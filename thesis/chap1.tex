@@ -1,0 +1,34 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Introduction}
+%% ---- MY NEW INTRO ----
+
+\section{Motivation}
+%Comparing music is seminal to the field of Music Information Retrieval (MIR). Questions such as ``Is this piece of music plagiarized from Bach?", ``Is this rhythmically more similar to Philip Glass or Scott Joplin? Melodically?", ``Is this newly discovered musical transcription an entirely new folk song or just a variation of an old one?" can be answered by comparing the pieces in question and applying a quantitative metric to determine that, ``Yes, this piece quotes Bach more than other pieces of similar time period and style", or, ``This piece has 74\% melodic similarity to Joplin's repertoire, 10\% similarity to Glass, but rhythmically shares 64\% similarity with Glass and only 12\% with Joplin."
+
+%% ---- END MY NEW INRO ----
+
+%% ----- BEGIN INTRO FROM PROPOSAL ----- 
+Comparing music is seminal to the field of Music Information Retrieval (MIR). Questions such as ``Is this piece of music plagiarized from Bach?", ``Is this rhythmically more similar to Philip Glass or Scott Joplin? Melodically?", ``Is this newly discovered musical transcription an entirely new folk song or just a variation of an old one?" can be answered by comparing the pieces in question and applying a quantitative metric to determine that, ``Yes, this piece quotes Bach more than other pieces of similar time period and style", or, ``This piece has 74\% melodic similarity to Joplin's repertoire, 10\% similarity to Glass, but rhythmically shares 64\% similarity with Glass and only 12\% with Joplin."
+
+Computational music comparison, a subset of classical computer science string comparison, comes in many forms and each domain has slightly different specifications for alignment and comparison. 
+
+The domain of music comparison that I will be studying and building tools for will be comparison between a MIDI score, which represents music in a restricted manner and its OMR counterpart, possibly a scanned score. Each representation is imperfect on its own.
+
+MIDI represents music in a very limited manner. This format encodes enharmonic notes as the "same"; note lengths are relative to each other, not necessarily in relation to a defined time signature; there is freedom in representing duration, as long as the total length is correct; and many other design decisions that make MIDI very universally compatible but also lacking in definition. Furthermore, since MIDI scores are generally created with some kind of human input, they tend to be correct, pitch-wise and rhythmically. 
+ 
+OMR takes a score that likely to be correct (the idea being this is a printed and published work, and also likely proofed for errors by the composer or publisher), scans its and tries to recreate what it scans in a digital notation format. While the more commonplace OCR has been optimized and whittled to an extremely high standard, OMR is still at present only 90\% correct \cite{omr}. One can imagine that the "alphabet" that OMR deals with is much larger and less well-defined than the 52 capital and lowercase letters and punctuation that OCR has been optimized for. Therefore, much of the optimizations for OCR do not directly apply to OMR. Some common errors in OMR include incorrectly recognizing a sharp as a natural and vice versa, mistaking rests as notes and vice versa, and other errors that any musician trained in the basics of music theory could identify as "wrong". Simple rules such as: all measures must sum to the same duration, only notes with existing accidentals can be made natural, should be able to great improve the quality of OMR if taken into account.
+
+The idea here is that we can compare MIDI scores and OMR scores, properly align them for as many points in the music as possible, and then use the correct metadata present in the MIDI to score to correct for scanning errors in the OMR score. 
+
+%% ----- END INTRO FROM PROPOSAL ----- 
+
+\section{Project Overview}
+
+\section{Chapter Summary}
+Chapter 2 will discuss background information that is important to understanding my work, including basic musical terms, an overview of canonical sequence alignment methods, as well as related work in musical sequence representation, alignment, and correction. Chapter 3 will summarize the work I did previously that is used as a building block for my thesis work. It also briefly discusses some ideas that were not as promising to explore. Chapter 4 will be a deep dive into the final implementations of the three main modules of my work and provides a concrete example of how the entire system would work. Performance and testing metrics are discussed in Chapter 5. Finally, Chapter 6 concludes with areas to explore in future work. 
+

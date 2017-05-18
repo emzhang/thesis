@@ -1,0 +1,125 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Final Implementation}
+This chapter describes the final implementation of the 
+
+\section{Hasher}
+
+
+\section{Aligner}
+\subsection{System Overview}
+\texttt{Aligner.py} contains the \texttt{StreamAligner} class that is the engine of the Alignment step. \texttt{StreamAligner} accepts as input two \texttt{music21} streams, one specified as a source stream, one as a target stream. The main functionality of \texttt{StreamAligner} is that it produces a global alignment between the source and the target streams in the form of a list of Change Tuples that maps each element in the source stream to an element in the target stream via one of the four change operations (insertion, deletion, substitution, no change). Additionally, \texttt{StreamAligner} also outputs a basic measurement of similarity between the two stream inputs \texttt{similarityScore}. Lastly \texttt{StreamAligner} has a \texttt{show} function that visually displays the alignment between the source and target streams. 
+
+\subsection{Producing a Global Alignment}
+The main objective of the Aligner is to produce a global alignment of two streams. In order to do so, it must hash the two streams with an instance of a Hasher (either passed in as a parameter during instantiation of a \texttt{StreamAligner} or using a default Hasher built into the \texttt{StreamAligner} class). After the two streams are hashed, \texttt{StreamAligner} sets up a distance matrix, a la the method described in Chapter 2 for classic string alignment, populates the matrix, and then performs a backtrace of the matrix starting the lower right corner to produce the alignment.
+
+\subsubsection{Pre-Alignment: Setting Appropriate Parameters}
+In the interest of being a modular system, I chose to give the programmer the option of setting their own Hasher. Upon instantiation of a \texttt{StreamAligner}, the programmer can choose to pass in an instance of a Hasher. If no Hasher is set initially, then \texttt{StreamAligner} uses the default Hasher that is set to hash Notes, Rests, and Chords, and their MIDI pitches and durations. The default Hasher is generic enough to be able to work with general alignment, but a more niche problem would require the programmer to use a Hasher more specific to their problem
+
+I also chose to leave the cost of Insertion, Deletion, and Substitution easily substitutable as well. By default, the cost of both Insertion and Deletion is equal to the length of one of the \texttt{NoteHashWithReference} tuples, which is exactly the number of properties that are hashed of any musical element. (So in the case of the default Hasher, Insertion and Deletion both have cost 2.) The cost of Substitution between two \texttt{NoteHashWithReference} tuples is equal to the number of properties they don't have in common with each other. For example, the cost of substituting 
+$$ \texttt{NoteHashWithReference(pitch=59, offset=1.0, duration=2.0)} $$
+with either 
+$$\texttt{NoteHashWithReference(pitch=59, offset=1.0, duration=3.0)} $$ or 
+$$\texttt{NoteHashWithReference(pitch=60, offset=1.0, duration=2.0)} $$
+would have a cost of 1. 
+
+\subsubsection{Pre-Alignment: Hashing the Streams}
+The alignment algorithm can only be applied after the streams are represented in a hashed format as a list of \texttt{NoteHashWithReference} tuples. Both input streams will be hashed and stored as the \texttt{hashedTargetStream} and the \texttt{hashedSourceStream}. The hashed format is the analog to a string and each \texttt{NoteHashWithReference} tuple is the analog to a character in classic string alignment.
+
+It recommended that the hasher used to the hash the streams be set to include references to the original stream by using \texttt{NoteHashWithReference} tuples in the creation of the hash (as opposed to the \texttt{NoteHash} tuple that has much less overhead), and in the default hasher,  This ensures that the \texttt{show} function and future fixers have access to the original objects that each hash came from. This makes it easier to color the original objects in the case of the show function and to extract any necessary metadata that wasn't encoded in the hash for future fixers.
+
+There is also an option to indicate that the streams passed in are already hashed, but in the context of my thesis work, this should never be the case. 
+
+\subsubsection{Alignment: Initializing the Distance Matrix}
+The first step in the alignment process is initializing the distance matrix. We set up an empty $n+1 \times m+1$ matrix, where $n$ is the length of the hashed target stream and the $m$ is the length of the hashed source. The extra column and extra row are populated with initial costs that correspond to just Insertion or just Deletion operations. In the leftmost column, the value $i \times insertCost$ is put into entries $(i, 0)$. In the topmost row, the value $j \times deleteCost$ is put into entries $(0, j)$. 
+
+\subsubsection{Alignment: Populating the Distance Matrix}
+The next step in the alignment process is to fill in the remainder of the distance matrix with values generated with these update rules. 
+
+\begin{equation*}
+\begin{split}
+\text{D[i][j]} = &  \text{min \{ }\\
+& \text{D[i-1][j] + insCost,} \\
+& \text{D[i][j-1] + delCost,} \\
+& \text{D[i-1][j-1] + subCost} \\
+\text{\}}
+\end{split}
+\end{equation*}
+
+
+where 
+\begin{align*}
+	\text{insCost = }  {}& \text{insertCost(hashedSourceStream[0])} \\
+	\text{delCost = } {}& \text{deleteCost(hashedSourceStream[0])} \\ 
+	\text{subCost = } {}& \text{substitutionCost(}  \text{hashedTargetStream[i-1]},  \-
+	\text{hashedSourceStream[j-1])} \\						
+\end{align*}
+
+Each entry A[i][j] in the distance matrix stores the lowest cost for aligning\\
+ \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]}. There are 4 possible ways of relating the two tuples. 
+\begin{enumerate}
+\item \textit{\texttt{hashedTargetStream[i]} is an insertion} - in this case, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is the same the cost of the subproblem of aligning \texttt{hashedTargetStream[i-i]} with \texttt{hashedSourceStream[j]} plus the cost of insertion.
+
+\item \textit{\texttt{hashedTargetStream[i]} is a deletion} - in this case, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is equal to the cost of the smaller sub problem of aligning \texttt{hashedTargetStream[i]}  with \texttt{hashedSourceStream[j-i]} plus the cost of deletion.
+
+\item \textit{Completely substituting one tuple for the other} - in this case, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is equal to the cost of the smaller subproblem of aligning \texttt{hashedTargetStream[i-i]} with \texttt{hashedSourceStream[j-1]} plus the cost of substituting \texttt{hashedSourceStream[j]} with \texttt{hashedTargetStream[i]}.
+ 
+\item \textit{No change between the two tuples i.e. the two tuples are the same} - same as above, where \- substitutionCost(\texttt{hashedTargetStream[i]}, \texttt{hashedSourceStream[j]}) is 0.
+\end{enumerate}
+
+The method \texttt{populateDistanceMatrix} fills in all the entries of the distance matrix using the rules and calculations listed above. It is important to note that in my work, all changes are made relative to \texttt{TargetStream}. That is, whenever possible, \texttt{SourceStream} is the stream that is being transformed into \texttt{TargetStream}. This invariant holds because in OMR/MIDI correction, the approach and direction I take is to change OMR into MIDI. Therefore, the MIDI stream is always the \texttt{TargetStream} and the OMR stream is always the \texttt{SourceStream}. It is certainly possible to go in either direction, but this paper will be done this way. 
+
+\subsubsection{Alignment: Backtrace to Find the Best Alignment and Create the Changes List}
+Once the distance matrix has been completely filled in, we use a backtrace starting from the bottom right hand corner of the matrix (i.e. A[i][j]) to find the path of least of cost. 
+
+Starting from the value found at A[i][j], we look at the values directly above, to the left, and diagonal in the up-left direction. That is, we look at the values in A[i-][j], A[i][j-1], and A[i-1][j-1]. Among these three values, we choose the minimum value. The combination of direction and value that we moved in tells us what kind of operation was performed to align NoteHashWithReference tuples \texttt{hashedSourceStream[i]} and \texttt{hashedSourceStream[j]}:
+\begin{enumerate}
+\item if the direction is up, then regardless of the value, this corresponds to an insertion operation.
+\item if the direction is left, then regardless of the value, this corresponds to an insertion operation.
+\item if the direction is diagonal up-left, and the value at A[i-1][j-1] is \textit{different} from the value at A[i][j], then this corresponds to a substitution operation.
+\item if the direction is diagonal up-left, and the value at A[i-1][j-1] is the \textit{same} as the value at A[i][j], then this corresponds to a no-change operation.
+\end{enumerate}  
+
+We continue this backtrace until we end up back at A[1][1]. Since we are using a global alignment technique, we should always end up back at this entry. If at the end of backtrace we end up in another part of the distance matrix, the method throws an \texttt{AlignmentException}. 
+
+Additionally, at every step of the backtrace, we create a \texttt{ChangeTuple} that holds references to the original musical elements that are represented in the original \texttt{SourceStream} and \texttt{TargetStream} and the kind of operation (insertion, deletion, substitution, no-change) that links them. Then we insert this \texttt{ChangeTuple} into the beginning of the \texttt{changes} list.
+
+This is all performed in the \texttt{calculateChangesList()} method. 
+
+\subsubsection{Post-Alignment: Measures of Similarity}
+After the backtrace to find the alignment, there is enough data to calculate some basic metrics of similarity. 
+
+\texttt{changesCount} is Counter object that provides a count of how many of each of the four different change operations appear in the \texttt{changes} list. 
+
+\texttt{similarityScore} is a float between 0 and 1.0 that is the ratio of \texttt{NoChange} operations to the total number operations in the \texttt{changes} list.
+\subsubsection{Post-Alignment: Visual Display of Alignment}
+The \texttt{showChanges} method provides a visual display of how the two streams are related via the \texttt{changes} list. For each \texttt{ChangeTuple} in the list, this method goes back to the initial reference and changes the color of the element in reference and adds in an id number as a lyric to that element if the change operation is not a \texttt{NoChange}. The color is determined by the type of change operation. Green corresponds to an insertion, red to deletion, and purple to substitution. The id number is the index of the \texttt{ChangeTuple} in the list. 
+
+The figures below shows the visual display of alignment between a scanned score of an excerpt of \textit{String Quartet No.7 in E-flat major, K.160: I. Allegro} and a MIDI recording of the same piece as well as the original score that the OMR came from. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.6]{sourceshow}
+\caption{Visual display of changes in source (OMR) stream}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.7]{targetshow}
+\caption{Visual display of changes in target (MIDI) stream}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.5]{sourceomr}
+\caption{Excerpt of original score taken from IMSLP}
+\end{figure}
+
+Since this method has a lot of overhead, it is by default set not to run. It can be set to run for every alignment by passing in the argument \texttt{show=True}. 
+
+\section{Fixer}
+\section{A Use Case}
