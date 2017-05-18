@@ -1,20 +1,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2-1}{\ignorespaces An example of protein alignment}}{18}
-\contentsline {figure}{\numberline {2-2}{\ignorespaces Alignment of MUSICAL and JUSTICE}}{20}
-\contentsline {figure}{\numberline {2-3}{\ignorespaces A bad alignment of MUSICAL and JUSTICE}}{21}
-\contentsline {figure}{\numberline {2-4}{\ignorespaces The alignment of MUSICAL split at \textit {i} and JUSTICE split at \textit {j}}}{22}
-\contentsline {figure}{\numberline {2-5}{\ignorespaces Initial distance matrix setup for aligning MUSICAL and JUSTICE}}{22}
+\contentsline {figure}{\numberline {2-1}{\ignorespaces An example of protein alignment}}{20}
+\contentsline {figure}{\numberline {2-2}{\ignorespaces Alignment of MUSICAL and JUSTICE}}{22}
+\contentsline {figure}{\numberline {2-3}{\ignorespaces A bad alignment of MUSICAL and JUSTICE}}{23}
+\contentsline {figure}{\numberline {2-4}{\ignorespaces The alignment of MUSICAL split at \textit {i} and JUSTICE split at \textit {j}}}{24}
+\contentsline {figure}{\numberline {2-5}{\ignorespaces Initial distance matrix setup for aligning MUSICAL and JUSTICE}}{24}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3-1}{\ignorespaces The hash of rhythmic features of this short melody would be \textit {NoteHash(offset=0, duration=0.5), NoteHash(offset=0.5, duration=0.5), NoteHash(offset=1.0, duration=2.0) NoteHash(offset=4, duration=1.0)}}}{28}
-\contentsline {figure}{\numberline {3-2}{\ignorespaces The hash of features related to transposition of this short melody would be \textit {NoteHash(intervalFromLastNote=0), NoteHash(intervalFromLastNote=2), NoteHash(intervalFromLastNote=5)}}}{29}
+\contentsline {figure}{\numberline {3-1}{\ignorespaces The hash of rhythmic features of this short melody would be \textit {NoteHash(offset=0, duration=0.5), NoteHash(offset=0.5, duration=0.5), NoteHash(offset=1.0, duration=2.0) NoteHash(offset=4, duration=1.0)}}}{30}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces The hash of features related to transposition of this short melody would be \textit {NoteHash(intervalFromLastNote=0), NoteHash(intervalFromLastNote=-2), NoteHash(intervalFromLastNote=-5)}}}{31}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4-1}{\ignorespaces Visual display of changes in source (OMR) stream}}{39}
-\contentsline {figure}{\numberline {4-2}{\ignorespaces Visual display of changes in target (MIDI) stream}}{40}
-\contentsline {figure}{\numberline {4-3}{\ignorespaces Excerpt of original score taken from IMSLP}}{40}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4-1}{\ignorespaces Visual display of changes in source (OMR) stream}}{46}
+\contentsline {figure}{\numberline {4-2}{\ignorespaces Visual display of changes in target (MIDI) stream}}{46}
+\contentsline {figure}{\numberline {4-3}{\ignorespaces Excerpt of original score taken from IMSLP}}{47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B-1}{\ignorespaces }}{49}
-\contentsline {figure}{\numberline {B-2}{\ignorespaces }}{50}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B-1}{\ignorespaces }}{55}
+\contentsline {figure}{\numberline {B-2}{\ignorespaces }}{56}

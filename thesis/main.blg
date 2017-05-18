@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: cover.aux
+A level-1 auxiliary file: contents.aux
+A level-1 auxiliary file: chap1.aux
+A level-1 auxiliary file: chap2.aux
+A level-1 auxiliary file: chap3.aux
+A level-1 auxiliary file: chap4.aux
+A level-1 auxiliary file: chap5.aux
+A level-1 auxiliary file: chap6.aux
+A level-1 auxiliary file: appa.aux
+A level-1 auxiliary file: appb.aux
+A level-1 auxiliary file: biblio.aux
+The style file: plain.bst
+Database file #1: main.bib
+Warning--I didn't find a database entry for "temperley"
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            537 strings with 4955 characters,
+and the built_in function-call counts, 1393 in all, are:
+= -- 135
+> -- 71
+< -- 1
++ -- 27
+- -- 23
+* -- 100
+:= -- 245
+add.period$ -- 13
+call.type$ -- 4
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 52
+empty$ -- 99
+format.name$ -- 23
+if$ -- 285
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 2
+newline$ -- 24
+num.names$ -- 10
+pop$ -- 20
+preamble$ -- 2
+purify$ -- 18
+quote$ -- 0
+skip$ -- 38
+stack$ -- 0
+substring$ -- 76
+swap$ -- 14
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 16
+warning$ -- 0
+while$ -- 13
+width$ -- 5
+write$ -- 48
+(There was 1 warning)

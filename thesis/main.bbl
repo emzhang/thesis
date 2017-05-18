@@ -1,0 +1,30 @@
+\newcommand{\noopsort}[1]{} \newcommand{\printfirst}[2]{#1}
+  \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
+\begin{thebibliography}{1}
+
+\bibitem{church}
+Maura Church and Michael~Scott Cuthbert.
+\newblock Improving rhythmic transcriptions via probability models applied
+  post-omr.
+\newblock In Hsin-Min Wang, Yi-Hsuan Yang, and Jin~Ha Lee, editors, {\em
+  Proceedings of the 15th Conference of the International Society for Music
+  Information Retrieval}, pages 643-- 647. ISMIR, 10 2014.
+
+\bibitem{typke}
+Peter Joslin.
+\newblock {\em Music Retrieval based on Melodic Similarity}.
+\newblock PhD thesis, Universiteit Utrecht, 2007.
+
+\bibitem{rebelo}
+Ana Rebelo, Ichiro Fujinaga, Filipe Paszkiewicz, Andre R.~S. Marcal, Carlos
+  Guedes, and Jaime~S. Cardoso.
+\newblock Optical music recognition: state-of-the-art and open issues.
+\newblock {\em International Journal of Multimedia Information Retrieval},
+  1(3):173?190, Feb 2012.
+
+\bibitem{white}
+Christopher~Wm. White.
+\newblock {\em Some statistical properties of tonality, 1650-1900}.
+\newblock PhD thesis, Yale University, 2013.
+
+\end{thebibliography}
