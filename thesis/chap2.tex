@@ -14,7 +14,7 @@ If you are familiar with the canonical representation of the string alignment pr
 \subsection{An Overview of Sequence Alignment}
 Sequence alignment in bioinformatics is an application of well-studied problem. In this field, researchers want to identify similar regions of DNA, RNA, or protein sequences to study functional, structural, or evolutionary relationships between the two sequences.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 
 \centering
 \includegraphics[scale=.5]{proteinalign}
@@ -120,7 +120,7 @@ seq2 & {\color[HTML]{009901} \textbf{J}}  & {\color[HTML]{6200C9} \textbf{U}} & 
 \label{badalign}
 \end{figure}
 
-If we have two sequences, of length $n$ and $m$, then we have ${n+m}\choose{m} $ possible alignments. Put into context, consider a two melodies of 10 notes each. Naively aligning just the note pitches, we have 184,765 different possible alignments! Clearly this isn't scalable, which is why we rely heavily on this piece of insight: A globally optimal alignment contains locally optimal alignments! This means that we can reuse the computations of subproblems to solve larger problems. What follows from this piece of insight is that for two strings split at $(i, j)$, the best alignment is:
+If we have two sequences, of length $n$ and $m$, then we have $\{n+m}\choose{m} $ possible alignments. Put into context, consider a two melodies of 10 notes each. Naively aligning just the note pitches, we have 184,765 different possible alignments! Clearly this isn't scalable, which is why we rely heavily on this piece of insight: A globally optimal alignment contains locally optimal alignments! This means that we can reuse the computations of subproblems to solve larger problems. What follows from this piece of insight is that for two strings split at $(i, j)$, the best alignment is:
 
 \begin{center}
 best alignment of \texttt{string1}$[:i]$ and \texttt{string2}$[:j]$ 
@@ -214,7 +214,7 @@ Going back to [original model] and the questions we posed and answered for strin
 \section{Related Work}
 \subsection{Typke: Music Retrieval based on Melodic Similarity}
 [[re-edit to talk about feature extraction as an important step, even though i don't necessarily call it feature extraction]]
-Another instance in which music is transformed and compressed into its most relevant features before comparison is in Typke?s thesis on Music Retrieval based on Melodic Similarity \cite{typke-2007}. Here, Typke proposes encoding music into what he calls a ?weighted point set? in a two-dimensional space of time and pitch before measuring any sort of melodic similarity between music. A note in a piece is represented as point set of pitch (in the Hewlett 40 system \cite{typke}) and an offset in quarter notes from the beginning of the piece.
+Another instance in which music is transformed and compressed into its most relevant features before comparison is in Typke's thesis on Music Retrieval based on Melodic Similarity \cite{typke-2007}. Here, Typke proposes encoding music into what he calls a ?weighted point set? in a two-dimensional space of time and pitch before measuring any sort of melodic similarity between music. A note in a piece is represented as point set of pitch (in the Hewlett 40 system \cite{typke-2007}) and an offset in quarter notes from the beginning of the piece.
 
 \subsection{Church and Cuthbert: Rhythmic Comparison and Alignment}
 \subsection{Viro: Peachnote, Musical Score Search and Analysis and IMSLP}

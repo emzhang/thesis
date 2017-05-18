@@ -62,11 +62,11 @@ where
 Each entry A[i][j] in the distance matrix stores the lowest cost for aligning\\
  \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]}. There are 4 possible ways of relating the two tuples. 
 \begin{enumerate}
-\item \textit{\texttt{hashedTargetStream[i]} is an insertion} - in this case, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is the same the cost of the subproblem of aligning \texttt{hashedTargetStream[i-i]} with \texttt{hashedSourceStream[j]} plus the cost of insertion.
+\item \textit{\texttt{hashedTargetStream[i]} is an insertion} - in the case of insertion, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is equal to the cost of aligning \texttt{hashedTargetStream[i-i]} with \texttt{hashedSourceStream[j]} plus the cost of insertion.
 
-\item \textit{\texttt{hashedTargetStream[i]} is a deletion} - in this case, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is equal to the cost of the smaller sub problem of aligning \texttt{hashedTargetStream[i]}  with \texttt{hashedSourceStream[j-i]} plus the cost of deletion.
+\item \textit{\texttt{hashedTargetStream[i]} is a deletion} - similar to the insertion case, for deletion, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is equal to the cost of the subproblem of aligning \texttt{hashedTargetStream[i]}  with \texttt{hashedSourceStream[j-i]} plus the cost of deletion.
 
-\item \textit{Completely substituting one tuple for the other} - in this case, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is equal to the cost of the smaller subproblem of aligning \texttt{hashedTargetStream[i-i]} with \texttt{hashedSourceStream[j-1]} plus the cost of substituting \texttt{hashedSourceStream[j]} with \texttt{hashedTargetStream[i]}.
+\item \textit{\texttt{hashedTargetStream[i]} is a substitution of \texttt{hashedSourceStream[j]}} - in the case of substitution, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is equal to the cost of the subproblem of aligning \texttt{hashedTargetStream[i-i]} with \texttt{hashedSourceStream[j-1]} plus the cost of a substitution of  \texttt{hashedSourceStream[j]} for \texttt{hashedTargetStream[i]}.
  
 \item \textit{No change between the two tuples i.e. the two tuples are the same} - same as above, where \- substitutionCost(\texttt{hashedTargetStream[i]}, \texttt{hashedSourceStream[j]}) is 0.
 \end{enumerate}

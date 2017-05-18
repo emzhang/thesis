@@ -71,7 +71,7 @@ There are several system-wide high level settings that must first be set.
                     \item \texttt{\_hashPitch} and \texttt{\_hashMIDI} - These settings determine whether pitch of a note will be hashed, and if it is, how it will be represented. If \texttt{hashMIDI} is \texttt{True}, then the MIDI pitch value is hashed. Otherwise, its name representation is hashed (e.g.``C\#\#"). This setting is useful depending upon whether the user would want to differentiate between B\# and C.
                     \item \texttt{\_hashOctave} - If True, this includes in the hash the number octave that a note is in. This could be useful for an envelope-like following of pitches. 
                     \item \texttt{\_hashIntervalFromLastNote} - If \texttt{True}, this returns a number corresponding to the interval between the current note and the last note when applicable. This setting is a useful alternative to hashing pitch when trying to identify transpositions of pieces.
-                    \item \texttt{\hashIsAccidental} = If \texttt{True}, this will return a boolean of whether the pitch of the hashed element is outside of the key signature. This setting is currently not fully supported. 
+                    \item \texttt{\_hashIsAccidental} = If \texttt{True}, this will return a boolean of whether the pitch of the hashed element is outside of the key signature. This setting is currently not fully supported. 
                     \end{itemize}
         \subsubsection{Pre-Hashing: Low Level Chord Hashing Settings}
                     \begin{itemize}
