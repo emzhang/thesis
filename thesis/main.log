@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 MAY 2017 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 MAY 2017 00:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -390,10 +390,6 @@ Overfull \hbox (17.26115pt too wide) in paragraph at lines 10--10
 ]
 Chapter 1.
 [15]
-
-LaTeX Warning: Citation `church' on page 16 undefined on input line 24.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16])
@@ -435,26 +431,13 @@ Overfull \hbox (5.2528pt too wide) in paragraph at lines 201--201
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 207.
 
-LaTeX Warning: Citation `typke' on page 26 undefined on input line 217.
-
-
-LaTeX Warning: Citation `typke' on page 26 undefined on input line 217.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26]
 
-LaTeX Warning: Citation `white' on page 27 undefined on input line 222.
-
-
 LaTeX Warning: Citation `temperley' on page 27 undefined on input line 222.
 
-[27]
-
-LaTeX Warning: Citation `rebelo' on page 28 undefined on input line 226.
-
-) [28]
+[27]) [28]
 \openout2 = `chap3.aux'.
 
  (./chap3.tex
@@ -486,10 +469,6 @@ Package pdftex.def Info: images/alg.pdf used on input line 28.
 Underfull \vbox (badness 4686) has occurred while \output is active []
 
  [30 <./images/alg.pdf>]
-
-LaTeX Warning: Citation `typke' on page 31 undefined on input line 35.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
@@ -624,11 +603,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5084 strings out of 493014
  73982 string characters out of 6133351
- 185641 words of memory out of 5000000
+ 185653 words of memory out of 5000000
  8277 multiletter control sequences out of 15000+600000
  23379 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,17n,38p,1134b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,17n,38p,1119b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -649,7 +628,7 @@ mf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (57 pages, 770333 bytes).
+Output written on main.pdf (57 pages, 770284 bytes).
 PDF statistics:
  286 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams
