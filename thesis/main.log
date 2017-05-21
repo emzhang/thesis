@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 MAY 2017 00:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 MAY 2017 10:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -220,13 +220,7 @@ Enter file names to process, (chap1,chap2 ...), or `all' to process all files:
 
 \files=all
 Including all files.
-(./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
-(./chap3.aux) (./chap4.aux) (./chap5.aux) (./chap6.aux) (./appa.aux)
-(./appb.aux
-
-LaTeX Warning: Label `' multiply defined.
-
-) (./biblio.aux))
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
@@ -390,6 +384,10 @@ Overfull \hbox (17.26115pt too wide) in paragraph at lines 10--10
 ]
 Chapter 1.
 [15]
+
+LaTeX Warning: Citation `church' on page 16 undefined on input line 24.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16])
@@ -431,13 +429,26 @@ Overfull \hbox (5.2528pt too wide) in paragraph at lines 201--201
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 207.
 
+LaTeX Warning: Citation `typke' on page 26 undefined on input line 217.
+
+
+LaTeX Warning: Citation `typke' on page 26 undefined on input line 217.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26]
 
+LaTeX Warning: Citation `white' on page 27 undefined on input line 222.
+
+
 LaTeX Warning: Citation `temperley' on page 27 undefined on input line 222.
 
-[27]) [28]
+[27]
+
+LaTeX Warning: Citation `rebelo' on page 28 undefined on input line 226.
+
+) [28]
 \openout2 = `chap3.aux'.
 
  (./chap3.tex
@@ -469,6 +480,10 @@ Package pdftex.def Info: images/alg.pdf used on input line 28.
 Underfull \vbox (badness 4686) has occurred while \output is active []
 
  [30 <./images/alg.pdf>]
+
+LaTeX Warning: Citation `typke' on page 31 undefined on input line 35.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
@@ -511,80 +526,87 @@ e-ment from \T1/cmtt/m/n/12 finalEltsToBeHashed\T1/cmr/m/n/12 (-20) .
 
 ]
 Chapter 4.
-[39] [40]
-Underfull \vbox (badness 1132) has occurred while \output is active []
 
- [41]
-[42]
-Underfull \vbox (badness 6542) has occurred while \output is active []
+Overfull \hbox (3.16653pt too wide) in paragraph at lines 15--16
+\T1/cmr/m/n/12 (-20) The en-tire sys-tem re-sides within the \T1/cmtt/m/n/12 OM
+RMIDICorrector \T1/cmr/m/n/12 (-20) class in \T1/cmtt/m/n/12 omrMidiCorrector.p
+y\T1/cmr/m/n/12 (-20) .
+ []
+
+[39] <images/sysdiag10.png, id=157, 704.6325pt x 595.22375pt>
+File: images/sysdiag10.png Graphic file (type png)
+
+<use images/sysdiag10.png>
+Package pdftex.def Info: images/sysdiag10.png used on input line 21.
+(pdftex.def)             Requested size: 433.62pt x 366.29204pt.
+ [40 <./images/sysdiag10.png>] [41] [42]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43]
-[44] <images/sourceshow.png, id=174, 640.3925pt x 359.3425pt>
+[44] [45] [46] <images/sourceshow.png, id=183, 640.3925pt x 359.3425pt>
 File: images/sourceshow.png Graphic file (type png)
 
 <use images/sourceshow.png>
-Package pdftex.def Info: images/sourceshow.png used on input line 106.
+Package pdftex.def Info: images/sourceshow.png used on input line 121.
 (pdftex.def)             Requested size: 384.23846pt x 215.60715pt.
- [45]
-<images/targetshow.png, id=179, 566.115pt x 346.29375pt>
+
+<images/targetshow.png, id=184, 566.115pt x 346.29375pt>
 File: images/targetshow.png Graphic file (type png)
 
 <use images/targetshow.png>
-Package pdftex.def Info: images/targetshow.png used on input line 112.
+Package pdftex.def Info: images/targetshow.png used on input line 127.
 (pdftex.def)             Requested size: 396.2778pt x 242.40396pt.
-
-<images/sourceomr.png, id=180, 759.83875pt x 479.7925pt>
-File: images/sourceomr.png Graphic file (type png)
-
-<use images/sourceomr.png>
-Package pdftex.def Info: images/sourceomr.png used on input line 118.
-(pdftex.def)             Requested size: 379.91844pt x 239.89565pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./images/sourceshow.png> <./images/targetshow.png>]) [47 <./images/source
-omr.png>]
+ [47 <./images/sourceshow.png>] <images/sourceomr.png, id=189, 759.83875pt x 47
+9.7925pt>
+File: images/sourceomr.png Graphic file (type png)
+
+<use images/sourceomr.png>
+Package pdftex.def Info: images/sourceomr.png used on input line 133.
+(pdftex.def)             Requested size: 379.91844pt x 239.89565pt.
+) [48 <./images/targetshow.png> <./images/sourceomr.png>] [49]
 \openout2 = `chap5.aux'.
 
-
-(./chap5.tex [48
+ (./chap5.tex [50
 
 
 
 ]
 Chapter 5.
-) [49]
+) [51]
 \openout2 = `chap6.aux'.
 
- (./chap6.tex [50
+ (./chap6.tex [52
 
 
 
 ]
 Chapter 6.
-) [51]
+) [53]
 \openout2 = `appa.aux'.
 
- (./appa.tex [52
+ (./appa.tex [54
 
 
 
 ]
 Appendix A.
-[53])
+[55])
 \openout2 = `appb.aux'.
 
- (./appb.tex [54
+ (./appb.tex [56
 
 
 
 
 ]
 Appendix B.
-[55] [56])
+[57] [58])
 \openout2 = `biblio.aux'.
 
- (./biblio.tex (./main.bbl)) [57
+ (./biblio.tex (./main.bbl)) [59
 
 
 
@@ -597,17 +619,17 @@ Appendix B.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5084 strings out of 493014
- 73982 string characters out of 6133351
- 185653 words of memory out of 5000000
- 8277 multiletter control sequences out of 15000+600000
+ 5056 strings out of 493014
+ 73780 string characters out of 6133351
+ 182171 words of memory out of 5000000
+ 8270 multiletter control sequences out of 15000+600000
  23379 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,17n,38p,1119b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,17n,38p,1134b,249s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -628,10 +650,10 @@ mf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (57 pages, 770284 bytes).
+Output written on main.pdf (59 pages, 855190 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
+ 294 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 23086 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23091 words of extra memory for PDF output out of 24883 (max. 10000000)
 

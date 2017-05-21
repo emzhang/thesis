@@ -34,23 +34,25 @@
 \contentsline {subsubsection}{\numberline {3.1.4.4}Hashing: Building \texttt {finalHash}}{37}
 \contentsline {section}{\numberline {3.2}Low-level Object Comparison Optimizations }{37}
 \contentsline {chapter}{\numberline {4}Final Implementation}{39}
-\contentsline {section}{\numberline {4.1}Hasher}{39}
-\contentsline {section}{\numberline {4.2}Aligner}{39}
-\contentsline {subsection}{\numberline {4.2.1}System Overview}{39}
-\contentsline {subsection}{\numberline {4.2.2}Producing a Global Alignment}{40}
-\contentsline {subsubsection}{\numberline {4.2.2.1}Pre-Alignment: Setting Appropriate Parameters}{40}
-\contentsline {subsubsection}{\numberline {4.2.2.2}Pre-Alignment: Hashing the Streams}{41}
-\contentsline {subsubsection}{\numberline {4.2.2.3}Alignment: Initializing the Distance Matrix}{42}
-\contentsline {subsubsection}{\numberline {4.2.2.4}Alignment: Populating the Distance Matrix}{42}
-\contentsline {subsubsection}{\numberline {4.2.2.5}Alignment: Backtrace to Find the Best Alignment and Create the Changes List}{44}
-\contentsline {subsubsection}{\numberline {4.2.2.6}Post-Alignment: Measures of Similarity}{45}
-\contentsline {subsubsection}{\numberline {4.2.2.7}Post-Alignment: Visual Display of Alignment}{45}
-\contentsline {section}{\numberline {4.3}Fixer}{47}
-\contentsline {section}{\numberline {4.4}A Use Case}{47}
-\contentsline {chapter}{\numberline {5}Testing}{49}
-\contentsline {section}{\numberline {5.1}Existing Music}{49}
-\contentsline {section}{\numberline {5.2}Timing}{49}
-\contentsline {chapter}{\numberline {6}Future Work}{51}
-\contentsline {section}{\numberline {6.1}Future Fixers}{51}
-\contentsline {chapter}{\numberline {A}Tables}{53}
-\contentsline {chapter}{\numberline {B}Figures}{55}
+\contentsline {section}{\numberline {4.1}OMRMIDICorrector}{39}
+\contentsline {subsubsection}{\numberline {4.1.0.1}preprocessStreams}{40}
+\contentsline {section}{\numberline {4.2}Hasher}{40}
+\contentsline {section}{\numberline {4.3}Aligner}{41}
+\contentsline {subsection}{\numberline {4.3.1}System Overview}{41}
+\contentsline {subsection}{\numberline {4.3.2}Producing a Global Alignment}{41}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Pre-Alignment: Setting Appropriate Parameters}{41}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Pre-Alignment: Hashing the Streams}{42}
+\contentsline {subsubsection}{\numberline {4.3.2.3}Alignment: Initializing the Distance Matrix}{43}
+\contentsline {subsubsection}{\numberline {4.3.2.4}Alignment: Populating the Distance Matrix}{43}
+\contentsline {subsubsection}{\numberline {4.3.2.5}Alignment: Backtrace to Find the Best Alignment and Create the Changes List}{45}
+\contentsline {subsubsection}{\numberline {4.3.2.6}Post-Alignment: Measures of Similarity}{46}
+\contentsline {subsubsection}{\numberline {4.3.2.7}Post-Alignment: Visual Display of Alignment}{47}
+\contentsline {section}{\numberline {4.4}Fixer}{49}
+\contentsline {section}{\numberline {4.5}A Use Case}{49}
+\contentsline {chapter}{\numberline {5}Testing}{51}
+\contentsline {section}{\numberline {5.1}Existing Music}{51}
+\contentsline {section}{\numberline {5.2}Timing}{51}
+\contentsline {chapter}{\numberline {6}Future Work}{53}
+\contentsline {section}{\numberline {6.1}Future Fixers}{53}
+\contentsline {chapter}{\numberline {A}Tables}{55}
+\contentsline {chapter}{\numberline {B}Figures}{57}

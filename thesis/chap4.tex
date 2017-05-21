@@ -5,17 +5,32 @@
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Final Implementation}
-This chapter describes the final implementation of the 
+This chapter describes the final implementation of the entire OMR/MIDI musical stream alignment and correction system. First there will be an overview of the entire system. Then, the there will be discussion on each of the large modules. Lastly, I will conclude with an example use case. 
+
+The final implementation of the OMR/MIDI musical stream alignment and correction system. can be found in \texttt{omrMidiCorrector.py}. The OMR system is a combination of one or more of each of the \texttt{Hasher}, \texttt{Aligner}, and \texttt{Fixer} modules with specific parameters set. 
+
+The inputs to the system is are two \texttt{music21} streams (one OMR, one MIDI). The output of the system is a corrected OMR stream. 
+
+\section{OMRMIDICorrector}
+The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{omrMidiCorrector.py}. This class is initialized with a \texttt{midiStream}, an \texttt{omrStream} and an optional \texttt{Hasher}. The \texttt{Hasher} parameter is optional because the system provides a default \texttt{Hasher} with some all-purpose settings if no \texttt{Hasher} is passed in. The method \texttt{processRunner} is the main function of this class that preprocesses the streams, sets up the appropriate \texttt{Hasher}, and calls the aligning and fixing methods.
+
+\subsubsection{preprocessStreams} 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\textwidth]{sysdiag10}
+\caption{System diagram}
+\end{figure}
 
 \section{Hasher}
-
+OMR/MIDI musical stream alignment system
 
 \section{Aligner}
 \subsection{System Overview}
 \texttt{Aligner.py} contains the \texttt{StreamAligner} class that is the engine of the Alignment step. \texttt{StreamAligner} accepts as input two \texttt{music21} streams, one specified as a source stream, one as a target stream. The main functionality of \texttt{StreamAligner} is that it produces a global alignment between the source and the target streams in the form of a list of Change Tuples that maps each element in the source stream to an element in the target stream via one of the four change operations (insertion, deletion, substitution, no change). Additionally, \texttt{StreamAligner} also outputs a basic measurement of similarity between the two stream inputs \texttt{similarityScore}. Lastly \texttt{StreamAligner} has a \texttt{show} function that visually displays the alignment between the source and target streams. 
 
 \subsection{Producing a Global Alignment}
-The main objective of the Aligner is to produce a global alignment of two streams. In order to do so, it must hash the two streams with an instance of a Hasher (either passed in as a parameter during instantiation of a \texttt{StreamAligner} or using a default Hasher built into the \texttt{StreamAligner} class). After the two streams are hashed, \texttt{StreamAligner} sets up a distance matrix, a la the method described in Chapter 2 for classic string alignment, populates the matrix, and then performs a backtrace of the matrix starting the lower right corner to produce the alignment.
+The main objective of the Aligner is to produce a global alignment of two streams. In order to do so, it must hash the two streams with an instance of a \texttt{Hasher} (either passed in as a parameter during instantiation of a \texttt{StreamAligner} or using a default Hasher built into the \texttt{StreamAligner} class). After the two streams are hashed, \texttt{StreamAligner} sets up a distance matrix, a la the method described in Chapter 2 for classic string alignment, populates the matrix, and then performs a backtrace of the matrix starting the lower right corner to produce the alignment.
 
 \subsubsection{Pre-Alignment: Setting Appropriate Parameters}
 In the interest of being a modular system, I chose to give the programmer the option of setting their own Hasher. Upon instantiation of a \texttt{StreamAligner}, the programmer can choose to pass in an instance of a Hasher. If no Hasher is set initially, then \texttt{StreamAligner} uses the default Hasher that is set to hash Notes, Rests, and Chords, and their MIDI pitches and durations. The default Hasher is generic enough to be able to work with general alignment, but a more niche problem would require the programmer to use a Hasher more specific to their problem
