@@ -5,22 +5,64 @@
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Final Implementation}
-This chapter describes the final implementation of the entire OMR/MIDI musical stream alignment and correction system. First there will be an overview of the entire system. Then, the there will be discussion on each of the large modules. Lastly, I will conclude with an example use case. 
+This chapter describes the final implementation of the entire OMR/MIDI musical stream alignment and correction system. First there will be an overview of the entire system. Then, there will be discussion on each of the large modules. Afterwards, I will present an example use case of the system. I will conclude with a discussion of design tradeoffs and choices that I made in implementing the system.
 
 The final implementation of the OMR/MIDI musical stream alignment and correction system. can be found in \texttt{omrMidiCorrector.py}. The OMR system is a combination of one or more of each of the \texttt{Hasher}, \texttt{Aligner}, and \texttt{Fixer} modules with specific parameters set. 
 
 The inputs to the system is are two \texttt{music21} streams (one OMR, one MIDI). The output of the system is a corrected OMR stream. 
 
 \section{OMRMIDICorrector}
-The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{omrMidiCorrector.py}. This class is initialized with a \texttt{midiStream}, an \texttt{omrStream} and an optional \texttt{Hasher}. The \texttt{Hasher} parameter is optional because the system provides a default \texttt{Hasher} with some all-purpose settings if no \texttt{Hasher} is passed in. The method \texttt{processRunner} is the main function of this class that preprocesses the streams, sets up the appropriate \texttt{Hasher}, and calls the aligning and fixing methods.
+The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{omrMidiCorrector.py}. This class is initialized with a \texttt{midiStream}, an \texttt{omrStream} and an optional \texttt{Hasher}. The \texttt{Hasher} parameter is optional because the system provides a default \texttt{Hasher} with some all-purpose settings if no \texttt{Hasher} is passed in. The method \texttt{processRunner} is the main method of this class that preprocesses the streams, sets up the appropriate \texttt{Hasher}, and calls the aligning and fixing methods.
 
-\subsubsection{preprocessStreams} 
+
 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\textwidth]{sysdiag10}
-\caption{System diagram}
+\caption{System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}
 \end{figure}
+
+\subsubsection{processRunner: preprocessStreams}
+The \texttt{processRunner} first verifies the streams that are passed in and preprocess them before being hashed, aligned, and fixed in the method \texttt{preprocessStreams}
+
+The first thing that \texttt{preprocessStreams} does is discretize the parts of the stream if the user has set \texttt{discretizeParts} to be \texttt{True}. Discretizing parts means to split the input streams into their constituent parts, so that the input streams are aligned part-wise. Since music is often comprised of multiple parts, this preprocessing step allows for input streams that contain nested streams. Take for example, an OMR/MIDI alignment of a string quartet. Both the OMR and MIDI inputs are stream in and of themselves, and so are all  individual instrumental parts within both of the streams. 
+
+A good alignment of the piece would involve aligning corresponding instrumental parts with each other to ensure that the beginnings and ends of corresponding parts aligned with each other. However, if we treat the inputs both as one long stream composed of four serial streams instead of four parallel streams, only the beginnings of the first instrumental parts and the ends of the last instrumental parts would be guaranteed to be aligned with each other. This guarantee comes from the global alignment method that I chose to implement. The figures below illustrate the phenomenon. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.5\textwidth]{omrmidisheets2}
+\caption{An example string quartet stream and its four parts.}
+\vspace{10mm}
+\includegraphics[width=.9\textwidth]{badalignstream2}
+\caption{A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}
+\vspace{10mm}
+\includegraphics[width=.25\textwidth]{goodalignstream}
+\caption{A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}
+\end{figure}
+
+%\begin{figure}[!ht]
+%\centering
+%\includegraphics[width=.9\textwidth]{badalignstream2}
+%\caption{A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}
+%\end{figure}
+%
+%\begin{figure}[!ht]
+%\centering
+%\includegraphics[width=.25\textwidth]{goodalignstream}
+%\caption{A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}
+%\end{figure}
+
+By default, \texttt{discretizeParts} is set to \texttt{True}. However, the user ultimately has the choice to align input streams part-wise or After a stream is split up into its constituent parts, the parts are stored in the lists \texttt{midiParts} and \texttt{omrParts}. The aligners and fixers work on all of the elements in the list, and so the entire system is agnostic to the number of parts; a stream comprised of a single part is processed in the same way as a multi-instrumental score. 
+
+Then, \texttt{preprocessStreams} checks if the number of parts in MIDI and the OMR stream are the same. If they are off by more than one, then a \texttt{OMRMIDICorrectorException} is raised and the process halts. This is a cursory check to see if the two input streams can even reasonably be aligned.
+
+If the numbers of parts are off by exactly one, then \texttt{preprocessStreams} spins up a lightweight \texttt{StreamAligner} object to try and see if there is an implicit bassline, where the bass doubles the cello part but an octave lower. In such a scenario, the OMR score would have one fewer part than the MIDI score because a bassist would read the cello line while reading sheet music, but the MIDI score would explicitly list all the instrument lines. If the similarity of the two streams is above a certain threshold, then I conclude that that bass part doubles the cello part and we disregard it in the alignment process. The \texttt{checkBassDoublesCello} method and its use of an \texttt{StreamAligner} object to determine whether two streams are an octave apart is a incidental example of the modularity and 
+
+\subsubsection{processRunner: setupHasher} 
+\subsubsection{processRunner: alignStreams}
+\subsubsection{processRunner: fixStreams}
+ 
 
 \section{Hasher}
 OMR/MIDI musical stream alignment system
@@ -116,25 +158,28 @@ The \texttt{showChanges} method provides a visual display of how the two streams
 
 The figures below shows the visual display of alignment between a scanned score of an excerpt of \textit{String Quartet No.7 in E-flat major, K.160: I. Allegro} and a MIDI recording of the same piece as well as the original score that the OMR came from. 
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 \centering
-\includegraphics[scale=.6]{sourceshow}
+\includegraphics[width =.9\textwidth]{sourceshow}
 \caption{Visual display of changes in source (OMR) stream}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 \centering
-\includegraphics[scale=.7]{targetshow}
+\includegraphics[width =.9\textwidth]{targetshow}
 \caption{Visual display of changes in target (MIDI) stream}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 \centering
-\includegraphics[scale=.5]{sourceomr}
+\includegraphics[width =.9\textwidth]{sourceomr}
 \caption{Excerpt of original score taken from IMSLP}
 \end{figure}
 
 Since this method has a lot of overhead, it is by default set not to run. It can be set to run for every alignment by passing in the argument \texttt{show=True}. 
 
 \section{Fixer}
+
+\section{Tradeoffs}
+
 \section{A Use Case}
