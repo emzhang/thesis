@@ -188,7 +188,7 @@ The \texttt{Fixer} is the last part of the OMR/MIDI music stream alignment and c
 
 Additional child Fixer classes would inherit from the parent \texttt{OMRMIDIFixer} class and correct very specific problems. For example, in the \texttt{StaccatoFixer} skeleton code, I have identified a pattern that \texttt{chunks} of \texttt{ChangeTuples} would exhibit that would indicate that the OMR process failed to recognize a passage that is marked as staccato. The \texttt{StaccatoFixer} class along with other children \texttt{Fixer} classes would look for similar patterns in the \texttt{ChangeTuples} list and correct the OMR stream based on this information. 
 
-In section \ref{fixerfuture} I discuss what I envision future \texttt{Fixers} to look like based on the groundwork I have laid out for the fixing process.
+In section \ref{futurefixers} I discuss what I envision future \texttt{Fixers} to look like based on the groundwork I have laid out for the fixing process.
 
 \section{Tradeoffs and Design Decisions}
 
@@ -205,10 +205,18 @@ One alleviation to this problem is providing default settings to all the modules
 \subsubsection{Length Agnosticism}
 There are two instances in which I purposefully built the system to be able to handle variable length input--- in building \texttt{NoteHash} and \texttt{NoteHashWithReference} tuples and in building the \texttt{OMRMIDICorrector} to be able to process a stream with any number of parts. Both of these decisions make the entire system more powerful because the system is able to process many more different types of streams this way, but it also makes the hashing and aligning process more convoluted. Fortunately for the user, all of this is hidden under the hood. There are likely some performance hits that are associated with this added complexity, but not to the point of inoperability. More demonstrations on timing are shown in section \ref{timing}.
 
-\subsection{Performance vs. Space}
-passing along hasher objects
-storing things in lists instead of using generators
-NHWR
+\subsection{Performance vs. Space and Object Overhead}
+
+\subsubsection{NoteHashWithReference}
+The \texttt{NoteHashWithReference} object contains a reference to the original stream object. Streams and the elements they contain are complex objects, so \texttt{NoteHashWithReference} objects have much more overhead in storage than their counterparts, \texttt{NoteHash} objects. However, in setting up a \texttt{Hasher} object, the user has the decision to use either one.   
+
+\subsubsection{Creating One Hasher and Many Aligners}
+During the correction process, only a single \texttt{Hasher} object is created and used and reused to generate hashes for every part in the stream passed in. There was the option of having \texttt{Hasher} object be one-time-use objects, but I chose to have the \texttt{Hasher} be able to operate on multiple streams. 
+
+On the other hand, a new \texttt{StreamAligner} object is generated for every pair of parts in the OMR and MIDI streams that are passed in. 
+
+Between generating \texttt{NoteHashWithReference} objects for every hashed stream element and \texttt{StreamAligner} objects for every pair of streams, there is a lot of space overhead taken up in even just a single alignment and correction process. However, based on experimental findings in which I tried to create these objects in C, perform the comparisons in C, and then translate the results into Python, I concluded that the limiting factor of the process was not in Pythonic object creation but rather the comparison process that calculates Levenshtein edit distance. The results and findings are discussed in more detail in section \ref{spaceoptimizations}.
+
 
 \subsection{Manual User Input}
 The OMR and MIDI streams that are used as input to the system come from somewhere. I have left the onus on the user to source .mid files and find scanned scores. I also have left it to the user to use some kind of OMR tool to convert the scanned score and the MIDI file into a musicXML form. Once in musicXML form, the user can use the \texttt{music21} library to parse the OMR and MIDI and convert them into \texttt{music21} streams. 
