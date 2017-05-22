@@ -9,7 +9,7 @@ This chapter describes the final implementation of the entire OMR/MIDI musical s
 
 The final implementation of the OMR/MIDI musical stream alignment and correction system. can be found in \texttt{omrMidiCorrector.py}. The OMR system is a combination of one or more of each of the \texttt{Hasher}, \texttt{Aligner}, and \texttt{Fixer} modules with specific parameters set. 
 
-The inputs to the system is are two \texttt{music21} streams (one OMR, one MIDI). The output of the system is a corrected OMR stream. 
+The inputs to the system are two \texttt{music21} streams (one OMR, one MIDI). The output of the system is a corrected OMR stream. 
 
 \section{OMRMIDICorrector}
 
@@ -56,7 +56,7 @@ This method creates a \texttt{StreamAligner} object for each pairwise MIDI part 
 \subsubsection{processRunner: fixStreams}
 The last step is of the entire process is to fix the OMR stream. While the \texttt{Fixer} still remains in development, the description of this method and the \texttt{Fixer} in section \label{fixer} will remain at a high level. 
 
-In its final implementation, \texttt{fixStreams} should 
+In its final implementation, \texttt{fixStreams} should create and instance of the \texttt{OMRMidiFixer} object. This would be a base class that does basic preprocessing on the \texttt{changes} list. All other fixers would extend from this class to fix a specific type of error in the original stream. The user would be able to choose which Fixers to apply to the original OMR stream.  
 
 \section{Hasher}
 The \texttt{Hasher} object used in the final implementation is a specific instance of the \texttt{Hasher} object described in section \ref{hasher}. The user can choose to pass in their own instance of \texttt{Hasher} or use the default \texttt{Hasher} provided.
@@ -133,7 +133,7 @@ Each entry A[i][j] in the distance matrix stores the lowest cost for aligning\\
 \item \textit{No change between the two tuples i.e. the two tuples are the same} - same as above, where substitutionCost(\texttt{hashedTargetStream[i]}, \texttt{hashedSourceStream[j]}) is 0.
 \end{enumerate}
 
-The method \texttt{populateDistanceMatrix} fills in all the entries of the distance matrix using the rules and calculations listed above. It is important to note that in my work, all changes are made relative to \texttt{TargetStream}. That is, whenever possible, \texttt{SourceStream} is the stream that is being transformed into \texttt{TargetStream}. This invariant holds because in OMR/MIDI correction, the approach and direction I take is to change OMR into MIDI. Therefore, the MIDI stream is always the \texttt{TargetStream} and the OMR stream is always the \texttt{SourceStream}. It is certainly possible to go in either direction, but this paper will be done this way. 
+The method \texttt{populateDistanceMatrix} fills in all the entries of the distance matrix using the rules and calculations listed above. It is important to note that in my work, all changes are made relative to \texttt{TargetStream}. That is, whenever possible, \texttt{SourceStream} is the stream that is being transformed into \texttt{TargetStream}. This invariant holds because in OMR/MIDI correction, the approach and direction I take is to change OMR into MIDI. Therefore, the MIDI stream is always the \texttt{TargetStream} and the OMR stream is always the \texttt{SourceStream}. It is certainly possible to go in either direction, but this paper will do it this way. 
 
 \subsubsection{Alignment: Backtrace to Find the Best Alignment and Create the Changes List}
 Once the distance matrix has been completely filled in, we use a backtrace starting from the bottom right hand corner of the matrix (i.e. A[i][j]) to find the path of least of cost. 
@@ -155,7 +155,7 @@ This is all performed in the \texttt{calculateChangesList} method.
 \subsubsection{Post-Alignment: Measures of Similarity}
 After the backtrace to find the alignment, there is enough data to calculate some basic metrics of similarity. 
 
-\texttt{changesCount} is Counter object that provides a count of how many of each of the four different change operations appear in the \texttt{changes} list. 
+\texttt{changesCount} is a Counter object that provides a count of how many of each of the four different change operations appear in the \texttt{changes} list. 
 
 \texttt{similarityScore} is a float between 0 and 1.0 that is the ratio of \texttt{NoChange} operations to the total number operations in the \texttt{changes} list.
 \subsubsection{Post-Alignment: Visual Display of Alignment}
@@ -184,7 +184,35 @@ The figures below shows the visual display of alignment between a scanned score 
 Since this method has a lot of overhead, it is by default set not to run. It can be set to run for every alignment by passing in the argument \texttt{show=True}. 
 
 \section{Fixer} \label{fixer}
+The \texttt{Fixer} is the last part of the OMR/MIDI music stream alignment and correction system. Its developmental work can be found in \texttt{fixer.py}. The high level idea is that there is a base class called \texttt{OMRMidiFixer} that takes as input the \texttt{changes} list that the \texttt{StreamAligners} outputs. It would also do basic preprocessing on the \texttt{changes} list, including dividing it up into \texttt{chunks}, substrings of the the \texttt{ChangeTuples} in the \texttt{changes} list that correspond to a small scale alignment of the corresponding stream elements in the original streams. 
 
-\section{Tradeoffs}
+Additional child Fixer classes would inherit from the parent \texttt{OMRMIDIFixer} class and correct very specific problems. For example, in the \texttt{StaccatoFixer} skeleton code, I have identified a pattern that \texttt{chunks} of \texttt{ChangeTuples} would exhibit that would indicate that the OMR process failed to recognize a passage that is marked as staccato. The \texttt{StaccatoFixer} class along with other children \texttt{Fixer} classes would look for similar patterns in the \texttt{ChangeTuples} list and correct the OMR stream based on this information. 
+
+In section \ref{fixerfuture} I discuss what I envision future \texttt{Fixers} to look like based on the groundwork I have laid out for the fixing process.
+
+\section{Tradeoffs and Design Decisions}
+
+In this section, I will justify some of my design choices and discuss tradeoffs in my decisions. 
+
+\subsection{Modularity vs. Simplicity}
+\subsubsection{A Variety of Settings and a Longer Setup}
+All of the modules have many different settings with various parameters. The variety of settings is what makes the \texttt{Hasher} and \texttt{Aligner} so powerful--- by changing just a couple of settings, both are able to solve very different problems.
+
+However, this necessarily lends itself to the system being more complex because each module must be able to handle various combinations of settings and their edge cases. It also requires the user to be careful when selecting initial settings. 
+
+One alleviation to this problem is providing default settings to all the modules. These default settings are what I believe are good general settings for the most common uses of the modules. 
+
+\subsubsection{Length Agnosticism}
+There are two instances in which I purposefully built the system to be able to handle variable length input--- in building \texttt{NoteHash} and \texttt{NoteHashWithReference} tuples and in building the \texttt{OMRMIDICorrector} to be able to process a stream with any number of parts. Both of these decisions make the entire system more powerful because the system is able to process many more different types of streams this way, but it also makes the hashing and aligning process more convoluted. Fortunately for the user, all of this is hidden under the hood. There are likely some performance hits that are associated with this added complexity, but not to the point of inoperability. More demonstrations on timing are shown in section \ref{timing}.
+
+\subsection{Performance vs. Space}
+passing along hasher objects
+storing things in lists instead of using generators
+NHWR
+
+\subsection{Manual User Input}
+The OMR and MIDI streams that are used as input to the system come from somewhere. I have left the onus on the user to source .mid files and find scanned scores. I also have left it to the user to use some kind of OMR tool to convert the scanned score and the MIDI file into a musicXML form. Once in musicXML form, the user can use the \texttt{music21} library to parse the OMR and MIDI and convert them into \texttt{music21} streams. 
+
+I leave this as a task to the user instead of automating it because with practice, humans can be much more precise and efficient with this process, and the necessity of a (probably large and complicated) computer program to do the same thing decreases. 
 
 \section{A Use Case}

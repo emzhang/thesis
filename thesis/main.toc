@@ -54,12 +54,17 @@
 \contentsline {subsubsection}{\numberline {4.3.2.6}Post-Alignment: Measures of Similarity}{50}
 \contentsline {subsubsection}{\numberline {4.3.2.7}Post-Alignment: Visual Display of Alignment}{51}
 \contentsline {section}{\numberline {4.4}Fixer}{53}
-\contentsline {section}{\numberline {4.5}Tradeoffs}{53}
-\contentsline {section}{\numberline {4.6}A Use Case}{53}
-\contentsline {chapter}{\numberline {5}Testing}{55}
-\contentsline {section}{\numberline {5.1}Existing Music}{55}
-\contentsline {section}{\numberline {5.2}Timing}{55}
-\contentsline {chapter}{\numberline {6}Future Work}{57}
-\contentsline {section}{\numberline {6.1}Future Fixers}{57}
-\contentsline {chapter}{\numberline {A}Tables}{59}
-\contentsline {chapter}{\numberline {B}Figures}{61}
+\contentsline {section}{\numberline {4.5}Tradeoffs and Design Decisions}{53}
+\contentsline {subsection}{\numberline {4.5.1}Modularity vs. Simplicity}{54}
+\contentsline {subsubsection}{\numberline {4.5.1.1}A Variety of Settings and a Longer Setup}{54}
+\contentsline {subsubsection}{\numberline {4.5.1.2}Length Agnosticism}{54}
+\contentsline {subsection}{\numberline {4.5.2}Performance vs. Space}{54}
+\contentsline {subsection}{\numberline {4.5.3}Manual User Input}{55}
+\contentsline {section}{\numberline {4.6}A Use Case}{55}
+\contentsline {chapter}{\numberline {5}Testing}{57}
+\contentsline {section}{\numberline {5.1}Existing Music}{57}
+\contentsline {section}{\numberline {5.2}Timing}{57}
+\contentsline {chapter}{\numberline {6}Future Work}{59}
+\contentsline {section}{\numberline {6.1}Future Fixers}{59}
+\contentsline {chapter}{\numberline {A}Tables}{61}
+\contentsline {chapter}{\numberline {B}Figures}{63}

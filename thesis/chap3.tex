@@ -68,10 +68,10 @@ There are several system-wide high level settings that must first be set.
         
         \subsubsection{Pre-Hashing: Low Level Note Settings}
                     \begin{itemize}
-                    \item \texttt{\_hashPitch} and \texttt{\_hashMIDI} - These settings determine whether pitch of a note will be hashed, and if it is, how it will be represented. If \texttt{hashMIDI} is \texttt{True}, then the MIDI pitch value is hashed. Otherwise, its name representation is hashed (e.g.``C\#\#"). This setting is useful depending upon whether the user would want to differentiate between B\# and C.
+                    \item \texttt{\_hashPitch} and \texttt{\_hashMIDI} - These settings determine whether pitch of a note will be hashed, and if it is, how it will be represented. If \texttt{\_hashMIDI} is \texttt{True}, then the MIDI pitch value is hashed. Otherwise, its name representation is hashed (e.g.``C\#\#''). This setting is useful depending upon whether the user would want to differentiate between B\# and C.
                     \item \texttt{\_hashOctave} - If True, this includes in the hash the number octave that a note is in. This could be useful for an envelope-like following of pitches. 
                     \item \texttt{\_hashIntervalFromLastNote} - If \texttt{True}, this returns a number corresponding to the interval between the current note and the last note when applicable. This setting is a useful alternative to hashing pitch when trying to identify transpositions of pieces.
-                    \item \texttt{\_hashIsAccidental} = If \texttt{True}, this will return a boolean of whether the pitch of the hashed element is outside of the key signature. This setting is currently not fully supported. 
+                    \item \texttt{\_hashIsAccidental} - If \texttt{True}, this will return a boolean of whether the pitch of the hashed element is outside of the key signature. This setting is currently not fully supported. 
                     \end{itemize}
         \subsubsection{Pre-Hashing: Low Level Chord Hashing Settings}
                     \begin{itemize}
@@ -88,7 +88,7 @@ There are several system-wide high level settings that must first be set.
         \end{enumerate}
         
         \subsection{Hashing: Preprocessing the Stream}
-        The stream that the \texttt{hashStream} method acts upon is stripped of all note ties in the \texttt{preprocessStream} if the \texttt{stripTies} setting is \texttt{True}. Additionally, this method returns the stream in a generator form by calling \texttt{recurse()} on the stream. 
+        The stream that the \texttt{hashStream} method acts upon is stripped of all note ties in the \texttt{preprocessStream} if the \texttt{stripTies} setting is \texttt{True}. Additionally, this method returns the stream in a generator form by calling \texttt{recurse} on the stream. 
         
         \subsubsection{Hashing: Creating a List of Elements to be Hashed}
         Next the \texttt{hashStream} method builds a list of elements that are to be hashed by filtering the recursed stream of any types that are not in \texttt{validTypes}. This is stored in \texttt{finalEltsToBeHashed}.
@@ -103,7 +103,7 @@ There are several system-wide high level settings that must first be set.
         If \texttt{includeReference} is set to \texttt{False}, then each new \texttt{NoteHash} object is directly added to \texttt{finalHash}. If \texttt{includeReference} is \texttt{True}, then each \texttt{NoteHash} gets replaced with a \texttt{NoteHashWithReference} object that includes a reference to the original stream element, and that gets added to \texttt{finalHash} instead.
     
 \section{Low-level Object Comparison Optimizations }
-Work during the fall of 2015 focused on optimizing the comparison process with variable-length data. The underlying idea was that Python objects tend to have more overhead than C objects, and if comparison and alignment algorithms were going to be doing a lot of comparisons between NoteHash objects produced by the Hasher, then converting these Python objects into C objects of appropriate size could save a lot of time. Here, ``appropriate size" refers to the idea that NoteHash objects with only a few hashed properties would correspond to smaller C objects, and NoteHash objects with more hashed properties would correspond to larger C objects. 
+Work during the fall of 2015 focused on optimizing the comparison process with variable-length data. The underlying idea was that Python objects tend to have more overhead than C objects, and if comparison and alignment algorithms were going to be doing a lot of comparisons between NoteHash objects produced by the Hasher, then converting these Python objects into C objects of appropriate size could save a lot of time. Here, ``appropriate size'' refers to the idea that NoteHash objects with only a few hashed properties would correspond to smaller C objects, and NoteHash objects with more hashed properties would correspond to larger C objects. 
 
 A smart implementation of the most efficient method, Yeti Levenshtein, already exists in C, so my work was to cleverly convert variable-length NoteHash Python objects to C objects to use the Yeti Levenshtein library, which I hoped would be faster than using any Python edit distance algorithm.
 
