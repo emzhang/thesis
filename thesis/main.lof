@@ -13,12 +13,12 @@
 \contentsline {figure}{\numberline {4-2}{\ignorespaces An example string quartet stream and its four parts.}}{42}
 \contentsline {figure}{\numberline {4-3}{\ignorespaces A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}}{42}
 \contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}}{42}
-\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in source (OMR) stream}}{50}
-\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in target (MIDI) stream}}{50}
-\contentsline {figure}{\numberline {4-7}{\ignorespaces Excerpt of original score taken from IMSLP}}{51}
+\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in source (OMR) stream}}{51}
+\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in target (MIDI) stream}}{52}
+\contentsline {figure}{\numberline {4-7}{\ignorespaces Excerpt of original score taken from IMSLP}}{52}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B-1}{\ignorespaces }}{59}
-\contentsline {figure}{\numberline {B-2}{\ignorespaces }}{60}
+\contentsline {figure}{\numberline {B-1}{\ignorespaces }}{61}
+\contentsline {figure}{\numberline {B-2}{\ignorespaces }}{62}

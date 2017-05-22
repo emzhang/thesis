@@ -5,18 +5,18 @@
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Final Implementation}
-This chapter describes the final implementation of the entire OMR/MIDI musical stream alignment and correction system. First there will be an overview of the entire system. Then, there will be discussion on each of the large modules. Afterwards, I will present an example use case of the system. I will conclude with a discussion of design tradeoffs and choices that I made in implementing the system.
+This chapter describes the final implementation of the entire OMR/MIDI musical stream alignment and correction system. First there will be an overview of the entire system. Then, there will be discussion on the final implementation of each of the large modules that is divorced from the context of the \texttt{OMRMIDICorrector} class. Afterwards, I will present an example use case of the system. I will conclude with a discussion of design tradeoffs and choices that I made in implementing the system.
 
 The final implementation of the OMR/MIDI musical stream alignment and correction system. can be found in \texttt{omrMidiCorrector.py}. The OMR system is a combination of one or more of each of the \texttt{Hasher}, \texttt{Aligner}, and \texttt{Fixer} modules with specific parameters set. 
 
 The inputs to the system is are two \texttt{music21} streams (one OMR, one MIDI). The output of the system is a corrected OMR stream. 
 
 \section{OMRMIDICorrector}
+
+\subsection{System Overview}
 The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{omrMidiCorrector.py}. This class is initialized with a \texttt{midiStream}, an \texttt{omrStream} and an optional \texttt{Hasher}. The \texttt{Hasher} parameter is optional because the system provides a default \texttt{Hasher} with some all-purpose settings if no \texttt{Hasher} is passed in. The method \texttt{processRunner} is the main method of this class that preprocesses the streams, sets up the appropriate \texttt{Hasher}, and calls the aligning and fixing methods.
 
-
-
-\begin{figure}[!ht]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{sysdiag10}
 \caption{System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}
@@ -25,7 +25,7 @@ The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{
 \subsubsection{processRunner: preprocessStreams}
 The \texttt{processRunner} first verifies the streams that are passed in and preprocess them before being hashed, aligned, and fixed in the method \texttt{preprocessStreams}
 
-The first thing that \texttt{preprocessStreams} does is discretize the parts of the stream if the user has set \texttt{discretizeParts} to be \texttt{True}. Discretizing parts means to split the input streams into their constituent parts, so that the input streams are aligned part-wise. Since music is often comprised of multiple parts, this preprocessing step allows for input streams that contain nested streams. Take for example, an OMR/MIDI alignment of a string quartet. Both the OMR and MIDI inputs are stream in and of themselves, and so are all  individual instrumental parts within both of the streams. 
+The first thing that \texttt{preprocessStreams} does is discretize the parts of the stream if the user has set \texttt{discretizeParts} to be \texttt{True}. Discretizing parts means to split the input streams into their constituent parts, so that the input streams are aligned part-wise. Since music is often comprised of multiple parts, this preprocessing step allows for input streams that contain nested streams. Take for example, an OMR/MIDI alignment of a string quartet. Both the OMR and MIDI inputs are stream in and of themselves, and so are all individual instrumental parts within both of the streams. 
 
 A good alignment of the piece would involve aligning corresponding instrumental parts with each other to ensure that the beginnings and ends of corresponding parts aligned with each other. However, if we treat the inputs both as one long stream composed of four serial streams instead of four parallel streams, only the beginnings of the first instrumental parts and the ends of the last instrumental parts would be guaranteed to be aligned with each other. This guarantee comes from the global alignment method that I chose to implement. The figures below illustrate the phenomenon. 
 
@@ -41,33 +41,38 @@ A good alignment of the piece would involve aligning corresponding instrumental 
 \caption{A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}
 \end{figure}
 
-%\begin{figure}[!ht]
-%\centering
-%\includegraphics[width=.9\textwidth]{badalignstream2}
-%\caption{A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}
-%\end{figure}
-%
-%\begin{figure}[!ht]
-%\centering
-%\includegraphics[width=.25\textwidth]{goodalignstream}
-%\caption{A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}
-%\end{figure}
-
 By default, \texttt{discretizeParts} is set to \texttt{True}. However, the user ultimately has the choice to align input streams part-wise or After a stream is split up into its constituent parts, the parts are stored in the lists \texttt{midiParts} and \texttt{omrParts}. The aligners and fixers work on all of the elements in the list, and so the entire system is agnostic to the number of parts; a stream comprised of a single part is processed in the same way as a multi-instrumental score. 
 
 Then, \texttt{preprocessStreams} checks if the number of parts in MIDI and the OMR stream are the same. If they are off by more than one, then a \texttt{OMRMIDICorrectorException} is raised and the process halts. This is a cursory check to see if the two input streams can even reasonably be aligned.
 
-If the numbers of parts are off by exactly one, then \texttt{preprocessStreams} spins up a lightweight \texttt{StreamAligner} object to try and see if there is an implicit bassline, where the bass doubles the cello part but an octave lower. In such a scenario, the OMR score would have one fewer part than the MIDI score because a bassist would read the cello line while reading sheet music, but the MIDI score would explicitly list all the instrument lines. If the similarity of the two streams is above a certain threshold, then I conclude that that bass part doubles the cello part and we disregard it in the alignment process. The \texttt{checkBassDoublesCello} method and its use of an \texttt{StreamAligner} object to determine whether two streams are an octave apart is a incidental example of the modularity and 
+If the numbers of parts are off by exactly one, then \texttt{preprocessStreams} spins up a lightweight \texttt{StreamAligner} object to try and see if there is an implicit bassline, where the bass doubles the cello part but an octave lower. In such a scenario, the OMR score would have one fewer part than the MIDI score because a bassist would read the cello line while reading sheet music, but the MIDI score would explicitly list all the instrument lines. If the similarity of the two streams is above a certain threshold, then I conclude that that bass part doubles the cello part and we disregard it in the alignment process. The \texttt{checkBassDoublesCello} method and its use of an \texttt{StreamAligner} object to determine whether two streams are an octave apart is a incidental example of a different use case of the \texttt{StreamAligner}.
 
-\subsubsection{processRunner: setupHasher} 
+\subsubsection{processRunner: setupHasher} \label{setuphasher}
+The next step in the \texttt{processRunner} method is setting up the \texttt{Hasher} object that will be used to hash both input streams. This is done in the \texttt{setupHasher} method. If user has passed in a \texttt{Hasher} object upon instantiation of an \texttt{OMRMIDICorrector} object, then that is used. Otherwise this method sets up a default \texttt{Hasher} with settings we have found to be generally effective in the \texttt{setDefaultHasher} method. The default \texttt{Hasher} hashes only pitch and duration and includes references to the original stream elements. 
+
 \subsubsection{processRunner: alignStreams}
+This method creates a \texttt{StreamAligner} object for each pairwise MIDI part and OMR part found in \texttt{midiParts} and \texttt{omrParts} and aligns the two parts, calculates their similarity metrics, and visually shows the changes and alignment if \texttt{debugShow} is \texttt{True}. There is more detail about how the \texttt{StreamAligner} object works in section \ref{aligner}
+
 \subsubsection{processRunner: fixStreams}
- 
+The last step is of the entire process is to fix the OMR stream. While the \texttt{Fixer} still remains in development, the description of this method and the \texttt{Fixer} in section \label{fixer} will remain at a high level. 
+
+In its final implementation, \texttt{fixStreams} should 
 
 \section{Hasher}
-OMR/MIDI musical stream alignment system
+The \texttt{Hasher} object used in the final implementation is a specific instance of the \texttt{Hasher} object described in section \ref{hasher}. The user can choose to pass in their own instance of \texttt{Hasher} or use the default \texttt{Hasher} provided.
 
-\section{Aligner}
+\subsection{The Default Hasher}
+The default \texttt{Hasher}, as described in section \ref{setuphasher}, hashes only pitch and duration of stream elements and set \texttt{includeReference} to be \texttt{True}. This setting is general enough to provide for a reasonable alignment for most generic alignment problems. But for more niche problems (for example, a rhythmic alignment), the user ought to define their own \texttt{Hasher} and the default \texttt{Hasher} should not be used. 
+
+\subsection{NoteHashWithReference}
+One update I made to the original \texttt{Hasher} was the addition of a new type of \texttt{NamedTuple} that includes a reference to the original element that is hashed and stored within the tuple. This new type provided access to the original stream elements which was necessary for three reasons:
+\begin{enumerate}
+\item It allows the user to visually see the alignment using the \texttt{showChanges} method in the \texttt{Aligner}. A list of the changes between two streams can be hard to parse and see patterns within, so this method provides a more visually appealing way of interpreting the list of changes.
+\item It allows the user to access other elements in the context of the original stream element. For example, it might be helpful to be able to access the most recent key signature change in the stream for some fixing purpose. 
+\item In order for the \texttt{Fixer} to fix the OMR stream, it must be able to change the original elements. 
+\end{enumerate}
+
+\section{Aligner} \label{aligner}
 \subsection{System Overview}
 \texttt{Aligner.py} contains the \texttt{StreamAligner} class that is the engine of the Alignment step. \texttt{StreamAligner} accepts as input two \texttt{music21} streams, one specified as a source stream, one as a target stream. The main functionality of \texttt{StreamAligner} is that it produces a global alignment between the source and the target streams in the form of a list of Change Tuples that maps each element in the source stream to an element in the target stream via one of the four change operations (insertion, deletion, substitution, no change). Additionally, \texttt{StreamAligner} also outputs a basic measurement of similarity between the two stream inputs \texttt{similarityScore}. Lastly \texttt{StreamAligner} has a \texttt{show} function that visually displays the alignment between the source and target streams. 
 
@@ -125,7 +130,7 @@ Each entry A[i][j] in the distance matrix stores the lowest cost for aligning\\
 
 \item \textit{\texttt{hashedTargetStream[i]} is a substitution of \texttt{hashedSourceStream[j]}} - in the case of substitution, the cost of aligning \texttt{hashedTargetStream[i]} with \texttt{hashedSourceStream[j]} is equal to the cost of the subproblem of aligning \texttt{hashedTargetStream[i-i]} with \texttt{hashedSourceStream[j-1]} plus the cost of a substitution of  \texttt{hashedSourceStream[j]} for \texttt{hashedTargetStream[i]}.
  
-\item \textit{No change between the two tuples i.e. the two tuples are the same} - same as above, where \- substitutionCost(\texttt{hashedTargetStream[i]}, \texttt{hashedSourceStream[j]}) is 0.
+\item \textit{No change between the two tuples i.e. the two tuples are the same} - same as above, where substitutionCost(\texttt{hashedTargetStream[i]}, \texttt{hashedSourceStream[j]}) is 0.
 \end{enumerate}
 
 The method \texttt{populateDistanceMatrix} fills in all the entries of the distance matrix using the rules and calculations listed above. It is important to note that in my work, all changes are made relative to \texttt{TargetStream}. That is, whenever possible, \texttt{SourceStream} is the stream that is being transformed into \texttt{TargetStream}. This invariant holds because in OMR/MIDI correction, the approach and direction I take is to change OMR into MIDI. Therefore, the MIDI stream is always the \texttt{TargetStream} and the OMR stream is always the \texttt{SourceStream}. It is certainly possible to go in either direction, but this paper will be done this way. 
@@ -145,7 +150,7 @@ We continue this backtrace until we end up back at A[1][1]. Since we are using a
 
 Additionally, at every step of the backtrace, we create a \texttt{ChangeTuple} that holds references to the original musical elements that are represented in the original \texttt{SourceStream} and \texttt{TargetStream} and the kind of operation (insertion, deletion, substitution, no-change) that links them. Then we insert this \texttt{ChangeTuple} into the beginning of the \texttt{changes} list.
 
-This is all performed in the \texttt{calculateChangesList()} method. 
+This is all performed in the \texttt{calculateChangesList} method. 
 
 \subsubsection{Post-Alignment: Measures of Similarity}
 After the backtrace to find the alignment, there is enough data to calculate some basic metrics of similarity. 
@@ -178,7 +183,7 @@ The figures below shows the visual display of alignment between a scanned score 
 
 Since this method has a lot of overhead, it is by default set not to run. It can be set to run for every alignment by passing in the argument \texttt{show=True}. 
 
-\section{Fixer}
+\section{Fixer} \label{fixer}
 
 \section{Tradeoffs}
 

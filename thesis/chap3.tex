@@ -2,7 +2,7 @@
 
 The work of my thesis uses the universal Hasher for digital representations of music tool. This work was largely done in the Spring of 2015 as part of my 6.UAP. Additionally, experimental results in a related project focused on speeding up musical comparison by converting Python objects to C objects provide evidence that the bottleneck in musical sequence alignment is not in the comparison step. Both subjects are described in more detail below but only to the extent necessary to understand the work of my thesis.
 
-\section{A Modular Universal Hasher}
+\section{A Modular Universal Hasher} \label{hasher}
 Prior to my work on building a musical sequence aligner and fixer, I built a hasher with the specific intention that it would be able to adapt according to different specification settings decided by the programmer. The programmer decides which kinds of music21 stream elements and properties are relevant to their hash, and selects them to build a specific instance of a Hasher object. This Hasher instance can then be used to produce a hash from any music21 stream. 
 
 \subsection{Why Musical Comparison and Alignment Needs a Modular Hashing Function}
@@ -48,7 +48,7 @@ The resulting hashes of the entire process are stored in \texttt{finalHash}.
 \subsubsection{Pre-Hashing: High Level Hasher Settings}
 There are several system-wide high level settings that must first be set.
 \begin{itemize}
-\item \texttt{includeReference} - By default this is set to \texttt{False}, but if set to \texttt{True}, each element hash will be stored in a \texttt{NoteHashWithReference} object that includes a reference to the original element in its original stream. For many purposes, having this references is not necessary and takes up extra overhead, so it is set to \texttt{False} by default.
+\item \texttt{includeReference} - By default this is set to \texttt{False}, but if set to \texttt{True}, each element hash will be stored in a \texttt{NoteHashWithReference} object that includes a reference to the original element in its original stream. For many purposes, having this reference is not necessary and takes up extra overhead, so it is set to \texttt{False} by default.
 
 \item \texttt{validTypes} - This is a list of what types stream elements should be hashed. By default this is \texttt{[note.Note, note.Rest, chord.Chord]} and can be changed to be any subset of those three stream elements.
 \item \texttt{stateVars} - This is a dictionary that keep track of state between consecutive hashes. By default it doesn't contain anything, but can be programmed to contain \textit{intervalFromLastNote} and \textit{KeySignature} during the later process of preprocessing the streams and setting the appropriate hashing functions if the user-set paramets call for their use. 
