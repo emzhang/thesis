@@ -2,6 +2,9 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{1}
 
+\bibitem{k160}
+{\em Scanned sheet music of String Quartet No.7 in E-flat major, K.160/159a}.
+
 \bibitem{church}
 Maura Church and Michael~Scott Cuthbert.
 \newblock Improving rhythmic transcriptions via probability models applied

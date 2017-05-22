@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 MAY 2017 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 MAY 2017 12:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -610,48 +610,65 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55])
-[56]
+ [55]
+
+LaTeX Warning: Citation `yalemidiarchive' on page 56 undefined on input line 23
+0.
+
+
+LaTeX Warning: Citation `musedata' on page 56 undefined on input line 230.
+
+[56] <images/k160uncroppedfirstpage.png, id=228, 586.19pt x 766.865pt>
+File: images/k160uncroppedfirstpage.png Graphic file (type png)
+
+<use images/k160uncroppedfirstpage.png>
+Package pdftex.def Info: images/k160uncroppedfirstpage.png used on input line 2
+36.
+(pdftex.def)             Requested size: 260.17464pt x 340.3587pt.
+)
+Underfull \vbox (badness 1460) has occurred while \output is active []
+
+ [57 <./images/k160uncroppedfirstpage.png>] [58]
 \openout2 = `chap5.aux'.
 
  (./chap5.tex
 Chapter 5.
-) [57
+) [59
 
 
 
 ]
 \openout2 = `chap6.aux'.
 
- (./chap6.tex [58
+ (./chap6.tex [60
 
 
 
 ]
 Chapter 6.
-) [59]
+) [61]
 \openout2 = `appa.aux'.
 
- (./appa.tex [60
+ (./appa.tex [62
 
 
 
 ]
 Appendix A.
-[61])
+[63])
 \openout2 = `appb.aux'.
 
- (./appb.tex [62
+ (./appb.tex [64
 
 
 
 
 ]
 Appendix B.
-[63] [64])
+[65] [66])
 \openout2 = `biblio.aux'.
 
- (./biblio.tex (./main.bbl)) [65
+ (./biblio.tex (./main.bbl)) [67
 
 
 
@@ -668,10 +685,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5113 strings out of 493014
- 74614 string characters out of 6133351
- 185734 words of memory out of 5000000
- 8300 multiletter control sequences out of 15000+600000
+ 5121 strings out of 493014
+ 74824 string characters out of 6133351
+ 185737 words of memory out of 5000000
+ 8307 multiletter control sequences out of 15000+600000
  23438 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,17n,38p,1119b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -695,10 +712,10 @@ mf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (65 pages, 900919 bytes).
+Output written on main.pdf (67 pages, 1215591 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
+ 329 PDF objects out of 1000 (max. 8388607)
+ 214 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 23106 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23111 words of extra memory for PDF output out of 24883 (max. 10000000)
 

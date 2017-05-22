@@ -15,45 +15,51 @@ A level-1 auxiliary file: biblio.aux
 The style file: plain.bst
 Database file #1: main.bib
 Warning--I didn't find a database entry for "temperley"
-You've used 4 entries,
+Warning--I didn't find a database entry for "yalemidiarchive"
+Warning--I didn't find a database entry for "musedata"
+Warning--to sort, need author, editor, or key in k160
+Warning--empty author and editor in k160
+Warning--empty publisher in k160
+Warning--empty year in k160
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            537 strings with 4955 characters,
-and the built_in function-call counts, 1393 in all, are:
-= -- 135
-> -- 71
+            542 strings with 5080 characters,
+and the built_in function-call counts, 1566 in all, are:
+= -- 147
+> -- 72
 < -- 1
-+ -- 27
++ -- 28
 - -- 23
-* -- 100
-:= -- 245
-add.period$ -- 13
-call.type$ -- 4
-change.case$ -- 20
+* -- 116
+:= -- 264
+add.period$ -- 14
+call.type$ -- 5
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 52
-empty$ -- 99
+cite$ -- 9
+duplicate$ -- 65
+empty$ -- 123
 format.name$ -- 23
-if$ -- 285
+if$ -- 323
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 2
-newline$ -- 24
+int.to.str$ -- 5
+missing$ -- 3
+newline$ -- 27
 num.names$ -- 10
-pop$ -- 20
+pop$ -- 30
 preamble$ -- 2
-purify$ -- 18
+purify$ -- 20
 quote$ -- 0
-skip$ -- 38
+skip$ -- 43
 stack$ -- 0
-substring$ -- 76
-swap$ -- 14
+substring$ -- 81
+swap$ -- 15
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 0
+type$ -- 18
+warning$ -- 4
 while$ -- 13
-width$ -- 5
-write$ -- 48
-(There was 1 warning)
+width$ -- 6
+write$ -- 53
+(There were 7 warnings)
