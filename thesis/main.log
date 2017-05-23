@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  23 MAY 2017 09:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  23 MAY 2017 15:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -572,94 +572,104 @@ MRMidiFixer
  []
 
 [43] [44] [45] [46] [47] [48] [49] [50]
-<images/sourceshow.png, id=203, 640.3925pt x 359.3425pt>
-File: images/sourceshow.png Graphic file (type png)
+<images/k525violatargetshow.png, id=203, 454.69875pt x 526.96875pt>
+File: images/k525violatargetshow.png Graphic file (type png)
 
-<use images/sourceshow.png>
-Package pdftex.def Info: images/sourceshow.png used on input line 168.
-(pdftex.def)             Requested size: 390.25534pt x 218.98476pt.
+<use images/k525violatargetshow.png>
+Package pdftex.def Info: images/k525violatargetshow.png used on input line 168.
 
-<images/targetshow.png, id=204, 566.115pt x 346.29375pt>
-File: images/targetshow.png Graphic file (type png)
+(pdftex.def)             Requested size: 390.25534pt x 452.29175pt.
 
-<use images/targetshow.png>
-Package pdftex.def Info: images/targetshow.png used on input line 174.
-(pdftex.def)             Requested size: 390.25534pt x 238.72629pt.
+<images/k525violasourceshow.png, id=204, 424.58624pt x 521.95pt>
+File: images/k525violasourceshow.png Graphic file (type png)
 
-<images/sourceomr.png, id=205, 759.83875pt x 479.7925pt>
-File: images/sourceomr.png Graphic file (type png)
+<use images/k525violasourceshow.png>
+Package pdftex.def Info: images/k525violasourceshow.png used on input line 174.
 
-<use images/sourceomr.png>
-Package pdftex.def Info: images/sourceomr.png used on input line 180.
-(pdftex.def)             Requested size: 390.25534pt x 246.42601pt.
- [51 <./images/sourceshow.png>]
+(pdftex.def)             Requested size: 390.25534pt x 479.76974pt.
+
+<images/k525midistream.png, id=205, 367.3725pt x 436.63126pt>
+File: images/k525midistream.png Graphic file (type png)
+
+<use images/k525midistream.png>
+Package pdftex.def Info: images/k525midistream.png used on input line 180.
+(pdftex.def)             Requested size: 390.25534pt x 463.8596pt.
+
+<images/k525omrstream.png, id=206, 391.4625pt x 513.92pt>
+File: images/k525omrstream.png Graphic file (type png)
+
+<use images/k525omrstream.png>
+Package pdftex.def Info: images/k525omrstream.png used on input line 186.
+(pdftex.def)             Requested size: 390.25534pt x 512.36606pt.
+ [51]
+
+LaTeX Warning: Citation `byrd-testbed' on page 52 undefined on input line 197.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52 <./images/targetshow.png> <./images/sourceomr.png>]
-
-LaTeX Warning: Citation `byrd-testbed' on page 53 undefined on input line 191.
-
-[53] [54]
-Overfull \hbox (5.01344pt too wide) in paragraph at lines 217--218
+ [52 <./images/k525violatargetshow.png>] [53 <./images/k525violasourceshow.png>
+] [54 <./images/k525midistream.png>] [55 <./images/k525omrstream.png>] [56]
+Overfull \hbox (5.01344pt too wide) in paragraph at lines 223--224
 \T1/cmr/m/n/12 (-20) Streams and the el-e-ments they con-tain are com-plex ob-j
 ects, so \T1/cmtt/m/n/12 NoteHashWithReference
  []
 
-[55]) [56]
+[57]) [58]
 \openout2 = `chap5.aux'.
 
  (./chap5.tex
 Chapter 5.
 
-LaTeX Warning: Citation `yalemidiarchive' on page 57 undefined on input line 13
+LaTeX Warning: Citation `yalemidiarchive' on page 59 undefined on input line 13
 .
 
 
-LaTeX Warning: Citation `musedata' on page 57 undefined on input line 13.
+LaTeX Warning: Citation `musedata' on page 59 undefined on input line 13.
 
-[57
+[59
 
 
 
-] <images/k160uncroppedfirstpage.png, id=231, 586.19pt x 766.865pt>
+] <images/k160uncroppedfirstpage.png, id=239, 586.19pt x 766.865pt>
 File: images/k160uncroppedfirstpage.png Graphic file (type png)
 
 <use images/k160uncroppedfirstpage.png>
 Package pdftex.def Info: images/k160uncroppedfirstpage.png used on input line 1
 9.
 (pdftex.def)             Requested size: 260.17464pt x 340.3587pt.
-) [58 <./images/k160uncroppedfirstpage.png>] [59]
+) [60 <./images/k160uncroppedfirstpage.png>] [61]
 \openout2 = `chap6.aux'.
 
- (./chap6.tex [60
+ (./chap6.tex [62
 
 
 
 ]
 Chapter 6.
-) [61]
+) [63]
 \openout2 = `appa.aux'.
 
- (./appa.tex [62
+ (./appa.tex [64
 
 
 
 ]
 Appendix A.
-[63])
+[65])
 \openout2 = `appb.aux'.
 
- (./appb.tex [64
+ (./appb.tex [66
 
 
 
 
 ]
 Appendix B.
-[65] [66])
+[67] [68])
 \openout2 = `biblio.aux'.
 
- (./biblio.tex (./main.bbl)) [67
+ (./biblio.tex (./main.bbl)) [69
 
 
 
@@ -676,10 +686,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5122 strings out of 493014
- 74838 string characters out of 6133351
- 185737 words of memory out of 5000000
- 8308 multiletter control sequences out of 15000+600000
+ 5127 strings out of 493014
+ 75085 string characters out of 6133351
+ 186737 words of memory out of 5000000
+ 8312 multiletter control sequences out of 15000+600000
  23438 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,17n,38p,1119b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -703,10 +713,10 @@ mf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (67 pages, 1214638 bytes).
+Output written on main.pdf (69 pages, 1064866 bytes).
 PDF statistics:
- 329 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
+ 337 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 23111 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23116 words of extra memory for PDF output out of 24883 (max. 10000000)
 
