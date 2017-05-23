@@ -224,12 +224,12 @@ INPUT ./images/targetshow.png
 INPUT images/sourceomr.png
 INPUT ./images/sourceomr.png
 INPUT ./images/sourceomr.png
-INPUT images/k160uncroppedfirstpage.png
-INPUT ./images/k160uncroppedfirstpage.png
-INPUT ./images/k160uncroppedfirstpage.png
 OUTPUT chap5.aux
 INPUT chap5.tex
 INPUT chap5.tex
+INPUT images/k160uncroppedfirstpage.png
+INPUT ./images/k160uncroppedfirstpage.png
+INPUT ./images/k160uncroppedfirstpage.png
 OUTPUT chap6.aux
 INPUT chap6.tex
 INPUT chap6.tex

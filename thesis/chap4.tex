@@ -184,9 +184,15 @@ The figures below shows the visual display of alignment between a scanned score 
 Since this method has a lot of overhead, it is by default set not to run. It can be set to run for every alignment by passing in the argument \texttt{show=True}. 
 
 \section{Fixer} \label{fixer}
-The \texttt{Fixer} is the last part of the OMR/MIDI music stream alignment and correction system. Its developmental work can be found in \texttt{fixer.py}. The high level idea is that there is a base class called \texttt{OMRMidiFixer} that takes as input the \texttt{changes} list that the \texttt{StreamAligners} outputs. It would also do basic preprocessing on the \texttt{changes} list, including dividing it up into \texttt{chunks}, substrings of the the \texttt{ChangeTuples} in the \texttt{changes} list that correspond to a small scale alignment of the corresponding stream elements in the original streams. 
+The \texttt{Fixer} is the last part of the OMR/MIDI music stream alignment and correction system. Its developmental work can be found in \texttt{fixer.py}. There is a base class called \texttt{OMRMidiFixer} that takes as input the \texttt{changes} list that the \texttt{StreamAligners} outputs, as well as the original OMR and MIDI Streams.
 
-Additional child Fixer classes would inherit from the parent \texttt{OMRMIDIFixer} class and correct very specific problems. For example, in the \texttt{StaccatoFixer} skeleton code, I have identified a pattern that \texttt{chunks} of \texttt{ChangeTuples} would exhibit that would indicate that the OMR process failed to recognize a passage that is marked as staccato. The \texttt{StaccatoFixer} class along with other children \texttt{Fixer} classes would look for similar patterns in the \texttt{ChangeTuples} list and correct the OMR stream based on this information. 
+Currently, there are two child classes, \texttt{EnharmonicFixer} and \texttt{DeleteFixer} that inherit from \texttt{OMRMidiFixer} and provide different fixing services. 
+
+The \texttt{EnharmonicFixer} corrects a very specific type of error that appears in OMR, classified by Byrd as a pitch error \cite{byrd-testbed}. What happens in this scenario is that the MIDI score has the correct absolute pitch of a note, but might be spelled enharmonically, due to the fact that MIDI does not encode key signatures. The OMR score has been scanned incorrectly--- a sharp is mistaken for a natural or vice versa. An emergent property of this scenario is that the OMR note and the MIDI note could be on different lines or spaces but probably no more than a few steps apart. The \texttt{EnharmonicFixer} accounts for the various possibilities that arise in this situation and corrects the pitch of the OMR note by tranposing the note 1 or 2 half steps and by adding or removing accidentals.
+
+The The \texttt{DeleteFixer} was created to fit the specifications of [[OpenScore stuff]]
+
+Any additional child Fixer classes would inherit from the parent \texttt{OMRMIDIFixer} class and also correct very specific problems. For example, in the \texttt{StaccatoFixer} skeleton code, would look for a specific pattern in the \texttt{changes} list that would indicate that the OMR process failed to recognize a passage that is marked as staccato. The \texttt{StaccatoFixer} class along with other children \texttt{Fixer} classes would look for similar patterns in the \texttt{ChangeTuples} list and correct the OMR stream based on this information. 
 
 In section \ref{futurefixers} I discuss what I envision future \texttt{Fixers} to look like based on the groundwork I have laid out for the fixing process.
 
@@ -222,23 +228,3 @@ Between generating \texttt{NoteHashWithReference} objects for every hashed strea
 The OMR and MIDI streams that are used as input to the system come from somewhere. I have left the onus on the user to source .mid files and find scanned scores. I also have left it to the user to use some kind of OMR tool to convert the scanned score and the MIDI file into a musicXML form. Once in musicXML form, the user can use the \texttt{music21} library to parse the OMR and MIDI and convert them into \texttt{music21} streams. 
 
 I leave this as a task to the user instead of automating it because with practice, humans can be much more precise and efficient with this process, and the necessity of a (probably large and complicated) computer program to do the same thing decreases. 
-
-\section{An Example: String Quartet No.7 in E-flat major, K.160}
-This section will walk through an example of how the entire \texttt{OMRMIDICorrector} system works on Mozart's \textit{String Quartet No.7 in E-flat major, K.160}.
-
-\subsection{Preparing the Raw Input}
-The basic raw input of the system is an OMR score and a MIDI file. A scanned copy of the score was found in IMSLP \cite{k160}, the source for much free public domain sheet music. The MIDI file was sourced from the Yale MIDI Archive\cite{yalemidiarchive}, whose contents are now hosted on MuseData \cite{musedata}. [[double check this with Myke]]
-
-I prepped the pdf score using SmartScore X2 Pro, splitting the pdf into its three movements and cropping out extraneous information in the title portion of the page. Then I ran the cropped movements through SmartScore's built-in OMR tool (It is important to note that while SmartScore is proprietary, there is also free and open source software that also has OMR tools). Then I saved the post-OMR file as a musicXML file. 
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width =.6\textwidth]{k160uncroppedfirstpage}
-\caption{The uncropped first page of k160 contains extraneous noise in the title section.}
-\end{figure}
-
-I prepped the MIDI file by opening it in SmartScore X2 Pro and saving as a musicXML file (It is important to note that while SmartScore is proprietary, there is also free and open source software that also converts .mid files to musicXML files).
-
-The last step of preparing the raw input is to parse the musicXML files with the \texttt{music21} library so that they are \texttt{Stream} objects. This can be done by passing in the musicXML filepaths to the \texttt{parse} method in the \texttt{converter} class. We will call these two parsed streams \texttt{midiStream} and \texttt{omrStream}. 
-
-\subsection{}

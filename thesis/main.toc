@@ -54,7 +54,7 @@
 \contentsline {subsubsection}{\numberline {4.3.2.6}Post-Alignment: Measures of Similarity}{50}
 \contentsline {subsubsection}{\numberline {4.3.2.7}Post-Alignment: Visual Display of Alignment}{51}
 \contentsline {section}{\numberline {4.4}Fixer}{53}
-\contentsline {section}{\numberline {4.5}Tradeoffs and Design Decisions}{53}
+\contentsline {section}{\numberline {4.5}Tradeoffs and Design Decisions}{54}
 \contentsline {subsection}{\numberline {4.5.1}Modularity vs. Simplicity}{54}
 \contentsline {subsubsection}{\numberline {4.5.1.1}A Variety of Settings and a Longer Setup}{54}
 \contentsline {subsubsection}{\numberline {4.5.1.2}Length Agnosticism}{54}
@@ -62,12 +62,11 @@
 \contentsline {subsubsection}{\numberline {4.5.2.1}NoteHashWithReference}{55}
 \contentsline {subsubsection}{\numberline {4.5.2.2}Creating One Hasher and Many Aligners}{55}
 \contentsline {subsection}{\numberline {4.5.3}Manual User Input}{56}
-\contentsline {section}{\numberline {4.6}An Example: String Quartet No.7 in E-flat major, K.160}{56}
-\contentsline {subsection}{\numberline {4.6.1}Preparing the Raw Input}{56}
-\contentsline {subsection}{\numberline {4.6.2}}{58}
-\contentsline {chapter}{\numberline {5}Testing}{59}
-\contentsline {section}{\numberline {5.1}Existing Music}{59}
-\contentsline {section}{\numberline {5.2}Timing}{59}
+\contentsline {chapter}{\numberline {5}Results and Testing}{57}
+\contentsline {section}{\numberline {5.1}An Example: String Quartet No.7 in E-flat major, K.160}{57}
+\contentsline {subsection}{\numberline {5.1.1}Preparing the Raw Input}{57}
+\contentsline {section}{\numberline {5.2}Existing Music}{59}
+\contentsline {section}{\numberline {5.3}Timing}{59}
 \contentsline {chapter}{\numberline {6}Future Work}{61}
 \contentsline {section}{\numberline {6.1}Future Fixers}{61}
 \contentsline {chapter}{\numberline {A}Tables}{63}

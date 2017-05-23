@@ -15,6 +15,7 @@ A level-1 auxiliary file: biblio.aux
 The style file: plain.bst
 Database file #1: main.bib
 Warning--I didn't find a database entry for "temperley"
+Warning--I didn't find a database entry for "byrd-testbed"
 Warning--I didn't find a database entry for "yalemidiarchive"
 Warning--I didn't find a database entry for "musedata"
 Warning--to sort, need author, editor, or key in k160
@@ -23,7 +24,7 @@ Warning--empty publisher in k160
 Warning--empty year in k160
 You've used 5 entries,
             2118 wiz_defined-function locations,
-            542 strings with 5080 characters,
+            543 strings with 5092 characters,
 and the built_in function-call counts, 1566 in all, are:
 = -- 147
 > -- 72
@@ -62,4 +63,4 @@ warning$ -- 4
 while$ -- 13
 width$ -- 6
 write$ -- 53
-(There were 7 warnings)
+(There were 8 warnings)
