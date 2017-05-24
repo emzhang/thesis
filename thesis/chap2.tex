@@ -46,7 +46,7 @@ Note that implicitly I am excluding all the no-change operations that look like 
 \item U $\rightarrow$  U (no-change)
 \end{enumerate}
 
-\begin{table}[!h]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{ll}
 \textbf{Operation} & \textbf{Cost} \\
@@ -61,7 +61,7 @@ No-change          & 0
 	
 This corresponds to an alignment that looks like this. The green pair of characters indicate an insertion operation, red is deletion, and purple is substitution. These colors are also used in the visualization of OMR/MIDI stream alignment. 
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
 \begin{tabular}{lcccccccccccc}
 seq1 & {\color[HTML]{6200C9} \textbf{M}} & \textbf{U} & \textbf{S} & {\color[HTML]{009901} \textbf{\_}} & \textbf{I} & \textbf{C} & {\color[HTML]{6200C9} \textbf{A}} & {\color[HTML]{9A0000} \textbf{L}}  & \textbf{} & \textbf{} & \textbf{} &  \\
@@ -90,7 +90,7 @@ No-change          & 0
 \end{table}
 
 But wait, should certain subtypes of a single type of operation have differently weights? Consider if you were trying to run a spell checker (one application of string alignment and correction algorithms) on a word that wasn't recognized by the dictionary. In your particular spell check model, maybe substitution of a vowel for a vowel isn't as costly as any other types of substitution. Let's say that substituting a vowel for a vowel should only have a cost of 1.2. Using this new cost function, our new edit distance is 4.7.
-\begin{table}[!h]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{ll}
 \textbf{Operation}             & \textbf{Cost} \\
@@ -108,7 +108,7 @@ No-change                      & 0
 
 Recall that the edit distance between two sequences come from the least-cost alignment. The figure below shows a valid alignment, but it is certainly not the least-cost alignment, and therefore does not correspond to the edit distance between between the two sequences. 
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
 \begin{tabular}{lcccccccccccc}
 seq1 & {\color[HTML]{009901} \textbf{\_}} & {\color[HTML]{6200C9} \textbf{M}} & {\color[HTML]{6200C9} \textbf{U}} & {\color[HTML]{6200C9} \textbf{S}} & \textbf{I} & \textbf{C} & {\color[HTML]{6200C9} \textbf{A}} & {\color[HTML]{9A0000} \textbf{L}}  & \textbf{} & \textbf{} & \textbf{} &  \\
@@ -125,7 +125,7 @@ best alignment of \texttt{string1}$[:i]$ and \texttt{string2}$[:j]$
 $+$ best alignment of \texttt{string1}$[i:]$ and \texttt{string2}$[j:]$
 \end{center}
 
-\begin{figure}[!h]`
+\begin{figure}[!ht]`
 \centering
 \begin{tabular}{lccccccc}
    & {\color[HTML]{333333} \textbf{}} & \multicolumn{2}{c}{{\color[HTML]{333333} $i$}}          & {\color[HTML]{333333} \textbf{}} & {\color[HTML]{333333} \textbf{}} & {\color[HTML]{333333} \textbf{}} & {\color[HTML]{333333} \textbf{}} \\
@@ -143,7 +143,7 @@ If we can keep track of all the possible alignment subproblems, we can recursive
 
 [[much more here on the steps of alignment. 2) populating distance matrix 3) backtracing from bottom right corner using the cost function we have previously defined]]
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
 \begin{tabular}{lllllllll}
                                 & \multicolumn{1}{c}{\textbf{-}} & \textbf{J}            & \textbf{U}            & \textbf{S}            & \textbf{T}            & \textbf{I}            & \textbf{C}            & \textbf{E}            \\ \cline{2-9} 
@@ -197,7 +197,7 @@ This section is a more mathematical and formal guide to sequence alignment in a 
 [[no, there's a really cool way of explaining the set up of the problem in space transformation language... see notes!]]
 
 \section{Turning Sequence Alignment into a Musical Problem}
-Finding the edit distance of a musical sequence as opposed to a string of ASCII characters is a little trickier. First, there isn?t an intuitive ''space'' of music elements the way that there is a ''space'' of all characters. Second, even after identifying the musical elements, there isn?t an intuitive metric of distance between elements. For example, how would the distance between [Ab quarter note, 4th octave] and [Bb quarter note, 4th octave] compare with [Ab either note, 4th octave] and [Ab quarter note, 4th octave]? [pictures, maybe an even more ambiguous example]
+Finding the edit distance of a musical sequence as opposed to a string of ASCII characters is a little trickier. First, there isn't an intuitive ''space'' of music elements the way that there is a ''space'' of all characters. Second, even after identifying the musical elements, there isn't an intuitive metric of distance between elements. For example, how would the distance between [Ab quarter note, 4th octave] and [Bb quarter note, 4th octave] compare with [Ab either note, 4th octave] and [Ab quarter note, 4th octave]? [pictures, maybe an even more ambiguous example]
 
 Going back to [original model] and the questions we posed and answered for string alignment, 
 
