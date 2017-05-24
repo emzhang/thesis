@@ -1,25 +1,25 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2-1}{\ignorespaces An example of protein alignment \cite {proteins}}}{20}
-\contentsline {figure}{\numberline {2-2}{\ignorespaces Alignment of MUSICAL and JUSTICE}}{22}
-\contentsline {figure}{\numberline {2-3}{\ignorespaces A bad alignment of MUSICAL and JUSTICE}}{23}
-\contentsline {figure}{\numberline {2-4}{\ignorespaces The alignment of MUSICAL split at \textit {i} and JUSTICE split at \textit {j}}}{24}
-\contentsline {figure}{\numberline {2-5}{\ignorespaces Initial distance matrix setup for aligning MUSICAL and JUSTICE}}{24}
+\contentsline {figure}{\numberline {2-1}{\ignorespaces An example of protein alignment \cite {proteins}}}{20}{figure.2.1}
+\contentsline {figure}{\numberline {2-2}{\ignorespaces Alignment of MUSICAL and JUSTICE}}{22}{figure.2.2}
+\contentsline {figure}{\numberline {2-3}{\ignorespaces A bad alignment of MUSICAL and JUSTICE}}{23}{figure.2.3}
+\contentsline {figure}{\numberline {2-4}{\ignorespaces The alignment of MUSICAL split at \textit {i} and JUSTICE split at \textit {j}}}{24}{figure.2.4}
+\contentsline {figure}{\numberline {2-5}{\ignorespaces Initial distance matrix setup for aligning MUSICAL and JUSTICE}}{24}{figure.2.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3-1}{\ignorespaces The hash of rhythmic features of this short melody would be \textit {NoteHash(offset=0, duration=0.5), NoteHash(offset=0.5, duration=0.5), NoteHash(offset=1.0, duration=2.0) NoteHash(offset=4, duration=1.0)}}}{30}
-\contentsline {figure}{\numberline {3-2}{\ignorespaces The hash of features related to transposition of this short melody would be \textit {NoteHash(intervalFromLastNote=0), NoteHash(intervalFromLastNote=-2), NoteHash(intervalFromLastNote=-5)}}}{31}
+\contentsline {figure}{\numberline {3-1}{\ignorespaces The hash of rhythmic features of this short melody would be \textit {NoteHash(offset=0, duration=0.5), NoteHash(offset=0.5, duration=0.5), NoteHash(offset=1.0, duration=2.0) NoteHash(offset=4, duration=1.0)}}}{30}{figure.3.1}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces The hash of features related to transposition of this short melody would be \textit {NoteHash(intervalFromLastNote=0), NoteHash(intervalFromLastNote=-2), NoteHash(intervalFromLastNote=-5)}}}{31}{figure.3.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4-1}{\ignorespaces System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}}{40}
-\contentsline {figure}{\numberline {4-2}{\ignorespaces An example string quartet stream and its four parts.}}{42}
-\contentsline {figure}{\numberline {4-3}{\ignorespaces A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}}{42}
-\contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}}{42}
-\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in viola part of target (MIDI) stream.}}{52}
-\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in viola part of source (OMR) stream.}}{53}
+\contentsline {figure}{\numberline {4-1}{\ignorespaces System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}}{40}{figure.4.1}
+\contentsline {figure}{\numberline {4-2}{\ignorespaces An example string quartet stream and its four parts.}}{42}{figure.4.2}
+\contentsline {figure}{\numberline {4-3}{\ignorespaces A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}}{42}{figure.4.3}
+\contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}}{42}{figure.4.4}
+\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in viola part of target (MIDI) stream.}}{52}{figure.4.5}
+\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in viola part of source (OMR) stream.}}{53}{figure.4.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5-1}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.}}{60}
-\contentsline {figure}{\numberline {5-2}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.}}{62}
+\contentsline {figure}{\numberline {5-1}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.}}{60}{figure.5.1}
+\contentsline {figure}{\numberline {5-2}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.}}{62}{figure.5.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B-1}{\ignorespaces }}{69}
-\contentsline {figure}{\numberline {B-2}{\ignorespaces }}{70}
+\contentsline {figure}{\numberline {B-1}{\ignorespaces }}{69}{figure.B.1}
+\contentsline {figure}{\numberline {B-2}{\ignorespaces }}{70}{figure.B.2}
