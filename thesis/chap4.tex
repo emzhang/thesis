@@ -161,30 +161,17 @@ After the backtrace to find the alignment, there is enough data to calculate som
 \subsubsection{Post-Alignment: Visual Display of Alignment}
 The \texttt{showChanges} method provides a visual display of how the two streams are related via the \texttt{changes} list. For each \texttt{ChangeTuple} in the list, this method goes back to the initial reference and changes the color of the element in reference and adds in an id number as a lyric to that element if the change operation is not a \texttt{NoChange}. The color is determined by the type of change operation. Green corresponds to an insertion, red to deletion, and purple to substitution. The id number is the index of the \texttt{ChangeTuple} in the list. 
 
-The figures below shows the visual display of alignment between the Viola parts of an excerpt of \textit{Eine kleine Nachtmusik, K.525} by Mozart. and a MIDI recording of the same piece as well as the original target (MIDI) and source (OMR) streams that contain all the parts.
-
-\begin{figure}[!ht]
+The figures below shows the visual display of alignment between the Viola parts of an excerpt of \textit{Eine kleine Nachtmusik, K.525} by W.A. Mozart. and a MIDI recording of the same piece.
+\begin{figure}[H]
 \centering
 \includegraphics[width =.9\textwidth]{k525violatargetshow}
 \caption{Visual display of changes in viola part of target (MIDI) stream.}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \centering
 \includegraphics[width =.9\textwidth]{k525violasourceshow}
 \caption{Visual display of changes in viola part of source (OMR) stream.}
-\end{figure}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width =.9\textwidth]{k525midistream}
-\caption{Excerpt of original score taken from IMSLP}
-\end{figure}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width =.9\textwidth]{k525omrstream}
-\caption{Original source (OMR) stream before it has been processed.}
 \end{figure}
 
 Since this method has a lot of overhead, it is by default set not to run. It can be set to run for every alignment by passing in the argument \texttt{show=True}. 
@@ -196,11 +183,11 @@ Currently, there are two child classes, \texttt{EnharmonicFixer} and \texttt{Del
 
 The \texttt{EnharmonicFixer} corrects a very specific type of error that appears in OMR, classified by Byrd as a pitch error \cite{byrd-testbed}. What happens in this scenario is that the MIDI score has the correct absolute pitch of a note, but might be spelled enharmonically, due to the fact that MIDI does not encode key signatures. The OMR score has been scanned incorrectly--- a sharp is mistaken for a natural or vice versa. An emergent property of this scenario is that the OMR note and the MIDI note could be on different lines or spaces but probably no more than a few steps apart. The \texttt{EnharmonicFixer} accounts for the various possibilities that arise in this situation and corrects the pitch of the OMR note by transposing the note 1 or 2 half steps and by adding or removing accidentals.
 
-The The \texttt{DeleteFixer} was created to fit the specifications of [[OpenScore stuff]]
+The \texttt{DeleteFixer} was designed to fit the specifications of the OpenScore project \cite{openscore}. The goal of the OpenScore project is to open-source music with open source software (like \texttt{music21}!). OpenScore will use a combination of computer and human power to digitize classical music scores and put them in the public domain. One idea is that software can identify wrong recognized notes in a scanned score and mark or delete the entire measure that that note is in and pass it off to a human corrector to re-transcribe the entire measure. The \texttt{DeleteFixer} could be the computer power in this method of score correction that OpenScore is using.
 
 Any additional child Fixer classes would inherit from the parent \texttt{OMRMIDIFixer} class and also correct very specific problems. For example, in the \texttt{StaccatoFixer} skeleton code, would look for a specific pattern in the \texttt{changes} list that would indicate that the OMR process failed to recognize a passage that is marked as staccato. The \texttt{StaccatoFixer} class along with other children \texttt{Fixer} classes would look for similar patterns in the \texttt{ChangeTuples} list and correct the OMR stream based on this information. 
 
-In section \ref{futurefixers} I discuss what I envision future \texttt{Fixers} to look like based on the groundwork I have laid out for the fixing process.
+% In section \ref{futurefixers} I discuss what I envision future \texttt{Fixers} to look like based on the groundwork I have laid out for the fixing process.
 
 \section{Tradeoffs and Design Decisions}
 

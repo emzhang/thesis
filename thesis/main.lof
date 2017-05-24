@@ -1,6 +1,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2-1}{\ignorespaces An example of protein alignment}}{20}
+\contentsline {figure}{\numberline {2-1}{\ignorespaces An example of protein alignment \cite {proteins}}}{20}
 \contentsline {figure}{\numberline {2-2}{\ignorespaces Alignment of MUSICAL and JUSTICE}}{22}
 \contentsline {figure}{\numberline {2-3}{\ignorespaces A bad alignment of MUSICAL and JUSTICE}}{23}
 \contentsline {figure}{\numberline {2-4}{\ignorespaces The alignment of MUSICAL split at \textit {i} and JUSTICE split at \textit {j}}}{24}
@@ -15,12 +15,11 @@
 \contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}}{42}
 \contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in viola part of target (MIDI) stream.}}{52}
 \contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in viola part of source (OMR) stream.}}{53}
-\contentsline {figure}{\numberline {4-7}{\ignorespaces Excerpt of original score taken from IMSLP}}{54}
-\contentsline {figure}{\numberline {4-8}{\ignorespaces Original source (OMR) stream before it has been processed.}}{55}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5-1}{\ignorespaces The uncropped first page of k160 contains extraneous noise in the title section.}}{60}
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5-1}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.}}{60}
+\contentsline {figure}{\numberline {5-2}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.}}{62}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B-1}{\ignorespaces }}{67}
-\contentsline {figure}{\numberline {B-2}{\ignorespaces }}{68}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B-1}{\ignorespaces }}{69}
+\contentsline {figure}{\numberline {B-2}{\ignorespaces }}{70}

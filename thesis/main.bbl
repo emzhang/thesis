@@ -2,8 +2,11 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{1}
 
-\bibitem{k160}
-{\em Scanned sheet music of String Quartet No.7 in E-flat major, K.160/159a}.
+\bibitem{byrd-testbed}
+Donald Byrd and Jakob~Grue Simonsen.
+\newblock Towards a standard testbed for optical music recognition:
+  Definitions, metrics, and page images.
+\newblock {\em Journal of New Music Research}, 44.3:169-- 195, 2015.
 
 \bibitem{church}
 Maura Church and Michael~Scott Cuthbert.
@@ -18,6 +21,10 @@ Peter Joslin.
 \newblock {\em Music Retrieval based on Melodic Similarity}.
 \newblock PhD thesis, Universiteit Utrecht, 2007.
 
+\bibitem{k525}
+Wolfgang~Amadeus Mozart.
+\newblock Eine kleine nachtmusik, k. 525.
+
 \bibitem{rebelo}
 Ana Rebelo, Ichiro Fujinaga, Filipe Paszkiewicz, Andre R.~S. Marcal, Carlos
   Guedes, and Jaime~S. Cardoso.
@@ -25,9 +32,18 @@ Ana Rebelo, Ichiro Fujinaga, Filipe Paszkiewicz, Andre R.~S. Marcal, Carlos
 \newblock {\em International Journal of Multimedia Information Retrieval},
   1(3):173?190, Feb 2012.
 
+\bibitem{openscore}
+shoogle.
+\newblock Introducing openscore.
+
 \bibitem{white}
 Christopher~Wm. White.
 \newblock {\em Some statistical properties of tonality, 1650-1900}.
 \newblock PhD thesis, Yale University, 2013.
+
+\bibitem{proteins}
+Wikid25.
+\newblock An excerpt of a multiple sequence alignment of tmem66 proteins, 4
+  2013.
 
 \end{thebibliography}
