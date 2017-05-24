@@ -16,7 +16,7 @@ The inputs to the system are two \texttt{music21} streams (one OMR, one MIDI). T
 \subsection{System Overview}
 The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{omrMidiCorrector.py}. This class is initialized with a \texttt{midiStream}, an \texttt{omrStream} and an optional \texttt{Hasher}. The \texttt{Hasher} parameter is optional because the system provides a default \texttt{Hasher} with some all-purpose settings if no \texttt{Hasher} is passed in. The method \texttt{processRunner} is the main method of this class that preprocesses the streams, sets up the appropriate \texttt{Hasher}, and calls the aligning and fixing methods.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=\textwidth]{sysdiag10}
 \caption{System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}
@@ -54,7 +54,7 @@ The next step in the \texttt{processRunner} method is setting up the \texttt{Has
 This method creates a \texttt{StreamAligner} object for each pairwise MIDI part and OMR part found in \texttt{midiParts} and \texttt{omrParts} and aligns the two parts, calculates their similarity metrics, and visually shows the changes and alignment if \texttt{debugShow} is \texttt{True}. There is more detail about how the \texttt{StreamAligner} object works in section \ref{aligner}
 
 \subsubsection{processRunner: fixStreams}
-The last step is of the entire process is to fix the OMR stream. While the \texttt{Fixer} still remains in development, the description of this method and the \texttt{Fixer} in section \label{fixer} will remain at a high level. 
+The last step is of the entire process is to fix the OMR stream. While the \texttt{Fixer} still remains in development, the description of this method and the \texttt{Fixer} in section \ref{fixer} will remain at a high level. 
 
 In its final implementation, \texttt{fixStreams} should create and instance of the \texttt{OMRMidiFixer} object. This would be a base class that does basic preprocessing on the \texttt{changes} list. All other fixers would extend from this class to fix a specific type of error in the original stream. The user would be able to choose which Fixers to apply to the original OMR stream.  
 
