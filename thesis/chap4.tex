@@ -22,7 +22,7 @@ The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{
 \caption{System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}
 \end{figure}
 
-\subsubsection{processRunner: preprocessStreams}
+\subsubsection{processRunner: preprocessStreams}\label{processrunner1}
 The \texttt{processRunner} first verifies the streams that are passed in and preprocess them before being hashed, aligned, and fixed in the method \texttt{preprocessStreams}
 
 The first thing that \texttt{preprocessStreams} does is discretize the parts of the stream if the user has set \texttt{discretizeParts} to be \texttt{True}. Discretizing parts means to split the input streams into their constituent parts, so that the input streams are aligned part-wise. Since music is often comprised of multiple parts, this preprocessing step allows for input streams that contain nested streams. Take for example, an OMR/MIDI alignment of a string quartet. Both the OMR and MIDI inputs are stream in and of themselves, and so are all individual instrumental parts within both of the streams. 
@@ -53,10 +53,12 @@ The next step in the \texttt{processRunner} method is setting up the \texttt{Has
 \subsubsection{processRunner: alignStreams}
 This method creates a \texttt{StreamAligner} object for each pairwise MIDI part and OMR part found in \texttt{midiParts} and \texttt{omrParts} and aligns the two parts, calculates their similarity metrics, and visually shows the changes and alignment if \texttt{debugShow} is \texttt{True}. There is more detail about how the \texttt{StreamAligner} object works in section \ref{aligner}
 
-\subsubsection{processRunner: fixStreams}
+\subsubsection{processRunner: fixStreams}\label{processrunner2}
 The last step is of the entire process is to fix the OMR stream. While the \texttt{Fixer} still remains in development, the description of this method and the \texttt{Fixer} in section \label{fixer} will remain at a high level. 
 
-In its final implementation, \texttt{fixStreams} should create and instance of the \texttt{OMRMidiFixer} object. This would be a base class that does basic preprocessing on the \texttt{changes} list. All other fixers would extend from this class to fix a specific type of error in the original stream. The user would be able to choose which Fixers to apply to the original OMR stream.  
+In its final implementation, \texttt{fixStreams} should create instances of the \texttt{OMRMidiFixer} object, one per pair of aligned streams and their \texttt{changes} list. This is the base class that all other \texttt{Fixer} objects inherit from. The user would be able to choose which \texttt{Fixer} objects they want to create and use on all the pairs of streams. 
+
+Currently, in order to use the two available child \texttt{Fixer} objects, a user can manually create \texttt{OMRMidiFixer} and \texttt{DeleteFixer} and/or \texttt{EnharmonicFixer} objects using the \texttt{changes} lists that \texttt{processRunner} creates.
 
 \section{Hasher}
 The \texttt{Hasher} object used in the final implementation is a specific instance of the \texttt{Hasher} object described in section \ref{hasher}. The user can choose to pass in their own instance of \texttt{Hasher} or use the default \texttt{Hasher} provided.

@@ -5,9 +5,9 @@
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Results and Testing}
-This chapter will describe the results of my work with of W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525} as an exmaple. This chapter will also look at timing metrics of the system.
+This chapter will describe the results of my work with of W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525} as an example. It will also use W. A. Mozart's \textit{String Quartet No.7 in E-flat major, K.160/159a} as an example where K.525 doesn't fit the specifications. This chapter will also look at timing metrics of the system.
 
-\section{An Example: Eine kleine Nachtmusik, K.525, W. A. Mozart)}
+\section{Example 1: Eine kleine Nachtmusik, K.525, W. A. Mozart)}
 This section will go through an example of how the entire \texttt{OMRMIDICorrector} system works on W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525}.
 
 \begin{figure}[H]
@@ -17,7 +17,7 @@ This section will go through an example of how the entire \texttt{OMRMIDICorrect
 \end{figure}
 
 \subsection{Musical Properties of K.525}
-I chose K.525 as the example piece for many of it music properties that make it a difficult but interesting piece to align and correct. In the hashing, align
+I chose K.525 as the example piece for many of it music properties that make it a difficult but interesting piece to align. 
 
 \subsubsection{Bass and Cello Doubling}
 In the original scanned score, there are only four parts because the bass part doubles the cello part one octave lower. However, in the MIDI encoding, there must be five separate voices. Thus, in the preprocessing step of the \texttt{OMRMiDICorrector}, it would be ideal for the system to recognize this. Otherwise, in instances where the \texttt{OMRMIDICorrector} could not pair up the parts between the input OMR stream and the input MIDI stream, there would be an error thrown, and alignment and correction would not happen. 
@@ -28,25 +28,88 @@ Starting in measure 5 in the original scanned score, the second violin has tremo
 \subsection{Preparing the Raw Input}
 The basic raw input of the system is an OMR score and a MIDI file. A scanned copy of the score was found in IMSLP \cite{k525}, the source for much free public domain sheet music. The MIDI file was sourced from the Yale MIDI Archive. 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width =.9\textwidth]{k525originalomrscan}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
-\end{figure}
-
 I used SmartScore's built-in OMR tool to convert the scanned score of K.525 into an ENF file. Then I exported the post-OMR file as a musicXML file.
 
 Similarly for the K.525 MIDI file, I used SmartScore to parse the original file and exported it as a musicXML file. 
 
 The last step of preparing the raw input is to parsing the musicXML files with the \texttt{music21} library so that they are \texttt{Stream} objects. This can be done by passing in the musicXML filepaths to the \texttt{parse} method in the \texttt{converter} class. We will call these two parsed streams \texttt{k525midiStream} and \texttt{k525omrStream}. 
-%\begin{minted}{python}
-%from music21 import *
-%k525MidiFilepath = 'path_to_k525_mid_to_xml.xml'
-%k525OmrFilepath= 'path_to_k525_omr_to_xml.xml'
-%k525midistream = converter.parse(k525MidiFilepath)
-%k525omrstream = converter.parse(k525OmrFilepath)
-%\end{minted}
+\begin{minted}{python}
+from music21 import *
+k525MidiFilepath = "pathto/k525/midtoxml.xml"
+k525OmrFilepath= "pathto/k525/omrtoxml.xml"
+k525midistream = converter.parse(k525MidiFilepath)
+k525omrstream = converter.parse(k525OmrFilepath)
+\end{minted}
 \subsection{Running OMRMIDICorrector on K.525}
+After the raw input has been massaged into \texttt{Stream} objects, the aligning process is simple. We create an instance of an \texttt{OMRMIDICorrector} object with the two streams as parameters. For the purposes of this example, we will use the default hasher that is built into the \texttt{OMRMIDICorrector} class. We will set the \texttt{debugShow} to \texttt{True} so that we can visualize the alignment between pairwise streams. Finally, we will call \texttt{processRunner} which will hash and align the parts in the stream. For now, we will manually create the \texttt{Fixer} objects for stream fixing. The aligner is able to correctly identify that the repeated \nth{16} notes 
+
+\begin{minted}{python}
+from music21 import *
+OMC = alpha.analysis.omrMidiCorrector
+k525omc = OMC.OMRMIDICorrector(k525midistream, k525omrstream)
+k525omc.debugShow = True
+k525omc.processRunner()
+\end{minted}
+
+These are the outputs of the \texttt{showChanges} function.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width =.9\textwidth]{k525postalignV1midi-1}
+\caption{The first page of the scanned copy of the score found on IMSLP.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width =.95\textwidth]{k525postalignV1omr-1}
+\caption{The first page of the scanned copy of the score found on IMSLP.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width =.95\textwidth]{k525postalignV2midi-1}
+\caption{The first page of the scanned copy of the score found on IMSLP.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width =.95\textwidth]{k525postalignV2omr-1}
+\caption{The first page of the scanned copy of the score found on IMSLP.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width =.95\textwidth]{k525postalignviolamidi-1}
+\caption{The first page of the scanned copy of the score found on IMSLP.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width =.95\textwidth]{k525postalignviolaomr-1}
+\caption{The first page of the scanned copy of the score found on IMSLP.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width =.95\textwidth]{k525postaligncellomidi-1}
+\caption{The first page of the scanned copy of the score found on IMSLP.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width =.95\textwidth]{k525postaligncellobassomr-1}
+\caption{The first page of the scanned copy of the score found on IMSLP.}
+\end{figure}
+
+\subsubsection{A Closer Look at Specifics of \texttt{processrunner}}
+A lot of magic happens within \texttt{processRunner}, all of which is described at a high level in sections \ref{processrunner1} - \ref{processrunner2}. Here are some salient details of the process in the context of K.525 that I think deserve notice:
+\begin{itemize}
+\item Bass Doubles Cello Part - The OMR score has only four parts, whereas the MIDI score has 5. The \texttt{checkBassDoublesCello} method in \texttt{OMRMIDICorrector} is able to correctly identify this and thus does not reject the input on the basis of having a mismatching number of parts in the stream. 
+\item Rhythmic Fault Tolerance: Beginning Rests - The first measure in the OMR score is a scanning and parsing error. The \texttt{Aligner} is robust enough to identify the beginning rest as a insertion error. 
+\item Rhythmic Fault Tolerance: Propagating Rhythmic Shifts - By measure 5, we see that the OMR score has introduced a \nth{16} note shift in the rhythm which continues for a few measures. 
+\item Notation Fault Tolerance: Tremolos - By measure 5 of the violin 2 part and by measure 10 of the viola part, the repeated \nth{16} notes get notated with tremolo slashes in the original OMR score. Of course, the MIDI protocol doesn't have a way of representing tremolo, so the notes are written out in long form. The corrector is able to 
+\end{itemize}
+
 
 \section{Timing} \label{timing}
 

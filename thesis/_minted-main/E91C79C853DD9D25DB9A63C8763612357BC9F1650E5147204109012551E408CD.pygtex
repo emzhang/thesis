@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{music21} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n}{OMC} \PYG{o}{=} \PYG{n}{alpha}\PYG{o}{.}\PYG{n}{analysis}\PYG{o}{.}\PYG{n}{omrMidiCorrector}
+\PYG{n}{k525omc} \PYG{o}{=} \PYG{n}{OMC}\PYG{o}{.}\PYG{n}{OMRMIDICorrector}\PYG{p}{(}\PYG{n}{k525midistream}\PYG{p}{,} \PYG{n}{k525omrstream}\PYG{p}{)}
+\PYG{n}{k525omc}\PYG{o}{.}\PYG{n}{debugShow} \PYG{o}{=} \PYG{n+nb+bp}{True}
+\PYG{n}{k525omc}\PYG{o}{.}\PYG{n}{processRunner}\PYG{p}{()}
+\end{Verbatim}

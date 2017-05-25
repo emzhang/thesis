@@ -28,9 +28,9 @@
 \documentclass[12pt,twoside]{mitthesis}
 \usepackage{amsmath}
 \usepackage{lgrind}
-%\usepackage{minted}
+\usepackage{minted}
 \usepackage{graphicx, float}
-\usepackage{hyperref} 
+\usepackage{url} 
 \graphicspath{ {images/} }
 %% These have been added at the request of the MIT Libraries, because
 %% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
@@ -50,9 +50,9 @@
 %% process, or `all' to process all files which you \include.
 %% Krishna Sethuraman (1990).
 
-% \typein [\files]{Enter file names to process, (chap1,chap2 ...), or `all' to process all files:}
-% \def\all{all}
-% \ifx\files\all \typeout{Including all files.} \else \typeout{Including otnly \files.} \includeonly{\files} \fi
+\typein [\files]{Enter file names to process, (chap1,chap2 ...), or `all' to process all files:}
+\def\all{all}
+\ifx\files\all \typeout{Including all files.} \else \typeout{Including otnly \files.} \includeonly{\files} \fi
 
 \begin{document}
 
@@ -69,9 +69,6 @@
 \include{chap4}
 \include{chap5}
 \include{chap6}
-\appendix
-\include{appa}
-\include{appb}
 \include{biblio}
 \end{document}
 
