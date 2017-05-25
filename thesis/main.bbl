@@ -21,6 +21,11 @@ Walter~B Hewlett.
 \newblock A base-40 number-line representation of musical pitch notation.
 \newblock {\em Musikometrika}, 4:1--14, 1992.
 
+\bibitem{imslp}
+Imslp/petrucci library free public domain sheet music.
+\newblock \url{http://imslp.org/}.
+\newblock Accessed: 2015-10-10.
+
 \bibitem{typke}
 Peter Joslin.
 \newblock {\em Music Retrieval based on Melodic Similarity}.
@@ -31,6 +36,13 @@ Wolfgang~Amadeus Mozart.
 \newblock Eine kleine nachtmusik, k. 525.
 \newblock
   \url{http://ks.petruccimusiclibrary.org/files/imglnks/usimg/5/57/IMSLP01776-Mozart_EineKleineNachtmusik_Score.pdf}.
+\newblock Accessed: 2017-05-23.
+
+\bibitem{k160}
+Wolfgang~Amadeus Mozart.
+\newblock String quartet no.7 in e-flat major, k.160/159a.
+\newblock
+  \url{http://ks.petruccimusiclibrary.org/files/imglnks/usimg/f/f1/IMSLP64127-PMLP05214-Mozart_Werke_Breitkopf_Serie_14_KV160.pdf}.
 \newblock Accessed: 2017-05-23.
 
 \bibitem{openscore}
@@ -57,6 +69,13 @@ David Temperley.
 \newblock An algorithm for harmonic analysis.
 \newblock {\em Music Perception: An Interdisciplinary Journal}, 15.1:31--68,
   1997.
+
+\bibitem{peachnote}
+Vladimir Viro.
+\newblock Peachnote: Music score search and analysis platform.
+\newblock In Anssi Klapuri and Leider Kolby, editors, {\em Proceedings of the
+  12th Conference of the International Society for Music Information
+  Retrieval}, pages 359-- 362. ISMIR, 10 2014.
 
 \bibitem{white}
 Christopher~Wm. White.

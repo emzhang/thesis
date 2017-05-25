@@ -146,7 +146,6 @@ $+$ best alignment of \texttt{string1}$[i:]$ and \texttt{string2}$[j:]$
 
 If we can keep track of all the possible alignment subproblems, we can recursively build an optimal solution using the answers from the subproblems. One way to represent this is with a scoring matrix indexed by $i$ and $j$. For our problem of aligning \textbf{MUSICAL} and \textbf{JUSTICE}, the setup would look something like this:
 
-[[much more here on the steps of alignment. 2) populating distance matrix 3) backtracing from bottom right corner using the cost function we have previously defined]]
 
 \begin{figure}[!h]
 \centering
@@ -191,15 +190,16 @@ After we've set up is the scoring matrix, we will populate it with initial value
 After we've set up the initial matrix, we can go through and fill in all of the remaining slots using this update rule:
 
 
-[[update rules here-- find the min (moving up + insertion, right + deletion, diagonal + subst)]]
+\begin{equation*}
+\begin{split}
+\text{D[i][j]} = &  \text{min \{ }\\
+& \text{D[i-1][j] + insCost,} \\
+& \text{D[i][j-1] + delCost,} \\
+& \text{D[i-1][j-1] + subCost} \\
+\text{\}}
+\end{split}
+\end{equation*}
 
-\subsection{Formal Definitions in Sequence Alignment}
-
-This section is a more mathematical and formal guide to sequence alignment in a matrix representation that uses the cost functions we have been slowly refining. 
-
-[[this section might not be necessary if the previous sections are rigorous enough...]] 
-
-[[no, there's a really cool way of explaining the set up of the problem in space transformation language... see notes!]]
 
 \section{Turning Sequence Alignment into a Musical Problem}
 Finding the edit distance of a musical sequence as opposed to a string of ASCII characters is a little trickier. First, there isn?t an intuitive ''space'' of music elements the way that there is a ''space'' of all characters. Second, even after identifying the musical elements, there isn?t an intuitive metric of distance between elements. For example, how would the distance between [Ab quarter note, 4th octave] and [Bb quarter note, 4th octave] compare with [Ab either note, 4th octave] and [Ab quarter note, 4th octave]? [pictures, maybe an even more ambiguous example]

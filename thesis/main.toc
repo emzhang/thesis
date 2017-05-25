@@ -1,5 +1,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{15}
 \contentsline {section}{\numberline {1.1}Motivation}{15}
+\contentsline {subsection}{\numberline {1.1.1}Why Compare Music?}{15}
+\contentsline {subsection}{\numberline {1.1.2}Why Correct Music?}{16}
 \contentsline {section}{\numberline {1.2}Chapter Summary}{17}
 \contentsline {chapter}{\numberline {2}Background and Related Work}{19}
 \contentsline {section}{\numberline {2.1}Musical Terminology}{19}
@@ -10,14 +12,13 @@
 \contentsline {subsection}{\numberline {2.2.1}An Overview of Sequence Alignment}{20}
 \contentsline {subsubsection}{\numberline {2.2.1.1}Edit Distance}{21}
 \contentsline {subsubsection}{\numberline {2.2.1.2}Alignment}{23}
-\contentsline {subsection}{\numberline {2.2.2}Formal Definitions in Sequence Alignment}{26}
 \contentsline {section}{\numberline {2.3}Turning Sequence Alignment into a Musical Problem}{26}
 \contentsline {section}{\numberline {2.4}Related Work}{27}
 \contentsline {subsection}{\numberline {2.4.1}Typke: Music Retrieval based on Melodic Similarity}{27}
 \contentsline {subsection}{\numberline {2.4.2}Church and Cuthbert: Rhythmic Comparison and Alignment}{27}
 \contentsline {subsection}{\numberline {2.4.3}Viro: Peachnote, Musical Score Search and Analysis and IMSLP}{28}
 \contentsline {subsection}{\numberline {2.4.4}White: Statistical Properties of Music and MIDI}{28}
-\contentsline {subsection}{\numberline {2.4.5}Rebelo et al: Optical Music Recognition - State-of-the-Art and Open Issues}{29}
+\contentsline {subsection}{\numberline {2.4.5}Rebelo et al: Optical Music Recognition - State-of-the-Art and Open Issues}{28}
 \contentsline {subsection}{\numberline {2.4.6}OpenScore}{29}
 \contentsline {chapter}{\numberline {3}Previous Work}{31}
 \contentsline {section}{\numberline {3.1}A Modular Universal Hasher}{31}
@@ -73,10 +74,10 @@
 \contentsline {subsection}{\numberline {5.1.2}Preparing the Raw Input}{63}
 \contentsline {subsection}{\numberline {5.1.3}Running \texttt {OMRMIDICorrector} on K.525}{64}
 \contentsline {subsubsection}{\numberline {5.1.3.1}A Closer Look at Specifics of \texttt {processrunner}}{73}
-\contentsline {subsection}{\numberline {5.1.4}Similarity Metrics}{73}
+\contentsline {subsection}{\numberline {5.1.4}Example 1: Similarity Metrics in K.525}{73}
 \contentsline {section}{\numberline {5.2}Example 2: String Quartet No.7 in E-flat major, K.160/159a, K.160, W. A. Mozart)}{74}
 \contentsline {subsection}{\numberline {5.2.1}Running \texttt {EnharmonicFixer} on K.160, Violin 1}{74}
-\contentsline {subsection}{\numberline {5.2.2}}{79}
+\contentsline {subsection}{\numberline {5.2.2}Example 2: Analysis of Correction}{79}
 \contentsline {section}{\numberline {5.3}Timing}{79}
 \contentsline {chapter}{\numberline {6}Future Work}{81}
 \contentsline {section}{\numberline {6.1}Future Fixers}{81}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 MAY 2017 04:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 MAY 2017 05:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -349,7 +349,12 @@ runsystem(which "pygmentize" && touch "main.aex")...executed.
 
 runsystem(rm "main.aex")...executed.
 
-(./main.aux)
+(./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
+(./chap3.aux) (./chap4.aux
+
+LaTeX Warning: Label `fixer' multiply defined.
+
+) (./chap5.aux) (./chap6.aux) (./biblio.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -364,7 +369,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
- (./_minted-main/default-pyg-prefix.pygstyle)
+
+(./_minted-main/default-pyg-prefix.pygstyle)
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count129
@@ -438,11 +444,8 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
 
 
 
-] (./main.toc<<ot1.cmap>><<oml.cmap>><<omx.cmap>>
-Underfull \vbox (badness 2012) has occurred while \output is active []
-
- [7]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 27.
+] (./main.toc<<ot1.cmap>><<oml.cmap>><<omx.cmap>> [7]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 33.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -451,11 +454,8 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \vbox (badness 2318) has occurred while \output is active []
-
  [8]
-Underfull \vbox (badness 2556) has occurred while \output is active []
+Underfull \vbox (badness 2318) has occurred while \output is active []
 
  [9])
 \tf@toc=\write6
@@ -463,10 +463,6 @@ Underfull \vbox (badness 2556) has occurred while \output is active []
 
 
 [10] (./main.lof
-
-LaTeX Warning: Citation `proteins' on page 11 undefined on input line 3.
-
-
 Overfull \hbox (17.26115pt too wide) in paragraph at lines 10--10
  \T1/cmr/m/n/12 (-20) be \T1/cmr/m/it/12 (-20) Note-Hash(intervalFromLastNote=0
 ), NoteHash(intervalFromLastNote=- 
@@ -497,15 +493,11 @@ Underfull \vbox (badness 5316) has occurred while \output is active []
 
 ]
 Chapter 1.
-[15]
 
-LaTeX Warning: Citation `church' on page 16 undefined on input line 24.
+Underfull \vbox (badness 1237) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16])
-[17]
+ [15]
+[16]) [17]
 \openout2 = `chap2.aux'.
 
  (./chap2.tex [18
@@ -524,24 +516,12 @@ File: images/proteinalign.png Graphic file (type png)
 <use images/proteinalign.png>
 Package pdftex.def Info: images/proteinalign.png used on input line 25.
 (pdftex.def)             Requested size: 368.37535pt x 232.86943pt.
-
-
-LaTeX Warning: Citation `proteins' on page 20 undefined on input line 26.
-
-[20 <./images/proteinalign.png>] [21] [22] [23]
+ [20 <./images/proteinalign.png>] [21] [22]
+[23]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24]
-
-LaTeX Warning: Reference `tab:naivetable' on page 25 undefined on input line 17
-6.
-
-
-LaTeX Warning: Reference `tab:naivetable2' on page 25 undefined on input line 1
-78.
-
-[25]
+[24] [25]
 Overfull \hbox (5.2528pt too wide) in paragraph at lines 204--204
 []\T1/cmr/bx/n/17.28 Turning Se-quence Align-ment into a Mu-si-cal Prob-
  []
@@ -549,36 +529,10 @@ Overfull \hbox (5.2528pt too wide) in paragraph at lines 204--204
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 210.
 [26]
-
-LaTeX Warning: Citation `typke' on page 27 undefined on input line 218.
-
-
-LaTeX Warning: Citation `typke' on page 27 undefined on input line 218.
-
-
-LaTeX Warning: Citation `church' on page 27 undefined on input line 221.
-
-[27]
-
-LaTeX Warning: Citation `peachnote' on page 28 undefined on input line 224.
-
-
-LaTeX Warning: Citation `imslp' on page 28 undefined on input line 224.
-
-
-LaTeX Warning: Citation `white' on page 28 undefined on input line 227.
-
-
-LaTeX Warning: Citation `temperley' on page 28 undefined on input line 227.
-
-
-LaTeX Warning: Citation `rebelo' on page 28 undefined on input line 231.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28])
-[29]
+ [27])
+[28] [29]
 \openout2 = `chap3.aux'.
 
  (./chap3.tex [30
@@ -610,13 +564,6 @@ Package pdftex.def Info: images/alg.pdf used on input line 28.
 Underfull \vbox (badness 4686) has occurred while \output is active []
 
  [32 <./images/alg.pdf>]
-
-LaTeX Warning: Citation `typke' on page 33 undefined on input line 35.
-
-
-LaTeX Warning: Citation `hewlett' on page 33 undefined on input line 35.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33]
@@ -705,18 +652,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [44 <./images/omrmidisheets2.png> <./images/badalignstream2.png> <./images/goo
-dalignstream.png>]
-
-LaTeX Warning: Reference `aligner' on page 45 undefined on input line 54.
-
-[45]
-
-LaTeX Warning: Reference `hasher' on page 46 undefined on input line 64.
-
-
-LaTeX Warning: Reference `setuphasher' on page 46 undefined on input line 67.
-
-[46]
+dalignstream.png>] [45] [46]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [47]
@@ -748,18 +684,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [54 <./images/k525violatargetshow.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [55 <./images/k525violasourceshow.png>]
-
-LaTeX Warning: Citation `byrd-testbed' on page 56 undefined on input line 186.
-
-
-LaTeX Warning: Citation `openscore' on page 56 undefined on input line 188.
-
-[56]
-
-LaTeX Warning: Reference `timing' on page 57 undefined on input line 207.
-
-
+ [55 <./images/k525violasourceshow.png>] [56]
 Underfull \vbox (badness 3769) has occurred while \output is active []
 
  [57]
@@ -767,10 +692,6 @@ Overfull \hbox (5.01344pt too wide) in paragraph at lines 212--213
 \T1/cmr/m/n/12 (-20) Streams and the el-e-ments they con-tain are com-plex ob-j
 ects, so \T1/cmtt/m/n/12 NoteHashWithReference
  []
-
-
-LaTeX Warning: Reference `spaceoptimizations' on page 58 undefined on input lin
-e 219.
 
 [58]) [59]
 \openout2 = `chap5.aux'.
@@ -793,11 +714,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62 <./images/k525originalomrscan.png>]
-
-LaTeX Warning: Citation `k525' on page 63 undefined on input line 29.
-
-[63]
+ [62 <./images/k525originalomrscan.png>] [63]
 \openout3 = `main.pyg'.
 
 
@@ -894,21 +811,9 @@ ine 100.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [71 <./images/k525postaligncellomidi-1.png>]
-
-LaTeX Warning: Reference `processrunner1' on page 72 undefined on input line 10
-5.
-
-
-LaTeX Warning: Reference `processrunner2' on page 72 undefined on input line 10
-5.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [72 <./images/k525postaligncellobassomr-1.png>] [73]
-
-LaTeX Warning: Citation `k160' on page 74 undefined on input line 130.
-
 \openout3 = `main.pyg'.
 
 
@@ -929,7 +834,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/k160postalignv1omr-1.png Graphic file (type png)
 
 <use images/k160postalignv1omr-1.png>
-Package pdftex.def Info: images/k160postalignv1omr-1.png used on input line 164
+Package pdftex.def Info: images/k160postalignv1omr-1.png used on input line 165
 .
 (pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
 
@@ -940,15 +845,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/k160postfixv1-1.png Graphic file (type png)
 
 <use images/k160postfixv1-1.png>
-Package pdftex.def Info: images/k160postfixv1-1.png used on input line 170.
+Package pdftex.def Info: images/k160postfixv1-1.png used on input line 172.
 (pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77 <./images/k160postalignv1omr-1.png>])
+ [77 <./images/k160postalignv1omr-1.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [78 <./images/k160postfixv1-1.png>] [79]
+ [78 <./images/k160postfixv1-1.png>]) [79]
 \openout2 = `chap6.aux'.
 
  (./chap6.tex [80
@@ -965,31 +870,43 @@ Chapter 6.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 30--35
+Underfull \hbox (badness 10000) in paragraph at lines 35--40
 []\T1/cmr/m/n/12 (+20) Wolfgang Amadeus Mozart.  Eine kleine nacht-musik, k. 52
 5.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--35
+Underfull \hbox (badness 10000) in paragraph at lines 35--40
 \T1/cmtt/m/n/12 http : / / ks . petruccimusiclibrary . org / files / imglnks / 
 usimg / 5 / 57 /
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 30--35
+Underfull \hbox (badness 1394) in paragraph at lines 35--40
 \T1/cmtt/m/n/12 IMSLP01776-[]Mozart _ EineKleineNachtmusik _ Score . pdf$\T1/cm
 r/m/n/12 (+20) .  Ac-cessed: 2017-
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 43--47
+Underfull \hbox (badness 10000) in paragraph at lines 42--47
+\T1/cmtt/m/n/12 http : / / ks . petruccimusiclibrary . org / files / imglnks / 
+usimg / f / f1 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--47
+\T1/cmtt/m/n/12 IMSLP64127-[]PMLP05214-[]Mozart _ Werke _ Breitkopf _ Serie _ 1
+4 _ KV160 . pdf$\T1/cmr/m/n/12 (+20) .
+ []
+
+
+Underfull \hbox (badness 6204) in paragraph at lines 55--59
 []\T1/cmr/m/n/12 (+20) An ex-cerpt of a mul-ti-ple se-quence align-ment of tmem
 66 pro-teins.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--47
+Underfull \hbox (badness 10000) in paragraph at lines 55--59
 \T1/cmtt/m/n/12 https : / / commons . wikimedia . org / wiki / File : An _ exce
 rpt _ of _ a _ multiple _
  []
@@ -1001,20 +918,17 @@ runsystem(rm "main.pyg")...executed.
 (./chap2.aux) (./chap3.aux) (./chap4.aux) (./chap5.aux) (./chap6.aux)
 (./biblio.aux))
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7634 strings out of 493014
- 124005 string characters out of 6133351
- 268423 words of memory out of 5000000
- 10764 multiletter control sequences out of 15000+600000
- 24447 words of font info for 111 fonts, out of 8000000 for 9000
+ 7666 strings out of 493014
+ 124359 string characters out of 6133351
+ 272897 words of memory out of 5000000
+ 10776 multiletter control sequences out of 15000+600000
+ 24564 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,17n,38p,1136b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,17n,38p,1085b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -1036,7 +950,7 @@ mf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf
 ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on main.pdf (84 pages, 3005851 bytes).
+Output written on main.pdf (84 pages, 3008495 bytes).
 PDF statistics:
  407 PDF objects out of 1000 (max. 8388607)
  254 compressed objects within 3 object streams

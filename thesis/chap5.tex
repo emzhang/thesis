@@ -110,7 +110,7 @@ A lot of magic happens within \texttt{processRunner}, all of which is described 
 \item Notation Fault Tolerance: Tremolos - By measure 5 of the violin 2 part and by measure 10 of the Viola part, the repeated \nth{16} notes get notated with tremolo slashes in the original OMR score. Of course, the MIDI protocol doesn't have a way of representing tremolo, so the notes are written out in long form. The corrector is able to match the written out repeated notes in the MIDI to the (incorrectly) scanned corresponding notes in the OMR. 
 \end{itemize}
 
-\subsection{Similarity Metrics}
+\subsection{Example 1: Similarity Metrics in K.525}
 Recall that the \texttt{similarityScore} is the ratio of \texttt{NoChange} operations to the total number of operations in the \texttt{changes} list. For each pair of streams in K.525, the \texttt{similarityScore} and \texttt{changesCount} are listed below:
 \begin{table}[H]
 \centering
@@ -157,20 +157,25 @@ The first two figures below show the alignment visualization of the Violin 1 par
 \centering
 \includegraphics[width =.95\textwidth]{k160postalignv1midi-1}
 \caption{Post-alignment visualization of the MIDI Violin 1 part in K.160.}
+\label{fig:k160postalignv1midi}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k160postalignv1omr-1}
 \caption{Post-alignment visualization of the OMR Violin 1 part in K.160.}
+\label{fig:k160postalignv1omr}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k160postfixv1-1}
 \caption{Post-enharmonic and pitch fixing visualization of the OMR Violin 1 part in K.160.}
+\label{fig:k160postfixv1}
 \end{figure}
 
-\subsection{}
+\subsection{Example 2: Analysis of Correction}
+Visual inspection of figures \ref{fig:k160postalignv1midi} and \ref{fig:k160postalignv1omr} suggests that the OMR failed to pick up the appropriate key signature of the movement and that is what lends to large number of changes in the first 10 or so measures. Inspection of figure \ref{fig:k160postfixv1} shows that many of the pitch errors have been corrected using the \texttt{EnharmonicFixer}. Of course, the most ideal scenario would be to recreate the key signature, but having the correct pitch is a good start. 
+
 \section{Timing} \label{timing}
 
