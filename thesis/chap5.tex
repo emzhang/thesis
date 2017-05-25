@@ -4,10 +4,10 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter{Results and Testing}
+\chapter{Results and Future Work}
 This chapter will describe the results of my work using an excerpt of of W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525- I.Allegro} (referred to by just ``K.525'' from here onwards) as an example. It will also use an excerpt of W. A. Mozart's \textit{String Quartet No.7 in E-flat major, K.160/159a- I.Allegro} (referred to by just ``K.160'' from here onwards)as an example where K.525 doesn't fit the specifications. This chapter will also look at timing metrics of the system.
 
-\section{Example 1: Eine kleine Nachtmusik, K.525- I.Allegro, W. A. Mozart)}		`
+\section{Results: Example 1: Eine kleine Nachtmusik, K.525- I.Allegro, W. A. Mozart)}		`
 This section will go through an example of how the entire \texttt{OMRMIDICorrector} system works on W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525- I.Allegro }.
 
 \begin{figure}[H]
@@ -106,8 +106,8 @@ A lot of magic happens within \texttt{processRunner}, all of which is described 
 \begin{itemize}
 \item Bass Doubles Cello Part - The OMR score has only four parts, whereas the MIDI score has 5. The \texttt{checkBassDoublesCello} method in \texttt{OMRMIDICorrector} is able to correctly identify this and thus does not reject the input on the basis of having a mismatching number of parts in the stream. 
 \item Rhythmic Fault Tolerance: Beginning Rests - The first measure in the OMR score is a scanning and parsing error. The \texttt{Aligner} is robust enough to identify the beginning rest as a insertion error. 
-\item Rhythmic Fault Tolerance: Propagating Rhythmic Shifts - By measure 5, we see that the OMR score has introduced a \nth{16} note shift in the rhythm which continues for a few measures. 
-\item Notation Fault Tolerance: Tremolos - By measure 5 of the violin 2 part and by measure 10 of the Viola part, the repeated \nth{16} notes get notated with tremolo slashes in the original OMR score. Of course, the MIDI protocol doesn't have a way of representing tremolo, so the notes are written out in long form. The corrector is able to match the written out repeated notes in the MIDI to the (incorrectly) scanned corresponding notes in the OMR. 
+\item Rhythmic Fault Tolerance: Propagating Rhythmic Shifts - By measure 5 in the Violin 2 part, we see that the OMR score has introduced a \nth{16} note shift in the rhythm which continues for a few measures. 
+\item Notation Fault Tolerance: Tremolos - By measure 5 of the Violin 2 part and by measure 10 of the Viola part, the repeated \nth{16} notes get notated with tremolo slashes in the original OMR score. Of course, the MIDI protocol doesn't have a way of representing tremolo, so the notes are written out in long form. The corrector is able to match the written out repeated notes in the MIDI to the (incorrectly) scanned corresponding notes in the OMR. 
 \end{itemize}
 
 \subsection{Example 1: Similarity Metrics in K.525}
@@ -174,8 +174,17 @@ Below, The first two figures below show the alignment visualization of the Violi
 \label{fig:k160postfixv1}
 \end{figure}
 
-\subsection{Example 2: Analysis of Correction}
+\subsection{Results: Example 2: Analysis of Correction}
 Visual inspection of figures \ref{fig:k160postalignv1midi} and \ref{fig:k160postalignv1omr} suggests that the OMR failed to pick up the appropriate key signature of the movement and that is what lends to large number of changes in the first 10 or so measures. Inspection of figure \ref{fig:k160postfixv1} shows that many of the pitch errors have been corrected using the \texttt{EnharmonicFixer}. Of course, the most ideal scenario would be to recreate the key signature, but having the correct pitch is a good start. 
 
-\section{Timing} \label{timing}
+\section{Results: Timing Tests} \label{timing}
+This section will discuss and evaluate the system based on its runtime analysis and empirical results. It will also discuss how the system would scale to different sized inputs. 
 
+\subsection{Runtime Analysis}
+There are three major modules of the system the \texttt{Hasher}, \texttt{Aligner}, and \texttt{Fixer}.	
+\subsection{Empirical Results}
+\subsection{Scalability}
+
+
+\subsection{Implications of Free Music}
+The lasting and tangible results of this research will hopefully be in helping providing more free and high-quality musical scores to the public. With ISMLP alone having over 100,000 scores that are freely available, there is a lot of potential for my work to liberate otherwise sub-quality scanned musical scores and turn them into digital scores that can be conveniently analyzed, replicated, and distributed. It's my hope that this work will be able to facilitate musical research, provide individuals and groups with easy access to practice material, and help bring more music to all of our lives.
