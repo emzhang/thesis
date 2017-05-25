@@ -6,6 +6,11 @@
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Background and Related Work}
 \section{Musical Terminology}
+
+\subsection{OMR}
+\subsection{MIDI} - MIDI is the protocol with which electronic instruments and computers can communicate with each other. Many people associate MIDI with an idea of low-quality computer music, but it  just an instruction-like protocol, not actually a audio recording. At the basic level, MIDI messages encode notes with note-on, note-off times, and a number that corresponds to its frequency. A piece of music can be encoded in MIDI as a sequence of notes. On the other hand, MIDI files contain sequences of MIDI protocol events time-stamped for playback in a certain order.
+\subsection{Ground Truth}
+
 \section{Non-musical Work in Sequence Alignment}
 It is far easier to understand sequence alignment in a non-musical context (here the context is plain string alignment), understand the rules and assumptions made in the non-musical context, generalize them, and then recreate music-specific rules and assumptions. 
 
@@ -168,9 +173,9 @@ Recall that we have defined our problem in three different ways:
 \end{enumerate}
 
 All of these problem definitions are (almost) one and the same. Calculating the edit distance will also provide a good alignment of the two words and a good alignment necessitates a series of character change operations. It is important to know that that (3) has an implicit directionality built into the problem statement. It won't always be the case that alignments and transformations are symmetric (i.e. cost the same and have the same series of operations), and having a simple cost operation functions, such as in tables 
-%\ref{tab:naivetable}
+\ref{tab:naivetable}
  and 
- %\ref{tab:naivetable2} 
+ \ref{tab:naivetable2} 
  will make such problems symmetric. 
 
 In our particular sample problem, we will always be transforming \textbf{MUSICAL} into \textbf{JUSTICE}. In the context of my thesis, we will always be transforming OMR sequences in MIDI sequences. 
@@ -208,17 +213,22 @@ Going back to [original model] and the questions we posed and answered for strin
 \end {itemize}
 
 
-
 \section{Related Work}
 \subsection{Typke: Music Retrieval based on Melodic Similarity}
-[[re-edit to talk about feature extraction as an important step, even though i don't necessarily call it feature extraction]]
 Another instance in which music is transformed and compressed into its most relevant features before comparison is in Typke's thesis on Music Retrieval based on Melodic Similarity \cite{typke}. Here, Typke proposes encoding music into what he calls a ``weighted point set" in a two-dimensional space of time and pitch before measuring any sort of melodic similarity between music. A note in a piece is represented as point set of pitch (in the Hewlett 40 system \cite{typke}) and an offset in quarter notes from the beginning of the piece.
 
 \subsection{Church and Cuthbert: Rhythmic Comparison and Alignment}
-\subsection{Viro: Peachnote, Musical Score Search and Analysis and IMSLP}
-\subsection{White: Statistical Properties of Music and MIDI}
-White's dissertation \cite{white} describes properties of music that can be turned into heuristics for refining algorithmic analysis of music. Specifically, he builds upon Temperley's 1997 \cite{temperley} paper's details to harmonic analysis of MIDI and refers to other research that has been constructive towards Temperley's model. White does say that Temperley's algorithm fails when faced with ambiguity, such as in MIDI differentiating between enharmonic tones. 
+Church and Cuthbert \cite{church} describe a system that hashes scores purely on rhythm and uses heuristics of rhythm in music (e.g. a repeated rhythm should be the same every time it is expected to repeat) to correct OMR scores. I believe that this model could be built upon with the hasher object in tandem with more heuristics pertaining to the qualities of music that I hash to further improve OMR accuracy.
 
-The hope is that by combining the ambiguous parts of MIDI with the probabilistic and rigorous details of OMR scores, ambiguities in MIDI tonality can be resolved. In addition, White also cites a large repository of high quality MIDI files. 
+\subsection{Viro: Peachnote, Musical Score Search and Analysis and IMSLP}
+Peachnote \cite{peachnote} and IMSLP \cite{imslp} both are projects that contain large bodies of musical scores. Peachnote performs a search of a musical phrase and tends to introduce errors in chord progression searches that requires recognition of musical staves. IMSLP holds a large collection of musical scores. many of which are user contributed (i.e. not necessarily ground truth). Both of these bodies of work contain information about musical scores that my work can draw upon and use. 
+
+\subsection{White: Statistical Properties of Music and MIDI}
+White's dissertation \cite{white} describes properties of music that can be turned into heuristics for refining algorithmic analysis of music. Specifically, he builds upon Temperley's 1997 \cite{temperley} paper's details to harmonic analysis of MIDI and refers to other research that has been constructive towards Temperley's model. White does say that Temperley's algorithm fails when faced with ambiguity, such as in MIDI differentiating between enharmonic tones. The hope is that by combining the ambiguous parts of MIDI with the probabilistic and rigorous details of OMR scores, ambiguities in MIDI tonality can be resolved. In addition, White also cites a large repository of high quality MIDI files. 
+
 \subsection{Rebelo et al: Optical Music Recognition - State-of-the-Art and Open Issues}
+Rebelo et al's paper discusses the state of the art of OMR at each step of the OMR process and proposes future work in certain areas that would advance the current state of OMR. 
 \cite{rebelo}
+
+\subsection{OpenScore}
+OpenScore is project

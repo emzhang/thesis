@@ -1,51 +1,51 @@
 \relax 
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Final Implementation}{39}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Final Implementation}{41}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}OMRMIDICorrector}{40}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}System Overview}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4-1}{\ignorespaces System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}}{40}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.1}processRunner: preprocessStreams}{41}}
-\newlabel{processrunner1}{{4.1.1.1}{41}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4-2}{\ignorespaces An example string quartet stream and its four parts.}}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4-3}{\ignorespaces A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}}{42}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.2}processRunner: setupHasher}{43}}
-\newlabel{setuphasher}{{4.1.1.2}{43}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.3}processRunner: alignStreams}{43}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.4}processRunner: fixStreams}{43}}
-\newlabel{processrunner2}{{4.1.1.4}{43}}
-\newlabel{fixer}{{4.1.1.4}{43}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Hasher}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}The Default Hasher}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}NoteHashWithReference}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Aligner}{45}}
-\newlabel{aligner}{{4.3}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}System Overview}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Producing a Global Alignment}{46}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.1}Pre-Alignment: Setting Appropriate Parameters}{46}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.2}Pre-Alignment: Hashing the Streams}{47}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.3}Alignment: Initializing the Distance Matrix}{47}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.4}Alignment: Populating the Distance Matrix}{48}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.5}Alignment: Backtrace to Find the Best Alignment and Create the Changes List}{50}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.6}Post-Alignment: Measures of Similarity}{51}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.7}Post-Alignment: Visual Display of Alignment}{51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in viola part of target (MIDI) stream.}}{52}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in viola part of source (OMR) stream.}}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}OMRMIDICorrector}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}System Overview}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4-1}{\ignorespaces System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}}{42}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.1}processRunner: preprocessStreams}{43}}
+\newlabel{processrunner1}{{4.1.1.1}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4-2}{\ignorespaces An example string quartet stream and its four parts.}}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4-3}{\ignorespaces A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}}{44}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.2}processRunner: setupHasher}{45}}
+\newlabel{setuphasher}{{4.1.1.2}{45}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.3}processRunner: alignStreams}{45}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.4}processRunner: fixStreams}{45}}
+\newlabel{processrunner2}{{4.1.1.4}{45}}
+\newlabel{fixer}{{4.1.1.4}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Hasher}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}The Default Hasher}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}NoteHashWithReference}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Aligner}{47}}
+\newlabel{aligner}{{4.3}{47}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}System Overview}{47}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Producing a Global Alignment}{48}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.1}Pre-Alignment: Setting Appropriate Parameters}{48}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.2}Pre-Alignment: Hashing the Streams}{49}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.3}Alignment: Initializing the Distance Matrix}{49}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.4}Alignment: Populating the Distance Matrix}{50}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.5}Alignment: Backtrace to Find the Best Alignment and Create the Changes List}{52}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.6}Post-Alignment: Measures of Similarity}{53}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.7}Post-Alignment: Visual Display of Alignment}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in viola part of target (MIDI) stream.}}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in viola part of source (OMR) stream.}}{55}}
 \citation{byrd-testbed}
 \citation{openscore}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Fixer}{54}}
-\newlabel{fixer}{{4.4}{54}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Tradeoffs and Design Decisions}{55}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Modularity vs. Simplicity}{55}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1.1}A Variety of Settings and a Longer Setup}{55}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1.2}Length Agnosticism}{56}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Performance vs. Space and Object Overhead}{56}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2.1}NoteHashWithReference}{56}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2.2}Creating One Hasher and Many Aligners}{56}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}Manual User Input}{57}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Fixer}{56}}
+\newlabel{fixer}{{4.4}{56}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Tradeoffs and Design Decisions}{57}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Modularity vs. Simplicity}{57}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1.1}A Variety of Settings and a Longer Setup}{57}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1.2}Length Agnosticism}{58}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Performance vs. Space and Object Overhead}{58}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2.1}NoteHashWithReference}{58}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2.2}Creating One Hasher and Many Aligners}{58}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}Manual User Input}{59}}
 \@setckpt{chap4}{
-\setcounter{page}{58}
+\setcounter{page}{60}
 \setcounter{equation}{0}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
@@ -67,7 +67,7 @@
 \setcounter{FancyVerbLine}{0}
 \setcounter{float@type}{8}
 \setcounter{linenumber}{1}
-\setcounter{LN@truepage}{57}
+\setcounter{LN@truepage}{59}
 \setcounter{FancyVerbLineBreakLast}{0}
 \setcounter{minted@FancyVerbLineTemp}{0}
 \setcounter{listing}{0}

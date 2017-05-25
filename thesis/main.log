@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 MAY 2017 22:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 MAY 2017 04:29
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -349,12 +349,7 @@ runsystem(which "pygmentize" && touch "main.aex")...executed.
 
 runsystem(rm "main.aex")...executed.
 
-(./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
-(./chap3.aux) (./chap4.aux
-
-LaTeX Warning: Label `fixer' multiply defined.
-
-) (./chap5.aux) (./chap6.aux) (./biblio.aux))
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -369,8 +364,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
-
-(./_minted-main/default-pyg-prefix.pygstyle)
+ (./_minted-main/default-pyg-prefix.pygstyle)
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count129
@@ -460,14 +454,19 @@ Package microtype Info: Loading generic settings for font family
 
 Underfull \vbox (badness 2318) has occurred while \output is active []
 
- [8])
+ [8]
+Underfull \vbox (badness 2556) has occurred while \output is active []
+
+ [9])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
 
-[9] [10
+[10] (./main.lof
 
-] (./main.lof
+LaTeX Warning: Citation `proteins' on page 11 undefined on input line 3.
+
+
 Overfull \hbox (17.26115pt too wide) in paragraph at lines 10--10
  \T1/cmr/m/n/12 (-20) be \T1/cmr/m/it/12 (-20) Note-Hash(intervalFromLastNote=0
 ), NoteHash(intervalFromLastNote=- 
@@ -476,7 +475,9 @@ Overfull \hbox (17.26115pt too wide) in paragraph at lines 10--10
 
 Underfull \vbox (badness 5316) has occurred while \output is active []
 
- [11])
+ [11
+
+])
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
@@ -497,6 +498,10 @@ Underfull \vbox (badness 5316) has occurred while \output is active []
 ]
 Chapter 1.
 [15]
+
+LaTeX Warning: Citation `church' on page 16 undefined on input line 24.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16])
@@ -509,49 +514,84 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 2.
-<images/proteinalign.png, id=74, 736.7525pt x 465.74pt>
-File: images/proteinalign.png Graphic file (type png)
-
-<use images/proteinalign.png>
-Package pdftex.def Info: images/proteinalign.png used on input line 20.
-(pdftex.def)             Requested size: 368.37535pt x 232.86943pt.
- [19] [20 <./images/proteinalign.png>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[21] [22]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[23] [24]
-Overfull \hbox (5.2528pt too wide) in paragraph at lines 199--199
-[]\T1/cmr/bx/n/17.28 Turning Se-quence Align-ment into a Mu-si-cal Prob-
- []
-
-[25]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 205.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-[27]) [28]
+ [19]
+<images/proteinalign.png, id=78, 736.7525pt x 465.74pt>
+File: images/proteinalign.png Graphic file (type png)
+
+<use images/proteinalign.png>
+Package pdftex.def Info: images/proteinalign.png used on input line 25.
+(pdftex.def)             Requested size: 368.37535pt x 232.86943pt.
+
+
+LaTeX Warning: Citation `proteins' on page 20 undefined on input line 26.
+
+[20 <./images/proteinalign.png>] [21] [22] [23]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24]
+
+LaTeX Warning: Reference `tab:naivetable' on page 25 undefined on input line 17
+6.
+
+
+LaTeX Warning: Reference `tab:naivetable2' on page 25 undefined on input line 1
+78.
+
+[25]
+Overfull \hbox (5.2528pt too wide) in paragraph at lines 204--204
+[]\T1/cmr/bx/n/17.28 Turning Se-quence Align-ment into a Mu-si-cal Prob-
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 210.
+[26]
+
+LaTeX Warning: Citation `typke' on page 27 undefined on input line 218.
+
+
+LaTeX Warning: Citation `typke' on page 27 undefined on input line 218.
+
+
+LaTeX Warning: Citation `church' on page 27 undefined on input line 221.
+
+[27]
+
+LaTeX Warning: Citation `peachnote' on page 28 undefined on input line 224.
+
+
+LaTeX Warning: Citation `imslp' on page 28 undefined on input line 224.
+
+
+LaTeX Warning: Citation `white' on page 28 undefined on input line 227.
+
+
+LaTeX Warning: Citation `temperley' on page 28 undefined on input line 227.
+
+
+LaTeX Warning: Citation `rebelo' on page 28 undefined on input line 231.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28])
+[29]
 \openout2 = `chap3.aux'.
 
- (./chap3.tex
-Chapter 3.
-
-Underfull \vbox (badness 1325) has occurred while \output is active []
-
- [29
+ (./chap3.tex [30
 
 
 
 ]
-<images/alg.pdf, id=118, 120.45pt x 38.1425pt>
+Chapter 3.
+
+Underfull \vbox (badness 1325) has occurred while \output is active []
+
+ [31]
+<images/alg.pdf, id=125, 120.45pt x 38.1425pt>
 File: images/alg.pdf Graphic file (type pdf)
  <use images/alg.pdf>
 Package pdftex.def Info: images/alg.pdf used on input line 20.
@@ -569,10 +609,17 @@ Package pdftex.def Info: images/alg.pdf used on input line 28.
 
 Underfull \vbox (badness 4686) has occurred while \output is active []
 
- [30 <./images/alg.pdf>]
+ [32 <./images/alg.pdf>]
+
+LaTeX Warning: Citation `typke' on page 33 undefined on input line 35.
+
+
+LaTeX Warning: Citation `hewlett' on page 33 undefined on input line 35.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
+ [33]
 Overfull \hbox (7.10727pt too wide) in paragraph at lines 44--45
 []\T1/cmr/m/n/12 (-20) For each el-e-ment, the Hasher will cre-ate ei-ther a \T
 1/cmtt/m/n/12 NoteHash \T1/cmr/m/n/12 (-20) or a \T1/cmtt/m/n/12 NoteHashWithRe
@@ -589,24 +636,24 @@ Hash \T1/cmr/m/n/12 (-20) list. Both \T1/cmtt/m/n/12 NoteHash \T1/cmr/m/n/12 (-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
-[33] [34]
+ [34]
+[35] [36]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 81.
 
 Underfull \vbox (badness 2111) has occurred while \output is active []
 
- [35]
+ [37]
 Overfull \hbox (36.61253pt too wide) in paragraph at lines 100--101
 \T1/cmr/m/n/12 (-20) It cre-ates a sin-gle \T1/cmtt/m/n/12 NamedTuple \T1/cmr/m
 /n/12 (-20) called a \T1/cmtt/m/n/12 NoteHash \T1/cmr/m/n/12 (-20) for each el-
 e-ment from \T1/cmtt/m/n/12 finalEltsToBeHashed\T1/cmr/m/n/12 (-20) . 
  []
 
-[36]) [37]
+[38]) [39]
 \openout2 = `chap4.aux'.
 
- (./chap4.tex [38
+ (./chap4.tex [40
 
 
 
@@ -622,29 +669,29 @@ y\T1/cmr/m/n/12 (-20) .
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
-<images/sysdiag10.png, id=157, 704.6325pt x 595.22375pt>
+ [41]
+<images/sysdiag10.png, id=163, 704.6325pt x 595.22375pt>
 File: images/sysdiag10.png Graphic file (type png)
 
 <use images/sysdiag10.png>
 Package pdftex.def Info: images/sysdiag10.png used on input line 21.
 (pdftex.def)             Requested size: 433.62pt x 366.29204pt.
- [40 <./images/sysdiag10.png>]
-<images/omrmidisheets2.png, id=163, 413.545pt x 237.88875pt>
+ [42 <./images/sysdiag10.png>]
+<images/omrmidisheets2.png, id=169, 413.545pt x 237.88875pt>
 File: images/omrmidisheets2.png Graphic file (type png)
 
 <use images/omrmidisheets2.png>
 Package pdftex.def Info: images/omrmidisheets2.png used on input line 34.
 (pdftex.def)             Requested size: 216.81pt x 124.71922pt.
 
-<images/badalignstream2.png, id=164, 691.58376pt x 89.33376pt>
+<images/badalignstream2.png, id=170, 691.58376pt x 89.33376pt>
 File: images/badalignstream2.png Graphic file (type png)
 
 <use images/badalignstream2.png>
 Package pdftex.def Info: images/badalignstream2.png used on input line 37.
 (pdftex.def)             Requested size: 390.25534pt x 50.41095pt.
 
-<images/goodalignstream.png, id=165, 203.76125pt x 320.19624pt>
+<images/goodalignstream.png, id=171, 203.76125pt x 320.19624pt>
 File: images/goodalignstream.png Graphic file (type png)
 
 <use images/goodalignstream.png>
@@ -654,61 +701,87 @@ Package pdftex.def Info: images/goodalignstream.png used on input line 40.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41]
+[43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42 <./images/omrmidisheets2.png> <./images/badalignstream2.png> <./images/goo
-dalignstream.png>] [43] [44]
+ [44 <./images/omrmidisheets2.png> <./images/badalignstream2.png> <./images/goo
+dalignstream.png>]
+
+LaTeX Warning: Reference `aligner' on page 45 undefined on input line 54.
+
+[45]
+
+LaTeX Warning: Reference `hasher' on page 46 undefined on input line 64.
+
+
+LaTeX Warning: Reference `setuphasher' on page 46 undefined on input line 67.
+
+[46]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
+ [47]
 Underfull \vbox (badness 2469) has occurred while \output is active []
 
- [46]
-[47] [48]
+ [48]
+[49] [50]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49]
-[50] <images/k525violatargetshow.png, id=203, 672.5125pt x 721.69624pt>
+ [51]
+[52] <images/k525violatargetshow.png, id=209, 672.5125pt x 721.69624pt>
 File: images/k525violatargetshow.png Graphic file (type png)
 
 <use images/k525violatargetshow.png>
 Package pdftex.def Info: images/k525violatargetshow.png used on input line 169.
 
-(pdftex.def)             Requested size: 390.25534pt x 418.79335pt.
- [51]
-<images/k525violasourceshow.png, id=207, 690.58pt x 847.165pt>
+(pdftex.def)             Requested size: 411.93767pt x 442.06209pt.
+ [53]
+<images/k525violasourceshow.png, id=213, 690.58pt x 847.165pt>
 File: images/k525violasourceshow.png Graphic file (type png)
 
 <use images/k525violasourceshow.png>
 Package pdftex.def Info: images/k525violasourceshow.png used on input line 175.
 
-(pdftex.def)             Requested size: 390.25534pt x 478.75252pt.
+(pdftex.def)             Requested size: 411.93767pt x 505.3427pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52 <./images/k525violatargetshow.png>]
+ [54 <./images/k525violatargetshow.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53 <./images/k525violasourceshow.png>] [54]
+ [55 <./images/k525violasourceshow.png>]
+
+LaTeX Warning: Citation `byrd-testbed' on page 56 undefined on input line 186.
+
+
+LaTeX Warning: Citation `openscore' on page 56 undefined on input line 188.
+
+[56]
+
+LaTeX Warning: Reference `timing' on page 57 undefined on input line 207.
+
+
 Underfull \vbox (badness 3769) has occurred while \output is active []
 
- [55]
+ [57]
 Overfull \hbox (5.01344pt too wide) in paragraph at lines 212--213
 \T1/cmr/m/n/12 (-20) Streams and the el-e-ments they con-tain are com-plex ob-j
 ects, so \T1/cmtt/m/n/12 NoteHashWithReference
  []
 
-[56]) [57]
+
+LaTeX Warning: Reference `spaceoptimizations' on page 58 undefined on input lin
+e 219.
+
+[58]) [59]
 \openout2 = `chap5.aux'.
 
- (./chap5.tex [58
+ (./chap5.tex [60
 
 
 
 ]
 Chapter 5.
-<images/k525originalomrscan.png, id=232, 734.745pt x 842.14626pt>
+<images/k525originalomrscan.png, id=238, 734.745pt x 842.14626pt>
 File: images/k525originalomrscan.png Graphic file (type png)
 
 <use images/k525originalomrscan.png>
@@ -717,28 +790,34 @@ Package pdftex.def Info: images/k525originalomrscan.png used on input line 15.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59]
+ [61]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [60 <./images/k525originalomrscan.png>] [61]
+ [62 <./images/k525originalomrscan.png>]
+
+LaTeX Warning: Citation `k525' on page 63 undefined on input line 29.
+
+[63]
 \openout3 = `main.pyg'.
 
 
-(./_minted-main/0FE6377DE698C44F0165D380830FA4E87BC9F1650E5147204109012551E408C
+(./_minted-main/CE1F576A1FE5AC9AA8B4B9A426CA932C7BC9F1650E5147204109012551E408C
 D.pygtex)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 43.
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/E91C79C853DD9D25DB9A63C8763612357BC9F1650E5147204109012551E408C
-D.pygtex) <images/k525postalignV1midi-1.png, id=244, 597.432pt x 845.0772pt>
+D.pygtex) <images/k525postalignV1midi-1.png, id=250, 597.432pt x 845.0772pt>
 File: images/k525postalignV1midi-1.png Graphic file (type png)
 
 <use images/k525postalignV1midi-1.png>
 Package pdftex.def Info: images/k525postalignV1midi-1.png used on input line 58
 .
 (pdftex.def)             Requested size: 390.25534pt x 552.04027pt.
- [62]
-<images/k525postalignV1omr-1.png, id=248, 597.432pt x 845.0772pt>
+ [64]
+<images/k525postalignV1omr-1.png, id=255, 597.432pt x 845.0772pt>
 File: images/k525postalignV1omr-1.png Graphic file (type png)
 
 <use images/k525postalignV1omr-1.png>
@@ -748,8 +827,8 @@ Package pdftex.def Info: images/k525postalignV1omr-1.png used on input line 64.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63 <./images/k525postalignV1midi-1.png>]
-<images/k525postalignV2midi-1.png, id=253, 597.432pt x 845.0772pt>
+ [65 <./images/k525postalignV1midi-1.png>]
+<images/k525postalignV2midi-1.png, id=260, 597.432pt x 845.0772pt>
 File: images/k525postalignV2midi-1.png Graphic file (type png)
 
 <use images/k525postalignV2midi-1.png>
@@ -759,8 +838,8 @@ Package pdftex.def Info: images/k525postalignV2midi-1.png used on input line 70
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64 <./images/k525postalignV1omr-1.png>]
-<images/k525postalignV2omr-1.png, id=258, 597.432pt x 845.0772pt>
+ [66 <./images/k525postalignV1omr-1.png>]
+<images/k525postalignV2omr-1.png, id=265, 597.432pt x 845.0772pt>
 File: images/k525postalignV2omr-1.png Graphic file (type png)
 
 <use images/k525postalignV2omr-1.png>
@@ -770,8 +849,8 @@ Package pdftex.def Info: images/k525postalignV2omr-1.png used on input line 76.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65 <./images/k525postalignV2midi-1.png>]
-<images/k525postalignviolamidi-1.png, id=263, 597.432pt x 845.0772pt>
+ [67 <./images/k525postalignV2midi-1.png>]
+<images/k525postalignviolamidi-1.png, id=271, 597.432pt x 845.0772pt>
 File: images/k525postalignviolamidi-1.png Graphic file (type png)
 
 <use images/k525postalignviolamidi-1.png>
@@ -781,8 +860,8 @@ Package pdftex.def Info: images/k525postalignviolamidi-1.png used on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66 <./images/k525postalignV2omr-1.png>]
-<images/k525postalignviolaomr-1.png, id=268, 597.432pt x 845.0772pt>
+ [68 <./images/k525postalignV2omr-1.png>]
+<images/k525postalignviolaomr-1.png, id=276, 597.432pt x 845.0772pt>
 File: images/k525postalignviolaomr-1.png Graphic file (type png)
 
 <use images/k525postalignviolaomr-1.png>
@@ -792,8 +871,8 @@ Package pdftex.def Info: images/k525postalignviolaomr-1.png used on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67 <./images/k525postalignviolamidi-1.png>]
-<images/k525postaligncellomidi-1.png, id=274, 597.432pt x 845.0772pt>
+ [69 <./images/k525postalignviolamidi-1.png>]
+<images/k525postaligncellomidi-1.png, id=281, 597.432pt x 845.0772pt>
 File: images/k525postaligncellomidi-1.png Graphic file (type png)
 
 <use images/k525postaligncellomidi-1.png>
@@ -803,8 +882,8 @@ Package pdftex.def Info: images/k525postaligncellomidi-1.png used on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68 <./images/k525postalignviolaomr-1.png>]
-<images/k525postaligncellobassomr-1.png, id=279, 597.432pt x 845.0772pt>
+ [70 <./images/k525postalignviolaomr-1.png>]
+<images/k525postaligncellobassomr-1.png, id=286, 597.432pt x 845.0772pt>
 File: images/k525postaligncellobassomr-1.png Graphic file (type png)
 
 <use images/k525postaligncellobassomr-1.png>
@@ -814,22 +893,74 @@ ine 100.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69 <./images/k525postaligncellomidi-1.png>]
+ [71 <./images/k525postaligncellomidi-1.png>]
+
+LaTeX Warning: Reference `processrunner1' on page 72 undefined on input line 10
+5.
+
+
+LaTeX Warning: Reference `processrunner2' on page 72 undefined on input line 10
+5.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70 <./images/k525postaligncellobassomr-1.png>] [71]) [72]
+ [72 <./images/k525postaligncellobassomr-1.png>] [73]
+
+LaTeX Warning: Citation `k160' on page 74 undefined on input line 130.
+
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C89B0F83EA7B72D7AAB0F489B817458B7BC9F1650E5147204109012551E408C
+D.pygtex [74])
+<images/k160postalignv1midi-1.png, id=302, 597.432pt x 845.0772pt>
+File: images/k160postalignv1midi-1.png Graphic file (type png)
+
+<use images/k160postalignv1midi-1.png>
+Package pdftex.def Info: images/k160postalignv1midi-1.png used on input line 15
+8.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75]
+<images/k160postalignv1omr-1.png, id=306, 597.432pt x 845.0772pt>
+File: images/k160postalignv1omr-1.png Graphic file (type png)
+
+<use images/k160postalignv1omr-1.png>
+Package pdftex.def Info: images/k160postalignv1omr-1.png used on input line 164
+.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76 <./images/k160postalignv1midi-1.png>]
+<images/k160postfixv1-1.png, id=311, 597.432pt x 845.0772pt>
+File: images/k160postfixv1-1.png Graphic file (type png)
+
+<use images/k160postfixv1-1.png>
+Package pdftex.def Info: images/k160postfixv1-1.png used on input line 170.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77 <./images/k160postalignv1omr-1.png>])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78 <./images/k160postfixv1-1.png>] [79]
 \openout2 = `chap6.aux'.
 
- (./chap6.tex
-Chapter 6.
-) [73
+ (./chap6.tex [80
 
 
 
 ]
+Chapter 6.
+) [81]
 \openout2 = `biblio.aux'.
 
- (./biblio.tex (./main.bbl [74
+ (./biblio.tex (./main.bbl [82
 
 
 
@@ -863,24 +994,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--47
 rpt _ of _ a _ multiple _
  []
 
-[75])) [76]
+[83])) [84]
 runsystem(rm "main.pyg")...executed.
 
  (./main.aux (./cover.aux) (./contents.aux) (./chap1.aux)
 (./chap2.aux) (./chap3.aux) (./chap4.aux) (./chap5.aux) (./chap6.aux)
 (./biblio.aux))
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  7634 strings out of 493014
- 123362 string characters out of 6133351
- 269772 words of memory out of 5000000
- 10754 multiletter control sequences out of 15000+600000
- 24134 words of font info for 110 fonts, out of 8000000 for 9000
+ 124005 string characters out of 6133351
+ 268423 words of memory out of 5000000
+ 10764 multiletter control sequences out of 15000+600000
+ 24447 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,17n,38p,1121b,298s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,17n,38p,1136b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -900,11 +1034,12 @@ exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/tex
 mf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (76 pages, 2184354 bytes).
+t/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/cm-super/sftt1440.pfb>
+Output written on main.pdf (84 pages, 3005851 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
- 234 compressed objects within 3 object streams
+ 407 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 23146 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23673 words of extra memory for PDF output out of 24883 (max. 10000000)
 

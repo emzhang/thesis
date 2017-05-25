@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{music21} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n}{k160iMidiFilepath} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}pathto/k160/miditoxml.xml\PYGZdq{}}
+\PYG{n}{k160iOmrFilepath} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}pathto/k160/omrtoxml.xml\PYGZdq{}}
+
+\PYG{n}{k160midiStream} \PYG{o}{=} \PYG{n}{converter}\PYG{o}{.}\PYG{n}{parse}\PYG{p}{(}\PYG{n}{k160iMidiFilepath}\PYG{p}{)}
+\PYG{n}{k160omrStream} \PYG{o}{=} \PYG{n}{converter}\PYG{o}{.}\PYG{n}{parse}\PYG{p}{(}\PYG{n}{k160iOmrFilepath}\PYG{p}{)}
+\PYG{n}{k160omc} \PYG{o}{=} \PYG{n}{OMRMIDICorrector}\PYG{p}{(}\PYG{n}{k160midiStream}\PYG{p}{,} \PYG{n}{k160omrStream}\PYG{p}{)}
+\PYG{n}{k160omc}\PYG{o}{.}\PYG{n}{processRunner}\PYG{p}{()}
+
+\PYG{n}{k160omcV1Changes} \PYG{o}{=} \PYG{n}{k160omc}\PYG{o}{.}\PYG{n}{changes}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n}{k160omcV1Midi} \PYG{o}{=} \PYG{n}{k160omc}\PYG{o}{.}\PYG{n}{midiParts}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n}{k160omcV1Omr} \PYG{o}{=} \PYG{n}{k160omc}\PYG{o}{.}\PYG{n}{omrParts}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n}{k160EF} \PYG{o}{=} \PYG{n}{fixer}\PYG{o}{.}\PYG{n}{EnharmonicFixer}\PYG{p}{(}\PYG{n}{k160omcV1Changes}\PYG{p}{,} \PYG{n}{k160omcV1Midi}\PYG{p}{,} \PYG{n}{k160omcV1Omr}\PYG{p}{)}
+\PYG{n}{k160EF}\PYG{o}{.}\PYG{n}{fix}\PYG{p}{()}
+
+\PYG{n}{k160omcViolin1OmrStream}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\end{Verbatim}
