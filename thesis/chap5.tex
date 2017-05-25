@@ -56,49 +56,49 @@ These are the outputs of the \texttt{showChanges} function.
 \begin{figure}[H]
 \centering
 \includegraphics[width =.9\textwidth]{k525postalignV1midi-1}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
+\caption{Post-alignment visualization of the MIDI Violin 1 part in K.525.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k525postalignV1omr-1}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
+\caption{Post-alignment visualization of the OMR Violin 1 part in K.525.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k525postalignV2midi-1}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
+\caption{Post-alignment visualization of the MIDI Violin 2 part in K.525.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k525postalignV2omr-1}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
+\caption{Post-alignment visualization of the OMR Violin 2 part in K.525.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k525postalignviolamidi-1}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
+\caption{Post-alignment visualization of the MIDI Viola part in K.525.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k525postalignviolaomr-1}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
+\caption{Post-alignment visualization of the OMR Viola part in K.525.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k525postaligncellomidi-1}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
+\caption{Post-alignment visualization of the MIDI Cello part in K.525.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{k525postaligncellobassomr-1}
-\caption{The first page of the scanned copy of the score found on IMSLP.}
+\caption{Post-alignment visualization of the OMR Cello and Bass part in K.525.}
 \end{figure}
 
 \subsubsection{A Closer Look at Specifics of \texttt{processrunner}}
@@ -107,8 +107,23 @@ A lot of magic happens within \texttt{processRunner}, all of which is described 
 \item Bass Doubles Cello Part - The OMR score has only four parts, whereas the MIDI score has 5. The \texttt{checkBassDoublesCello} method in \texttt{OMRMIDICorrector} is able to correctly identify this and thus does not reject the input on the basis of having a mismatching number of parts in the stream. 
 \item Rhythmic Fault Tolerance: Beginning Rests - The first measure in the OMR score is a scanning and parsing error. The \texttt{Aligner} is robust enough to identify the beginning rest as a insertion error. 
 \item Rhythmic Fault Tolerance: Propagating Rhythmic Shifts - By measure 5, we see that the OMR score has introduced a \nth{16} note shift in the rhythm which continues for a few measures. 
-\item Notation Fault Tolerance: Tremolos - By measure 5 of the violin 2 part and by measure 10 of the viola part, the repeated \nth{16} notes get notated with tremolo slashes in the original OMR score. Of course, the MIDI protocol doesn't have a way of representing tremolo, so the notes are written out in long form. The corrector is able to 
+\item Notation Fault Tolerance: Tremolos - By measure 5 of the violin 2 part and by measure 10 of the viola part, the repeated \nth{16} notes get notated with tremolo slashes in the original OMR score. Of course, the MIDI protocol doesn't have a way of representing tremolo, so the notes are written out in long form. The corrector is able to match the written out repeated notes in the MIDI to the (incorrectly) scanned corresponding notes in the OMR. 
 \end{itemize}
+
+
+\subsection{Similarity Metrics}
+Recall that the \texttt{similarityScore} is the ratio of \texttt{NoChange} operations to the total number of operations in the \texttt{changes} list. For each pair of streams in K.525, the \texttt{similarityScore} and \texttt{changesCount} are listed below:
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+           & \texttt{similarityScore} & \texttt{changesCount}                                                  \\
+Violin 1   & 0.51                       & \{NoChange: 83, Ins: 30, Del: 10, Sub: 39\} \\
+Violin 2   & 0.30                       & \{NoChange: 74, Ins: 125, Del: 9, Sub: 38\} \\
+Viola      & 0.72                       & \{NoChange: 97, Ins: 21, Del: 9, Sub: 8\}   \\
+Cello/Bass & 0.87                       & \{NoChange: 107, Del: 11, Sub: 5\}               
+\end{tabular}
+\caption{\texttt{similarityScore} and \texttt{changesCount} for every pair of aligned streams}
+\end{table}
 
 
 \section{Timing} \label{timing}
