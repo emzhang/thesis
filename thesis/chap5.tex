@@ -5,10 +5,10 @@
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Results and Testing}
-This chapter will describe the results of my work using an excerpt of of W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525} as an example. It will also use an excerpt of W. A. Mozart's \textit{String Quartet No.7 in E-flat major, K.160/159a} as an example where K.525 doesn't fit the specifications. This chapter will also look at timing metrics of the system.
+This chapter will describe the results of my work using an excerpt of of W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525- I.Allegro} (referred to by just ``K.525'' from here onwards) as an example. It will also use an excerpt of W. A. Mozart's \textit{String Quartet No.7 in E-flat major, K.160/159a- I.Allegro} (referred to by just ``K.160'' from here onwards)as an example where K.525 doesn't fit the specifications. This chapter will also look at timing metrics of the system.
 
-\section{Example 1: Eine kleine Nachtmusik, K.525, W. A. Mozart)}		`
-This section will go through an example of how the entire \texttt{OMRMIDICorrector} system works on W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525}.
+\section{Example 1: Eine kleine Nachtmusik, K.525- I.Allegro, W. A. Mozart)}		`
+This section will go through an example of how the entire \texttt{OMRMIDICorrector} system works on W. A. Mozart's \textit{Eine kleine Nachtmusik, K.525- I.Allegro }.
 
 \begin{figure}[H]
 \centering
@@ -35,8 +35,8 @@ Similarly for the K.525 MIDI file, I used SmartScore to parse the original file 
 The last step of preparing the raw input is to parsing the musicXML files with the \texttt{music21} library so that they are \texttt{Stream} objects. This can be done by passing in the musicXML filepaths to the \texttt{parse} method in the \texttt{converter} class. We will call these two parsed streams \texttt{k525midiStream} and \texttt{k525omrStream}. 
 \begin{minted}{python}
 from music21 import *
-k525MidiFilepath = "pathto/k525/miditoxml.xml"
-k525OmrFilepath= "pathto/k525/omrtoxml.xml"
+k525MidiFilepath = "pathto/k525mvmt1/miditoxml.xml"
+k525OmrFilepath= "pathto/k525mvmt1/omrtoxml.xml"
 k525midistream = converter.parse(k525MidiFilepath)
 k525omrstream = converter.parse(k525OmrFilepath)
 \end{minted}
@@ -55,50 +55,50 @@ These are the outputs of the \texttt{showChanges} function.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.9\textwidth]{k525postalignV1midi-1}
-\caption{Post-alignment visualization of the MIDI Violin 1 part in K.525.}
+\includegraphics[width =.9\textwidth]{K525_I_MIDI_Violin_1-1}
+\caption{Post-alignment visualization of an excerpt of the MIDI Violin 1 part in K.525- I.Allegro.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k525postalignV1omr-1}
-\caption{Post-alignment visualization of the OMR Violin 1 part in K.525.}
+\includegraphics[width =.95\textwidth]{K525_I_OMR_Violin_1-1}
+\caption{Post-alignment visualization of an excerpt of the OMR Violin 1 part in K.525- I.Allegro.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k525postalignV2midi-1}
-\caption{Post-alignment visualization of the MIDI Violin 2 part in K.525.}
+\includegraphics[width =.95\textwidth]{K525_I_MIDI_Violin_2-1}
+\caption{Post-alignment visualization of an excerpt of the MIDI Violin 2 part in K.525- I.Allegro.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k525postalignV2omr-1}
-\caption{Post-alignment visualization of the OMR Violin 2 part in K.525.}
+\includegraphics[width =.95\textwidth]{K525_I_OMR_Violin_2-1}
+\caption{Post-alignment visualization of an excerpt of the OMR Violin 2 part in K.525- I.Allegro.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k525postalignviolamidi-1}
-\caption{Post-alignment visualization of the MIDI Viola part in K.525.}
+\includegraphics[width =.95\textwidth]{K525_I_MIDI_Viola-1}
+\caption{Post-alignment visualization of an excerpt of the MIDI Viola part in K.525- I.Allegro.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k525postalignviolaomr-1}
-\caption{Post-alignment visualization of the OMR Viola part in K.525.}
+\includegraphics[width =.95\textwidth]{K525_I_OMR_Viola-1}
+\caption{Post-alignment visualization of an excerpt of the OMR Viola part in K.525- I.Allegro.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k525postaligncellomidi-1}
-\caption{Post-alignment visualization of the MIDI Cello part in K.525.}
+\includegraphics[width =.95\textwidth]{K525_I_MIDI_Cello-1}
+\caption{Post-alignment visualization of an excerpt of the MIDI Cello part in K.525- I.Allegro.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k525postaligncellobassomr-1}
-\caption{Post-alignment visualization of the OMR Cello and Bass part in K.525.}
+\includegraphics[width =.95\textwidth]{K525_I_OMR_Cello-1}
+\caption{Post-alignment visualization of an excerpt of the OMR Cello and Bass part in K.525.}
 \end{figure}
 
 \subsubsection{A Closer Look at Specifics of \texttt{processrunner}}
@@ -126,19 +126,19 @@ Cello/Bass & 0.87                       & \{NoChange: 107, Del: 11, Sub: 5\}
 
 A visual examination of the pairs of streams suggests that these numbers and counts look correct. The Cello/Bass parts have the fewest colorations to their notes and no insertion changes at all. The least similar pair of parts is the Violin 2, which has multiple cases of the tremolo problem described above as well as propagating rhythmic shifts.
 
-\section{Example 2: String Quartet No.7 in E-flat major, K.160/159a, K.160, W. A. Mozart)}
-This section will go through an example of how just the \texttt{EnharmonicFixer} works on correcting and excerpt of the Violin 1 part of W. A. Mozart's \textit{String Quartet No.7 in E-flat major, K.160, Mvt. I}. The OMR score was sources from IMSLP \cite{k160}.
+\section{Example 2: String Quartet No.7 in E-flat major, K.160/159a- I.Allegro, W. A. Mozart)}
+This section will go through an example of how just the \texttt{EnharmonicFixer} works on correcting and excerpt of the Violin 1 part of K.160. The OMR score was sources from IMSLP \cite{k160}.
 
 \subsection{Running \texttt{EnharmonicFixer} on K.160, Violin 1}
 After prepping the raw input files of K.160 in the same way as detailed above and running that through an \texttt{OMRMIDICorrector} instance, we will create an and \texttt{EnharmonicFixer} instance using just the Violin 1 OMR stream and MIDI stream and the associated \texttt{changes} list.
 
 \begin{minted}{python}
 from music21 import *
-k160iMidiFilepath = "pathto/k160/miditoxml.xml"
-k160iOmrFilepath = "pathto/k160/omrtoxml.xml"
+k160MidiFilepath = "pathto/k160mvmt1/miditoxml.xml"
+k160OmrFilepath = "pathto/k160mvmt1/omrtoxml.xml"
          
-k160midiStream = converter.parse(k160iMidiFilepath)
-k160omrStream = converter.parse(k160iOmrFilepath)
+k160midiStream = converter.parse(k160MidiFilepath)
+k160omrStream = converter.parse(k160OmrFilepath)
 k160omc = OMRMIDICorrector(k160midiStream, k160omrStream)
 k160omc.processRunner()
         
@@ -155,21 +155,21 @@ Below, The first two figures below show the alignment visualization of the Violi
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k160postalignv1midi-1}
+\includegraphics[width =.95\textwidth]{K160_MIDI_Violin_1-1}
 \caption{Post-alignment visualization of the MIDI Violin 1 part in K.160.}
 \label{fig:k160postalignv1midi}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k160postalignv1omr-1}
+\includegraphics[width =.95\textwidth]{K160_OMR_Violin_1-1}
 \caption{Post-alignment visualization of the OMR Violin 1 part in K.160.}
 \label{fig:k160postalignv1omr}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width =.95\textwidth]{k160postfixv1-1}
+\includegraphics[width =.95\textwidth]{K160_Violin_1_Part_OMR_Enharmonic_Fixer-1}
 \caption{Post-enharmonic and pitch fixing visualization of the OMR Violin 1 part in K.160.}
 \label{fig:k160postfixv1}
 \end{figure}
