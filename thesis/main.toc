@@ -12,31 +12,33 @@
 \contentsline {subsubsection}{\numberline {2.2.1.1}Edit Distance}{21}
 \contentsline {subsubsection}{\numberline {2.2.1.2}Alignment}{23}
 \contentsline {section}{\numberline {2.3}Turning Sequence Alignment into a Musical Problem}{26}
-\contentsline {section}{\numberline {2.4}Related Work}{27}
-\contentsline {subsection}{\numberline {2.4.1}Typke: Music Retrieval based on Melodic Similarity}{27}
-\contentsline {subsection}{\numberline {2.4.2}Church and Cuthbert: Rhythmic Comparison and Alignment}{27}
-\contentsline {subsection}{\numberline {2.4.3}Viro: Peachnote, Musical Score Search and Analysis and IMSLP}{28}
-\contentsline {subsection}{\numberline {2.4.4}White: Statistical Properties of Music and MIDI}{28}
-\contentsline {subsection}{\numberline {2.4.5}Rebelo et al: Optical Music Recognition - State-of-the-Art and Open Issues}{28}
-\contentsline {subsection}{\numberline {2.4.6}OpenScore}{29}
-\contentsline {chapter}{\numberline {3}Previous Work}{31}
-\contentsline {section}{\numberline {3.1}A Modular Universal Hasher}{31}
-\contentsline {subsection}{\numberline {3.1.1}Why Musical Comparison and Alignment Needs a Modular Hashing Function}{32}
-\contentsline {subsection}{\numberline {3.1.2}Previous Work on Modular Hashing Functions}{33}
-\contentsline {subsection}{\numberline {3.1.3}Overview of System}{33}
-\contentsline {subsubsection}{\numberline {3.1.3.1}Pre-Hashing: High Level Hasher Settings}{34}
-\contentsline {subsubsection}{\numberline {3.1.3.2}Pre-Hashing: Low Level General Settings}{35}
-\contentsline {subsubsection}{\numberline {3.1.3.3}Pre-Hashing: Low Level Note Settings}{36}
-\contentsline {subsubsection}{\numberline {3.1.3.4}Pre-Hashing: Low Level Chord Hashing Settings}{36}
-\contentsline {subsubsection}{\numberline {3.1.3.5}Hashing: \texttt {hashStream}}{37}
-\contentsline {subsubsection}{\numberline {3.1.3.6}Hashing: Setting up \texttt {ValidTypes} and \texttt {StateVars}}{37}
-\contentsline {subsection}{\numberline {3.1.4}Hashing: Preprocessing the Stream}{37}
-\contentsline {subsubsection}{\numberline {3.1.4.1}Hashing: Creating a List of Elements to be Hashed}{38}
-\contentsline {subsubsection}{\numberline {3.1.4.2}Hashing: Building a Set of Hashing Functions}{38}
-\contentsline {subsubsection}{\numberline {3.1.4.3}Hashing: Creating a \texttt {NoteHash} for Every Element}{38}
-\contentsline {subsubsection}{\numberline {3.1.4.4}Hashing: Building \texttt {finalHash}}{38}
-\contentsline {section}{\numberline {3.2}Low-level Object Comparison Optimizations}{39}
-\contentsline {chapter}{\numberline {4}Final Implementation}{41}
+\contentsline {chapter}{\numberline {3}Previous Work}{29}
+\contentsline {section}{\numberline {3.1}Related Work by Others}{29}
+\contentsline {subsection}{\numberline {3.1.1}Typke: Music Retrieval based on Melodic Similarity}{29}
+\contentsline {subsection}{\numberline {3.1.2}Church and Cuthbert: Rhythmic Comparison and Alignment}{30}
+\contentsline {subsection}{\numberline {3.1.3}IMSLP}{30}
+\contentsline {subsection}{\numberline {3.1.4}Viro: Peachnote, Musical Score Search and Analysis}{30}
+\contentsline {subsection}{\numberline {3.1.5}White: Statistical Properties of Music and MIDI}{30}
+\contentsline {subsection}{\numberline {3.1.6}Rebelo et al: Optical Music Recognition - State-of-the-Art and Open Issues}{31}
+\contentsline {subsection}{\numberline {3.1.7}OpenScore}{31}
+\contentsline {subsection}{\numberline {3.1.8}\texttt {music21}}{31}
+\contentsline {section}{\numberline {3.2}Previous Work: A Modular Universal Hasher}{32}
+\contentsline {subsection}{\numberline {3.2.1}Why Musical Comparison and Alignment Needs a Modular Hashing Function}{32}
+\contentsline {subsection}{\numberline {3.2.2}Previous Work on Modular Hashing Functions}{33}
+\contentsline {subsection}{\numberline {3.2.3}Overview of System}{34}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Pre-Hashing: High Level Hasher Settings}{35}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Pre-Hashing: Low Level General Settings}{36}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Pre-Hashing: Low Level Note Settings}{36}
+\contentsline {subsubsection}{\numberline {3.2.3.4}Pre-Hashing: Low Level Chord Hashing Settings}{37}
+\contentsline {subsubsection}{\numberline {3.2.3.5}Hashing: \texttt {hashStream}}{37}
+\contentsline {subsubsection}{\numberline {3.2.3.6}Hashing: Setting up \texttt {ValidTypes} and \texttt {StateVars}}{38}
+\contentsline {subsection}{\numberline {3.2.4}Hashing: Preprocessing the Stream}{38}
+\contentsline {subsubsection}{\numberline {3.2.4.1}Hashing: Creating a List of Elements to be Hashed}{38}
+\contentsline {subsubsection}{\numberline {3.2.4.2}Hashing: Building a Set of Hashing Functions}{38}
+\contentsline {subsubsection}{\numberline {3.2.4.3}Hashing: Creating a \texttt {NoteHash} for Every Element}{39}
+\contentsline {subsubsection}{\numberline {3.2.4.4}Hashing: Building \texttt {finalHash}}{39}
+\contentsline {section}{\numberline {3.3}Previous Work: Low-level Object Comparison Optimizations}{39}
+\contentsline {chapter}{\numberline {4}Implementation of \texttt {OMRMIDICorrector}}{41}
 \contentsline {section}{\numberline {4.1}OMRMIDICorrector}{42}
 \contentsline {subsection}{\numberline {4.1.1}System Overview}{42}
 \contentsline {subsubsection}{\numberline {4.1.1.1}processRunner: preprocessStreams}{43}
@@ -56,38 +58,39 @@
 \contentsline {subsubsection}{\numberline {4.3.2.5}Alignment: Backtrace to Find the Best Alignment and Create the Changes List}{52}
 \contentsline {subsubsection}{\numberline {4.3.2.6}Post-Alignment: Measures of Similarity}{53}
 \contentsline {subsubsection}{\numberline {4.3.2.7}Post-Alignment: Visual Display of Alignment}{53}
-\contentsline {section}{\numberline {4.4}Fixer}{56}
-\contentsline {section}{\numberline {4.5}Tradeoffs and Design Decisions}{57}
-\contentsline {subsection}{\numberline {4.5.1}Modularity vs. Simplicity}{57}
-\contentsline {subsubsection}{\numberline {4.5.1.1}A Variety of Settings and a Longer Setup}{57}
-\contentsline {subsubsection}{\numberline {4.5.1.2}Length Agnosticism}{58}
-\contentsline {subsection}{\numberline {4.5.2}Performance vs. Space and Object Overhead}{58}
-\contentsline {subsubsection}{\numberline {4.5.2.1}NoteHashWithReference}{58}
-\contentsline {subsubsection}{\numberline {4.5.2.2}Creating One Hasher and Many Aligners}{58}
-\contentsline {subsection}{\numberline {4.5.3}Manual User Input}{59}
-\contentsline {chapter}{\numberline {5}Emamples and Results}{61}
-\contentsline {section}{\numberline {5.1}Eine Kleine Nachtmusik, K.525- I.Allegro, W. A. Mozart}{61}
-\contentsline {subsection}{\numberline {5.1.1}Musical Properties of K.525}{62}
-\contentsline {subsubsection}{\numberline {5.1.1.1}Bass and Cello Doubling}{63}
-\contentsline {subsubsection}{\numberline {5.1.1.2}Tremolos}{63}
-\contentsline {subsection}{\numberline {5.1.2}Preparing the Raw Input}{63}
-\contentsline {subsection}{\numberline {5.1.3}Running \texttt {OMRMIDICorrector} on K.525}{64}
-\contentsline {subsubsection}{\numberline {5.1.3.1}A Closer Look at Specifics of \texttt {processrunner}}{65}
-\contentsline {subsection}{\numberline {5.1.4}Example 1: Similarity Metrics in K.525}{65}
-\contentsline {section}{\numberline {5.2}String Quartet No.7 in E-flat major, K.160- I.Allegro, W. A. Mozart}{66}
-\contentsline {subsection}{\numberline {5.2.1}Running \texttt {EnharmonicFixer} on K.160, Violin 1}{66}
-\contentsline {subsection}{\numberline {5.2.2}Analysis of Correction}{67}
-\contentsline {section}{\numberline {5.3}Results: Timing Tests}{68}
-\contentsline {subsection}{\numberline {5.3.1}Runtime Analysis: \texttt {Hasher}}{68}
-\contentsline {subsection}{\numberline {5.3.2}Runtime Analysis: \texttt {Aligner}}{68}
-\contentsline {subsection}{\numberline {5.3.3}Runtime Analysis: \texttt {Fixer}}{69}
-\contentsline {subsection}{\numberline {5.3.4}Runtime Analysis: \texttt {OMRMIDICorrector}}{69}
-\contentsline {subsection}{\numberline {5.3.5}Empirical Results}{69}
-\contentsline {subsection}{\numberline {5.3.6}\texttt {\%timeit}: Hasher}{70}
-\contentsline {subsection}{\numberline {5.3.7}texttt{\%timeit}: Aligner}{70}
-\contentsline {subsection}{\numberline {5.3.8}texttt{\%timeit}: Fixer}{70}
-\contentsline {subsection}{\numberline {5.3.9}texttt{\%timeit}: OMR/MIDI Corrector}{70}
-\contentsline {subsection}{\numberline {5.3.10}Scalability}{71}
-\contentsline {subsection}{\numberline {5.3.11}Implications of Free Music}{71}
-\contentsline {chapter}{\numberline {A}Alignment Visualization of K.525}{73}
-\contentsline {chapter}{\numberline {B}Alignment Visualization of Violin 1 part in K.160}{83}
+\contentsline {section}{\numberline {4.4}Fixer}{54}
+\contentsline {section}{\numberline {4.5}Tradeoffs and Design Decisions}{55}
+\contentsline {subsection}{\numberline {4.5.1}Modularity vs. Simplicity}{55}
+\contentsline {subsubsection}{\numberline {4.5.1.1}A Variety of Settings and a Longer Setup}{55}
+\contentsline {subsubsection}{\numberline {4.5.1.2}Length Agnosticism}{56}
+\contentsline {subsection}{\numberline {4.5.2}Performance vs. Space and Object Overhead}{56}
+\contentsline {subsubsection}{\numberline {4.5.2.1}NoteHashWithReference}{56}
+\contentsline {subsubsection}{\numberline {4.5.2.2}Creating One Hasher and Many Aligners}{56}
+\contentsline {subsection}{\numberline {4.5.3}Manual User Input}{57}
+\contentsline {chapter}{\numberline {5}Examples and Results}{59}
+\contentsline {section}{\numberline {5.1}Eine Kleine Nachtmusik, K.525- I.Allegro, W. A. Mozart}{59}
+\contentsline {subsection}{\numberline {5.1.1}Musical Properties of K.525}{60}
+\contentsline {subsubsection}{\numberline {5.1.1.1}Bass and Cello Doubling}{61}
+\contentsline {subsubsection}{\numberline {5.1.1.2}Tremolos}{61}
+\contentsline {subsection}{\numberline {5.1.2}Preparing the Raw Input}{61}
+\contentsline {subsection}{\numberline {5.1.3}Running \texttt {OMRMIDICorrector} on K.525}{62}
+\contentsline {subsubsection}{\numberline {5.1.3.1}A Closer Look at Specifics of \texttt {processrunner}}{63}
+\contentsline {subsection}{\numberline {5.1.4}Example 1: Similarity Metrics in K.525}{63}
+\contentsline {section}{\numberline {5.2}String Quartet No.7 in E-flat major, K.160- I.Allegro, W. A. Mozart}{64}
+\contentsline {subsection}{\numberline {5.2.1}Running \texttt {EnharmonicFixer} on K.160, Violin 1}{64}
+\contentsline {subsection}{\numberline {5.2.2}Analysis of Correction}{65}
+\contentsline {section}{\numberline {5.3}Results: Timing Tests}{66}
+\contentsline {subsection}{\numberline {5.3.1}Runtime Analysis: \texttt {Hasher}}{66}
+\contentsline {subsection}{\numberline {5.3.2}Runtime Analysis: \texttt {Aligner}}{66}
+\contentsline {subsection}{\numberline {5.3.3}Runtime Analysis: \texttt {Fixer}}{67}
+\contentsline {subsection}{\numberline {5.3.4}Runtime Analysis: \texttt {OMRMIDICorrector}}{67}
+\contentsline {subsection}{\numberline {5.3.5}Empirical Results}{67}
+\contentsline {subsection}{\numberline {5.3.6}\texttt {\%timeit}: Hasher}{68}
+\contentsline {subsection}{\numberline {5.3.7}\texttt {\%timeit}: Aligner}{68}
+\contentsline {subsection}{\numberline {5.3.8}\texttt {\%timeit}: Fixer}{68}
+\contentsline {subsection}{\numberline {5.3.9}\texttt {\%timeit}: OMR/MIDI Corrector}{68}
+\contentsline {subsection}{\numberline {5.3.10}Scalability}{69}
+\contentsline {subsection}{\numberline {5.3.11}Implications of Free Music}{69}
+\contentsline {chapter}{\numberline {A}Alignment Visualization of K.525}{71}
+\contentsline {chapter}{\numberline {B}Alignment Visualization of K.525}{75}
+\contentsline {chapter}{\numberline {C}Alignment Visualization of Violin 1 part in K.160}{85}

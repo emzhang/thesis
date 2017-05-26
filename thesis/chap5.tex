@@ -4,10 +4,10 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter{Emamples and Results}
+\chapter{Examples and Results}
 This chapter will describe the results of my work using an excerpt of of W. A. Mozart's \textit{Eine Kleine Nachtmusik, K.525- I.Allegro} (referred to by just ``K.525'' from here onwards) as an example. It will also use an excerpt of W. A. Mozart's \textit{String Quartet No.7 in E-flat major, K.160- I.Allegro} (referred to by just ``K.160'' from here onwards) as an example where K.525 doesn't fit the specifications. This chapter will also look at timing metrics of the system.
 
-\section{Eine Kleine Nachtmusik, K.525- I.Allegro, W. A. Mozart}		`
+\section{Eine Kleine Nachtmusik, K.525- I.Allegro, W. A. Mozart}		
 This section will go through an example of how the entire \texttt{OMRMIDICorrector} system works on W. A. Mozart's \textit{Eine Kleine Nachtmusik, K.525- I.Allegro}.
 
 \begin{figure}[H]
@@ -51,7 +51,7 @@ k525omc.debugShow = True
 k525omc.processRunner()
 \end{minted}
 
-The outputs of the \texttt{showChanges} function are all in \ref{appa}
+The outputs of the \texttt{showChanges} function are all in Appendix \ref{appb}
 
 \subsubsection{A Closer Look at Specifics of \texttt{processrunner}}
 A lot of magic happens within \texttt{processRunner}, all of which was described at a high level in sections \ref{processrunner1} - \ref{processrunner2}. Here are some salient details of the process in the context of K.525 that I think deserve notice:
@@ -94,16 +94,16 @@ k160omrStream = converter.parse(k160OmrFilepath)
 k160omc = OMRMIDICorrector(k160midiStream, k160omrStream)
 k160omc.processRunner()
         
-k160omcV1Changes = k160omc.changes[0]
-k160omcV1Midi = k160omc.midiParts[0]
-k160omcV1Omr = k160omc.omrParts[0]
-k160EF = fixer.EnharmonicFixer(k160omcV1Changes, k160omcV1Midi, k160omcV1Omr)
+V1Changes = k160omc.changes[0]
+V1Midi = k160omc.midiParts[0]
+V1Omr = k160omc.omrParts[0]
+k160EF = fixer.EnharmonicFixer(V1Changes, V1Midi, V1Omr)
 k160EF.fix()
 
 k160omcViolin1OmrStream.show()
 \end{minted}
 
-In \ref{appb}, the first two figures below show the alignment visualization of the Violin 1 part. The last figure shows the corrected OMR score after it has been changed by the \texttt{EnharmonicFixer}.
+In Appendix\ref{appb}, the first two figures below show the alignment visualization of the Violin 1 part. The last figure shows the corrected OMR score after it has been changed by the \texttt{EnharmonicFixer}.
 
 \subsection{Analysis of Correction}
 Visual inspection of figures \ref{fig:k160postalignv1midi} and \ref{fig:k160postalignv1omr} suggests that the OMR failed to pick up the appropriate key signature of the movement and that is what lends to large number of changes in the first 10 or so measures. Inspection of figure \ref{fig:k160postfixv1} shows that many of the pitch errors have been corrected using the \texttt{EnharmonicFixer}. Of course, the most ideal scenario would be to recreate the key signature, but having the correct pitch is a good start. 
@@ -121,7 +121,7 @@ Thus, a single use of the \texttt{Hasher} is in $O(n) + O(k \cdot n) = O(n)$ tim
 \subsection{Runtime Analysis: \texttt{Aligner}}
 Setup of a \texttt{StreamAligner} object takes $O(n \cdot n) = O(n^2)$ time, dominated by the \texttt{populateDistanceMatrix} function. Traceback in the \texttt{calculateChangesList} method takes $O(n+ n) = O(n)$ time. The length of the \texttt{changes} list is then also $O(n)$. The runtime of \texttt{showChanges} is proportional to the length of the \texttt{changes} list, calculated above to be $O(n)$
 
-A single use of a \texttt{StreamAligner} object is in $O(n^2) + O(n) +O(n) = O(n^2) time$ 
+A single use of a \texttt{StreamAligner} object is in $O(n^2) + O(n) +O(n) = O(n^2)$ time. 
 
 \subsection{Runtime Analysis: \texttt{Fixer}}
 The \texttt{OMRMIDIFixer} and the \texttt{EnharmonicFixer} both require negligible setup. The \texttt{fix} function's runtime is proportional to the length of the \texttt{changes} list input, shown above to be $O(n)$. 
@@ -139,13 +139,13 @@ Using the the first movement of K.160, I timed some results using the \texttt{\%
 \subsection{\texttt{\%timeit}: Hasher}
 After setting up a \texttt{Hasher}, \texttt{\% timeit}  reported an average time of 621 ms per call to hash the MIDI stream and average time of 617 ms per call to hash the OMR stream. The length of the hashed MIDI stream was 662 and and the length of the hashed OMR stream was 669. 
 
-\subsection{texttt{\%timeit}: Aligner}
-After setting up a \texttt{StreamAligner} object using the hashed MIDI stream and the hashed OMR stream, I ran \texttt{\% timeit} on the \texttt{align} function and got an average of 2.39 s per call. Since the \texttt{align} function itself hashes input streams if not already hashed, I passed in the hashed streams. This produced more accurate measurement of the time for the alignment process, separate of the hashing process.
+\subsection{\texttt{\%timeit}: Aligner}
+After setting up a \texttt{StreamAligner} object using the hashed MIDI stream and the hashed OMR stream, I ran \texttt{\% timeit} on the \texttt{align} function and got an average of 2.39 s per call. Since the \texttt{align} function itself hashes input streams if not already hashed, I passed in the hashed streams. This produced more accurate measurement of the time for the alignment process, separate from the hashing process.
 
-\subsection{texttt{\%timeit}: Fixer}
+\subsection{\texttt{\%timeit}: Fixer}
 I set up a \texttt{EnharmonicFixer} object using the \texttt{changes} list from the aligning step and the original K.160 Violin 1 OMR and MIDI streams. Running \texttt{\% timeit} on the \texttt{fix} function returned an average of 12.7 ms per call. 
 
-\subsection{texttt{\%timeit}: OMR/MIDI Corrector}
+\subsection{\texttt{\%timeit}: OMR/MIDI Corrector}
 After testing the timing of each of the major modules, I tested the timing of the OMR/MIDI Correction system on the entire first movement of K.160. The average time to hash, align, and fix the four instrumental parts in K.160 was 12.94 s. 
 
 An entire run of the OMR/MIDI Corrector system on K.160 require 8 calls to the \texttt{Hasher}, 4 calls to the \texttt{Aligner}, and 4 calls to the \texttt{Fixer}. Using the empirical numbers from above, this gives an estimate of 14.56 seconds, which is in the range of the 12.94 seconds that \texttt{\%timeit} gives us. The speedup in the empirical time versus the calculated time likely comes from the fact that there is considerable setup that was reused in calling the \texttt{OMRMIDICorrector} once instead of its constituent modules. 
@@ -156,4 +156,4 @@ If a single movement of a four-part Mozart quartet takes on the order of tens of
 The bottleneck of the system lies in the \texttt{Aligner}. The method implemented in my system is a basic string alignment algorithm, and there is considerable room for speedup using techniques such as The Four Russian Algorithm \cite{seqalign}. 
 
 \subsection{Implications of Free Music}
-The lasting and tangible results of this research will hopefully be in helping providing more free and high-quality musical scores to the public. With ISMLP alone having over 100,000 scores that are freely available, there is a lot of potential for my work to liberate otherwise sub-quality scanned musical scores and turn them into digital scores that can be conveniently analyzed, replicated, and distributed. It's my hope that this work will be able to facilitate musical research, provide individuals and groups with easy access to practice material, and help bring more music to all of our lives.
+The lasting and tangible results of this research will hopefully be in helping providing more free and high-quality musical scores to the public. With ISMLP alone having over 350,000 scores that are freely available, there is a lot of potential for my work to liberate otherwise sub-quality scanned musical scores and turn them into digital scores that can be conveniently analyzed, replicated, and distributed. It's my hope that this work will be able to facilitate musical research, provide individuals and groups with easy access to practice material, and help bring more music to all of our lives.

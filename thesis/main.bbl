@@ -23,11 +23,6 @@ Algorithms for Computational~Biology.
 \newblock
   \url{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-096-algorithms-for-computational-biology-spring-2005/lecture-notes/lecture5_newest.pdf}.
 
-\bibitem{yeti}
-Antti Haapala.
-\newblock {Yeti Levenshtein Python Extension}.
-\newblock \url{https://pypi.python.org/pypi/python-Levenshtein/0.12.0}.
-
 \bibitem{hewlett}
 Walter~B Hewlett.
 \newblock {A Base-40 Number-line Representation of Musical Pitch Notation}.
@@ -56,6 +51,12 @@ Wolfgang~Amadeus Mozart.
 \newblock
   \url{http://ks.petruccimusiclibrary.org/files/imglnks/usimg/f/f1/IMSLP64127-PMLP05214-Mozart_Werke_Breitkopf_Serie_14_KV160.pdf}.
 \newblock Accessed: 2017-05-23.
+
+\bibitem{needleman}
+Saul~B. Needleman and Christian~D. Wunsch.
+\newblock {A general method applicable to the search for similarities in the
+  amino acid sequence of two proteins}.
+\newblock {\em Journal of Molecular Biology}, 48(3):443-- 453, March 1970.
 
 \bibitem{openscore}
 Openscore.

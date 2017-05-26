@@ -10,47 +10,50 @@ A level-1 auxiliary file: chap4.aux
 A level-1 auxiliary file: chap5.aux
 A level-1 auxiliary file: appa.aux
 A level-1 auxiliary file: appb.aux
+A level-1 auxiliary file: appc.aux
 A level-1 auxiliary file: biblio.aux
 The style file: plain.bst
 Database file #1: main.bib
+Warning--I didn't find a database entry for "yeti"
 You've used 15 entries,
             2118 wiz_defined-function locations,
-            592 strings with 6803 characters,
-and the built_in function-call counts, 4112 in all, are:
-= -- 417
-> -- 144
+            597 strings with 6900 characters,
+and the built_in function-call counts, 4252 in all, are:
+= -- 434
+> -- 150
 < -- 2
-+ -- 59
-- -- 43
-* -- 220
-:= -- 664
++ -- 61
+- -- 45
+* -- 244
+:= -- 686
 add.period$ -- 49
 call.type$ -- 15
-change.case$ -- 65
+change.case$ -- 66
 chr.to.int$ -- 0
 cite$ -- 15
-duplicate$ -- 157
-empty$ -- 374
-format.name$ -- 43
-if$ -- 891
+duplicate$ -- 161
+empty$ -- 380
+format.name$ -- 45
+if$ -- 916
 int.to.chr$ -- 0
 int.to.str$ -- 15
-missing$ -- 6
+missing$ -- 7
 newline$ -- 81
 num.names$ -- 28
-pop$ -- 96
+pop$ -- 91
 preamble$ -- 2
-purify$ -- 52
+purify$ -- 53
 quote$ -- 0
 skip$ -- 123
 stack$ -- 0
-substring$ -- 237
+substring$ -- 265
 swap$ -- 35
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 60
 warning$ -- 0
-while$ -- 40
+while$ -- 42
 width$ -- 17
-write$ -- 160
+write$ -- 162
+(There was 1 warning)
