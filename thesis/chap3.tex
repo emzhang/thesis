@@ -3,17 +3,17 @@
 The work of my thesis uses the universal Hasher for digital representations of music tool. This work was largely done in the Spring of 2015 as part of my undergraduate capstone supervised independent study (6.UAP). Additionally, experimental results in a related project, which focused on speeding up musical comparison by converting Python objects to C objects, provide evidence that the bottleneck in musical sequence alignment is not in the comparison step. Both subjects are described in more detail below but only to the extent necessary to understand the work of my thesis.
 
 \section{A Modular Universal Hasher} \label{hasher}
-Prior to my work on building a musical sequence aligner and fixer, I built a hasher with the specific intention that it would be able  to adapt according to different specification settings decided by the programmer [[\textbf{fix this sentence}]]. The programmer decides which kinds of \texttt{music21} stream elements and properties are relevant to their hash, and selects them to build a specific instance of a \texttt{Hasher} object. This \texttt{Hasher} instance can then be used to produce a hash from any \texttt{music21} stream. 
+Prior to my work on building a musical sequence aligner and fixer, I built a hasher with the specific intention that it would be able  to adapt according to different specification settings decided by the programmer. The programmer decides which kinds of \texttt{music21} stream elements, such as notes and chords, and properties, such as pitch name or duration, are relevant to their hash, and selects them to build a specific instance of a \texttt{Hasher} object. This \texttt{Hasher} instance can then be used to produce a hash from any \texttt{music21} stream. 
 
 \subsection{Why Musical Comparison and Alignment Needs a Modular Hashing Function}
 A hash function maps pieces of data of arbitrary size into data of fixed size and standard representation. If musical sequences could be discretized into elements and if these elements could be hashed, then the processes of comparison and alignment could be made deterministic and quick. 
 
-Depending upon the problem statement that calls for a hash in the first place, the details of this two step process:
+Depending upon the problem statement that calls for a hash in the first place, this is a two step process:
 \begin{enumerate}
 \item discretizing a musical sequence into a list of relevant elements
 \item hashing those elements  
 \end{enumerate}
-can vary. For instance, in determining the rhythmic similarity between two musical sequences, only the musical elements with durations (e.g. notes, chords, rests) in each sequence would be relevant. In hashing these elements, only properties such as duration and offset might be relevant. 
+The details of this process can vary.  For instance, in determining the rhythmic similarity between two musical sequences, only the musical elements with durations (e.g. notes, chords, rests) in each sequence would be relevant. In hashing these elements, only properties such as duration and offset might be relevant. 
 
 \begin{figure}[H]
 \centering
@@ -29,7 +29,7 @@ As another example, in determining whether one piece is an approximate transposi
 \includegraphics[scale=.7]{alg}
 \caption[Melody transposition hash]{The hash of features related to transposition of this short melody would be \textit{NoteHash(intervalFromLastNote=0), NoteHash(intervalFromLastNote=-2), NoteHash(intervalFromLastNote=-5)}}
 \end{figure}
-Once a musical sequence is discretized and represented as a hash sequence, each individual tuple in the hash sequence can be thought of as a point in the space of all combinations of possible element properties. Then, canonical edit distance or string alignment algorithms could be used to come up with a measure of similarity or an alignment between the two original musical sequences.
+Once a musical sequence is discretized and represented as a sequence of \texttt{NoteHash} objects, each individual tuple in the hash sequence can be thought of as a point in the space of all combinations of possible element properties. Then, canonical edit distance or string alignment algorithms can then be used to come up with a measure of similarity or an alignment between the two original musical sequences.
 
 \subsection{Previous Work on Modular Hashing Functions}
 The idea of extracting qualities of music specific to the needs of distance analyses and encoding that information in a lower-dimensional representation is not new. Typke in his thesis proposes what he calls a weighted point set representation of music \cite{typke}. His method of creating a weighted point set for a stream of music involves only taking melodic information (i.e. notes) and representing each discrete note as a three-tuple of (time, pitch, weight). The time component encodes information about the note's offset from the beginning. The pitch component encodes the note's pitch using the Hewlett's base-40 system (this is a numerical encoding similar to MIDI pitch but is also able to encode more information than just absolute frequency). The weight component is an assignment of how important the particular note is to the melody of the music stream." as something like "The weight component is an assignment of a numerical value to each note in the music stream, indicating the relative importance of the different notes within the melody \cite{hewlett}. 
@@ -41,7 +41,7 @@ Upon instantiation, \texttt{Hasher} does not take in any parameters. After an in
 
 After the hashing parameters are set, the user calls the \texttt{hashStream} method on a stream. This method strips the stream only to the relevant elements, creates a set of hash functions based on the user's selection of relevant element qualities, and individually hashes each element with the entire set of specified hashing functions. 
 
-For each element, the Hasher will create either a \texttt{NoteHash} or a \texttt{NoteHashWithReference} object and add it to the end of the \texttt{FinalHash} list. Both \texttt{NoteHash} and \texttt{NoteHashWithReference} are objects that hold the hashed qualities of a single stream element. The only difference is that a \texttt{NoteHashWithReference} stores a reference back to the original stream element. Even though this has a lot of overhead, it is necessary if ever the original streams need to referenced for context or if they need to be changed.
+The \texttt{Hasher} will create either a \texttt{NoteHash} or a \texttt{NoteHashWithReference} object for each element and add it to the end of the \texttt{FinalHash} list. Both are tuples that hold the hashed qualities of a single stream element. The only difference is that a \texttt{NoteHashWithReference} stores a reference back to the original stream element. Even though this has a lot of overhead, it is necessary if ever the original streams need to referenced for context or if they need to be changed.
 
 The output of the entire process is a list of  \texttt{NoteHash} or \texttt{NoteHashWithReference} objects, stored in \texttt{finalHash}.
 
@@ -74,16 +74,17 @@ There are several system-wide high level settings that must first be set before 
                     \item \texttt{\_hashIsAccidental} - If \texttt{True}, this will return a boolean indicating whether the pitch of the hashed element is outside of the key signature. This setting is currently not fully supported. 
                     \end{itemize}
         \subsubsection{Pre-Hashing: Low Level Chord Hashing Settings}
+        Chords can be thought of as multiple notes happening at the same time. In \texttt{music21}, chords are their own type of object that can be decomposed into \texttt{note} objects. In the hashing system, chords can be hashed as chords, or by their constituent notes.
                     \begin{itemize}
                     \item \texttt{\_hashPrimeFormString} - If \texttt{True}, this includes in the hash of chord a string representation of its prime form.
                     \item \texttt{\_hashChordNormalOrderString} - If \texttt{True}, this includes in the hash of a chord a string representation of its normal order. 
                     \end{itemize}
-        \subsubsection{Hashing: \texttt{hashStream}, the engine}
-        Once the settings of a \texttt{Hasher} instance have been set, we can call its \texttt{hashStreams} method on any stream. The following sections describe the what happens within a single \texttt{hashStreams} call. 
+        \subsubsection{Hashing: \texttt{hashStream}}
+        Once the settings of a \texttt{Hasher} instance have been set, we can call its \texttt{hashStream} method on any stream. The following sections describe the what happens within a single \texttt{hashStreams} call. 
         \subsubsection{Hashing: Setting up \texttt{ValidTypes} and \texttt{StateVars}}
         First, the method \texttt{setupValidTypesAndStateVars} is called to set up the state variables and the valid hashing types. Recall that by default \texttt{stateVars} is empty and \texttt{validTypes} is \texttt{[note.Note, note.Rest, chord.Chord]} (of course, the user has already had the option of changing \texttt{validTypes} to contain any subset of the default types). This method checks whether the user has set either of these two settings:
         \begin{enumerate}
-        \item \texttt{hashIntervalFromLastNote} - if this is set, then \texttt{IntervalFromLastNote} is added to \texttt{stateVars} to keep track of
+        \item \texttt{hashIntervalFromLastNote} - if this is set, then \texttt{IntervalFromLastNote} is added to \texttt{stateVars} to keep track of it. 
         \item \texttt{hashIsAccidental} - if this is set, then \texttt{KeySignature} is added to \texttt{stateVars} to keep track of, and \texttt{key.KeySignature} is added to the list of \texttt{validTypes} to hash. 
         \end{enumerate}
         
@@ -94,10 +95,10 @@ There are several system-wide high level settings that must first be set before 
         Next the \texttt{hashStream} method builds a list of elements that are to be hashed by filtering the recursed stream of any types that are not in \texttt{validTypes}. This is stored in \texttt{finalEltsToBeHashed}.
         
         \subsubsection{Hashing: Building a Set of Hashing Functions}
-        The method \texttt{setupTupleList} is called, and it sets up \texttt{tupleList}, \texttt{hashingFunctions} and \texttt{tupleClass}, all related to each other. \texttt{tupleList} is a list of all the element properties that should be hashed. \texttt{hashingFunctions} is a dictionary of which hashing function should be used for each property. \texttt{tupleClass} is a \texttt{NamedTuple} that is constructed ad hoc based on which properties are to be hashed. The ad hoc construction accommodates for the fact that different \texttt{Hasher} instances will contain different things to hash. 
+        The method \texttt{setupTupleList} is called, and it sets up \texttt{tupleList}, \texttt{hashingFunctions} and \texttt{tupleClass}, all related to each other. \texttt{tupleList} is a list of all the element properties that should be hashed. \texttt{hashingFunctions} is a dictionary of which hashing function should be used for each property. \texttt{tupleClass} is a \texttt{namedtuple} that is constructed ad hoc based on which properties are to be hashed. The ad hoc construction accommodates for the fact that different \texttt{Hasher} instances will contain different things to hash. 
         
         \subsubsection{Hashing: Creating a \texttt{NoteHash} for Every Element}
-        For each of the elements in \texttt{finalEltsToBeHashed}, the \texttt{Hasher} hashes every one of its properties that are to be hashed using the hashing function listed in \texttt{hashingFunctions}. It creates a single \texttt{NamedTuple} called a \texttt{NoteHash} for each element from \texttt{finalEltsToBeHashed}.
+        For each of the elements in \texttt{finalEltsToBeHashed}, the \texttt{Hasher} hashes its relevant properties using the hashing function listed in \texttt{hashingFunctions}. It then creates a single \texttt{NoteHash} that stores all the hashed properties.
         
         \subsubsection{Hashing: Building \texttt{finalHash}}
         If \texttt{includeReference} is set to \texttt{False}, then each new \texttt{NoteHash} object is directly added to \texttt{finalHash}. If \texttt{includeReference} is \texttt{True}, then each \texttt{NoteHash} gets replaced with a \texttt{NoteHashWithReference} object that includes a reference to the original stream element, and that gets added to \texttt{finalHash} instead.

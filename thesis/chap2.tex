@@ -114,7 +114,7 @@ No-change                      & 0
 Considerations such as these go into the creation of a musical sequence aligner as well. 
 \subsubsection{Alignment}
 
-Recall that the edit distance between two sequences come from the least-cost alignment. The figure below shows a valid alignment, but it is certainly not the least-cost alignment, and therefore does not correspond to the edit distance between between the two sequences. 
+Recall that the edit distance between two sequences is defined as the least-cost alignment. Figure \ref{badalign} shows a valid alignment, but it is certainly not the least-cost alignment, and therefore does not correspond to the edit distance between between the two sequences, as it requires four substitutions, one insertion, and one deletion.
 
 \begin{figure}[!h]
 \centering
@@ -126,7 +126,7 @@ seq2 & {\color[HTML]{009901} \textbf{J}}  & {\color[HTML]{6200C9} \textbf{U}} & 
 \label{badalign}
 \end{figure}
 
-If we have two sequences, of length $n$ and $m$, then we have $\binom{n+m}{m}$ possible alignments. Put into context, consider a two melodies of 10 notes each. Naively aligning just the note pitches, we have 184,765 different possible alignments! Clearly this isn't scalable, which is why we rely heavily on this piece of insight: A globally optimal alignment contains locally optimal alignments! This means that we can reuse the computations of subproblems to solve larger problems. What follows from this piece of insight is that for two strings split at $(i, j)$, the best alignment is:
+If there are two sequences, of length $n$ and $m$, then they have $\binom{n+m}{m}$ possible alignments. Put into context, consider two melodies of 10 notes each. Naively aligning just the note pitches, we have 184,765 different possible alignments! Clearly this isn't scalable, which is why we rely heavily on this piece of insight: A globally optimal alignment contains locally optimal alignments! This means that we can reuse the computations of subproblems to solve larger problems. What follows from this piece of insight is that for two strings split at $(i, j)$, the best alignment is:
 
 \begin{center}
 best alignment of \texttt{string1}$[:i]$ and \texttt{string2}$[:j]$ 
@@ -147,7 +147,7 @@ $+$ best alignment of \texttt{string1}$[i:]$ and \texttt{string2}$[j:]$
 \label{indexed musical and justice}
 \end{figure}
 
-If we can keep track of all the possible alignment subproblems, we can recursively build an optimal solution using the answers from the subproblems. One way to represent this is with a scoring matrix indexed by $i$ and $j$. For the problem of aligning \textbf{MUSICAL} and \textbf{JUSTICE}, the setup would look something like this:
+If we can keep track of all the possible alignment subproblems, we can recursively build an optimal solution using the answers from the subproblems. One way to represent this is with a scoring matrix indexed by $i$ and $j$. For the problem of aligning \textbf{MUSICAL} and \textbf{JUSTICE}, the setup would look something like the following.
 
 
 \begin{figure}[!h]
@@ -174,13 +174,13 @@ Recall that we have defined the problem in three different ways:
 \item Finding a series of operations that transforms \textbf{MUSICAL} into \textbf{JUSTICE}
 \end{enumerate}
 
-All of these problem definitions are (almost) one and the same. Calculating the edit distance will also provide a good alignment of the two words and a good alignment necessitates a series of character change operations. It is important to know that that (3) has an implicit directionality built into the problem statement. It won't always be the case that alignments and transformations are symmetric (i.e. cost the same and have the same series of operations), and having a simple cost operation functions, such as in tables 
+All of these problem definitions are (almost) one and the same. Calculating the edit distance will also provide a good alignment of the two words and a good alignment necessitates a series of character change operations. It is important to know that that (3) has an implicit directionality built into the problem statement. It won't always be the case that alignments and transformations are symmetric (i.e. cost the same and have the same series of operations), but having a simple cost operation functions, such as in tables 
 \ref{tab:naivetable}
  and 
  \ref{tab:naivetable2} 
  will make such problems symmetric. 
 
-In this particular sample problem, we will always be transforming \textbf{MUSICAL} into \textbf{JUSTICE}. In the context of my thesis, we will always be transforming OMR sequences in MIDI sequences. 
+In this particular sample problem, we will always be transforming one word, \textbf{MUSICAL} into another, \textbf{JUSTICE}. In the context of my thesis, we will always be transforming OMR sequences in MIDI sequences. 
 
 After we've set up is the scoring matrix, we will populate it with initial values: 
 \begin{enumerate}
@@ -188,15 +188,14 @@ After we've set up is the scoring matrix, we will populate it with initial value
 \item $i-1 \cdot insertion cost$ for $i$ in $(i, 0)$ (this is the first column) 
 \item $j-1 \cdot deletion cost$ for $j$ in $(0, j)$ (this is the first column) 
 \end{enumerate}
-[[somehow there needs to be an explanation that insertions are vertical movements, deletions are horizontal movements, and this is all relative to how you define the problem of transforming X->Y or Y->X ]]
-
+In reading a scoring matrix setup like this, insertions are vertical movements, deletions are horizontal movements, and substitutions are diagonal. 
 After we've set up the initial matrix, we can go through and fill in all of the remaining slots using this update rule:
 
 
 \begin{equation*}
 \begin{split}
 \text{D[i][j]} = &  \text{min \{ }\\
-& \text{D[i-1][j] + insCost,} \\
+& \text{D[i-1][j] + insCost (),} \\
 & \text{D[i][j-1] + delCost,} \\
 & \text{D[i-1][j-1] + subCost} \\
 \text{\}}

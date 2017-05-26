@@ -28,14 +28,14 @@
 \contentsline {subsubsection}{\numberline {3.1.3.2}Pre-Hashing: Low Level General Settings}{35}
 \contentsline {subsubsection}{\numberline {3.1.3.3}Pre-Hashing: Low Level Note Settings}{36}
 \contentsline {subsubsection}{\numberline {3.1.3.4}Pre-Hashing: Low Level Chord Hashing Settings}{36}
-\contentsline {subsubsection}{\numberline {3.1.3.5}Hashing: \texttt {hashStream}, the engine}{37}
+\contentsline {subsubsection}{\numberline {3.1.3.5}Hashing: \texttt {hashStream}}{37}
 \contentsline {subsubsection}{\numberline {3.1.3.6}Hashing: Setting up \texttt {ValidTypes} and \texttt {StateVars}}{37}
 \contentsline {subsection}{\numberline {3.1.4}Hashing: Preprocessing the Stream}{37}
-\contentsline {subsubsection}{\numberline {3.1.4.1}Hashing: Creating a List of Elements to be Hashed}{37}
+\contentsline {subsubsection}{\numberline {3.1.4.1}Hashing: Creating a List of Elements to be Hashed}{38}
 \contentsline {subsubsection}{\numberline {3.1.4.2}Hashing: Building a Set of Hashing Functions}{38}
 \contentsline {subsubsection}{\numberline {3.1.4.3}Hashing: Creating a \texttt {NoteHash} for Every Element}{38}
 \contentsline {subsubsection}{\numberline {3.1.4.4}Hashing: Building \texttt {finalHash}}{38}
-\contentsline {section}{\numberline {3.2}Low-level Object Comparison Optimizations}{38}
+\contentsline {section}{\numberline {3.2}Low-level Object Comparison Optimizations}{39}
 \contentsline {chapter}{\numberline {4}Final Implementation}{41}
 \contentsline {section}{\numberline {4.1}OMRMIDICorrector}{42}
 \contentsline {subsection}{\numberline {4.1.1}System Overview}{42}
