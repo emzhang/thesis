@@ -14,6 +14,12 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -28,8 +34,6 @@ INPUT lgrind.sty
 INPUT lgrind.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/minted/minted.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/minted/minted.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 MAY 2017 00:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 MAY 2017 02:27
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -367,11 +367,8 @@ runsystem(which "pygmentize" && touch "main.aex")...executed.
 runsystem(rm "main.aex")...executed.
 
 (./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
-(./chap3.aux) (./chap4.aux
-
-LaTeX Warning: Label `fixer' multiply defined.
-
-) (./chap5.aux) (./biblio.aux))
+(./chap3.aux) (./chap4.aux) (./chap5.aux) (./appa.aux) (./appb.aux)
+(./biblio.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -474,20 +471,24 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [8]
-Underfull \vbox (badness 2556) has occurred while \output is active []
+Underfull \vbox (badness 2318) has occurred while \output is active []
 
  [9])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
 
-[10] (./main.lof [11
+[10] (./main.lof
+Underfull \vbox (badness 2495) has occurred while \output is active []
+
+ [11
 
 ])
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [12] (./main.lot)
+
+[12] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
@@ -576,13 +577,6 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
 ]
 Chapter 4.
 
-Overfull \hbox (3.16653pt too wide) in paragraph at lines 17--18
-\T1/cmr/m/n/12 (-20) The en-tire sys-tem re-sides within the \T1/cmtt/m/n/12 OM
-RMIDICorrector \T1/cmr/m/n/12 (-20) class in \T1/cmtt/m/n/12 omrMidiCorrector.p
-y\T1/cmr/m/n/12 (-20) .
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
@@ -649,13 +643,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54 <./images/K525_I_MIDI_Violin_2-1.png>] [55 <./images/K525_I_OMR_Violin_2-1
 .png>]
-[56] [57]
-Overfull \hbox (5.01344pt too wide) in paragraph at lines 210--211
-\T1/cmr/m/n/12 (-20) Streams and the el-e-ments they con-tain are com-plex ob-j
-ects, so \T1/cmtt/m/n/12 NoteHashWithReference
- []
-
-[58]) [59]
+[56] [57] [58]) [59]
 \openout2 = `chap5.aux'.
 
  (./chap5.tex [60
@@ -679,10 +667,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [62 <./images/k525originalomrscan.png>] [63]
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o "
-_minted-main/3A9C90600E9E6844DE68C9623ECD981B7BC9F1650E5147204109012551E408CD.p
-ygtex" "main.pyg" )...executed.
-
 
 (./_minted-main/3A9C90600E9E6844DE68C9623ECD981B7BC9F1650E5147204109012551E408C
 D.pygtex)
@@ -690,247 +674,278 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 43.
 \openout3 = `main.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o "
-_minted-main/E91C79C853DD9D25DB9A63C8763612357BC9F1650E5147204109012551E408CD.p
-ygtex" "main.pyg" )...executed.
-
 
 (./_minted-main/E91C79C853DD9D25DB9A63C8763612357BC9F1650E5147204109012551E408C
-D.pygtex) <images/K525_I_MIDI_Violin_1-1.png, id=253, 597.432pt x 845.0772pt>
-File: images/K525_I_MIDI_Violin_1-1.png Graphic file (type png)
+D.pygtex) [64] [65]
+Overfull \hbox (32.90724pt too wide) in paragraph at lines 81--81
+[]\T1/cmr/bx/n/17.28 String Quar-tet No.7 in E-flat ma-jor, K.160- I.Allegro,
+ []
 
-<use images/K525_I_MIDI_Violin_1-1.png>
-Package pdftex.def Info: images/K525_I_MIDI_Violin_1-1.png used on input line 5
-8.
-(pdftex.def)             Requested size: 390.25534pt x 552.04027pt.
- [64]
-<images/K525_I_OMR_Violin_1-1.png, id=258, 597.432pt x 845.0772pt>
-File: images/K525_I_OMR_Violin_1-1.png Graphic file (type png)
-
-<use images/K525_I_OMR_Violin_1-1.png>
-Package pdftex.def Info: images/K525_I_OMR_Violin_1-1.png used on input line 64
-.
-(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [65 <./images/K525_I_MIDI_Violin_1-1.png>]
-File: images/K525_I_MIDI_Violin_2-1.png Graphic file (type png)
- <use images/K525_I_MIDI_Violin_2-1.png>
-Package pdftex.def Info: images/K525_I_MIDI_Violin_2-1.png used on input line 7
-0.
-(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [66 <./images/K525_I_OMR_Violin_1-1.png>]
-File: images/K525_I_OMR_Violin_2-1.png Graphic file (type png)
- <use images/K525_I_OMR_Violin_2-1.png>
-Package pdftex.def Info: images/K525_I_OMR_Violin_2-1.png used on input line 76
-.
-(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [67]
-<images/K525_I_MIDI_Viola-1.png, id=271, 597.432pt x 845.0772pt>
-File: images/K525_I_MIDI_Viola-1.png Graphic file (type png)
-
-<use images/K525_I_MIDI_Viola-1.png>
-Package pdftex.def Info: images/K525_I_MIDI_Viola-1.png used on input line 82.
-(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [68]
-<images/K525_I_OMR_Viola-1.png, id=275, 597.432pt x 845.0772pt>
-File: images/K525_I_OMR_Viola-1.png Graphic file (type png)
-
-<use images/K525_I_OMR_Viola-1.png>
-Package pdftex.def Info: images/K525_I_OMR_Viola-1.png used on input line 88.
-(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [69 <./images/K525_I_MIDI_Viola-1.png>]
-<images/K525_I_MIDI_Cello-1.png, id=280, 597.432pt x 845.0772pt>
-File: images/K525_I_MIDI_Cello-1.png Graphic file (type png)
-
-<use images/K525_I_MIDI_Cello-1.png>
-Package pdftex.def Info: images/K525_I_MIDI_Cello-1.png used on input line 94.
-(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [70 <./images/K525_I_OMR_Viola-1.png>]
-<images/K525_I_OMR_Cello-1.png, id=285, 597.432pt x 845.0772pt>
-File: images/K525_I_OMR_Cello-1.png Graphic file (type png)
-
-<use images/K525_I_OMR_Cello-1.png>
-Package pdftex.def Info: images/K525_I_OMR_Cello-1.png used on input line 100.
-(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [71 <./images/K525_I_MIDI_Cello-1.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [72 <./images/K525_I_OMR_Cello-1.png>] [73]
 \openout3 = `main.pyg'.
-
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o "
-_minted-main/BA45B34B868B7154811B650EF5A85CB87BC9F1650E5147204109012551E408CD.p
-ygtex" "main.pyg" )...executed.
 
 
 (./_minted-main/BA45B34B868B7154811B650EF5A85CB87BC9F1650E5147204109012551E408C
-D.pygtex [74])
-<images/K160_MIDI_Violin_1-1.png, id=302, 597.432pt x 845.0772pt>
-File: images/K160_MIDI_Violin_1-1.png Graphic file (type png)
+D.pygtex [66])
+Underfull \vbox (badness 1845) has occurred while \output is active []
 
-<use images/K160_MIDI_Violin_1-1.png>
-Package pdftex.def Info: images/K160_MIDI_Violin_1-1.png used on input line 158
+ [67]
+[68]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+[70]) [71]
+\openout2 = `appa.aux'.
+
+ (./appa.tex [72
+
+
+
+]
+Appendix A.
+[73] <images/K525_I_MIDI_Violin_1-1.png, id=287, 597.432pt x 845.0772pt>
+File: images/K525_I_MIDI_Violin_1-1.png Graphic file (type png)
+
+<use images/K525_I_MIDI_Violin_1-1.png>
+Package pdftex.def Info: images/K525_I_MIDI_Violin_1-1.png used on input line 6
+.
+(pdftex.def)             Requested size: 390.25534pt x 552.04027pt.
+
+<images/K525_I_OMR_Violin_1-1.png, id=288, 597.432pt x 845.0772pt>
+File: images/K525_I_OMR_Violin_1-1.png Graphic file (type png)
+
+<use images/K525_I_OMR_Violin_1-1.png>
+Package pdftex.def Info: images/K525_I_OMR_Violin_1-1.png used on input line 12
 .
 (pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75]
-<images/K160_OMR_Violin_1-1.png, id=306, 597.432pt x 845.0772pt>
-File: images/K160_OMR_Violin_1-1.png Graphic file (type png)
+ [74
 
-<use images/K160_OMR_Violin_1-1.png>
-Package pdftex.def Info: images/K160_OMR_Violin_1-1.png used on input line 165.
-
+ <./images/K525_I_MIDI_Violin_1-1.png>]
+File: images/K525_I_MIDI_Violin_2-1.png Graphic file (type png)
+ <use images/K525_I_MIDI_Violin_2-1.png>
+Package pdftex.def Info: images/K525_I_MIDI_Violin_2-1.png used on input line 1
+8.
 (pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76 <./images/K160_MIDI_Violin_1-1.png>]
-<images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png, id=311, 597.432pt x 845.
+ [75 <./images/K525_I_OMR_Violin_1-1.png>]
+File: images/K525_I_OMR_Violin_2-1.png Graphic file (type png)
+ <use images/K525_I_OMR_Violin_2-1.png>
+Package pdftex.def Info: images/K525_I_OMR_Violin_2-1.png used on input line 24
+.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76]
+<images/K525_I_MIDI_Viola-1.png, id=300, 597.432pt x 845.0772pt>
+File: images/K525_I_MIDI_Viola-1.png Graphic file (type png)
+
+<use images/K525_I_MIDI_Viola-1.png>
+Package pdftex.def Info: images/K525_I_MIDI_Viola-1.png used on input line 30.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77]
+<images/K525_I_OMR_Viola-1.png, id=304, 597.432pt x 845.0772pt>
+File: images/K525_I_OMR_Viola-1.png Graphic file (type png)
+
+<use images/K525_I_OMR_Viola-1.png>
+Package pdftex.def Info: images/K525_I_OMR_Viola-1.png used on input line 36.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78 <./images/K525_I_MIDI_Viola-1.png>]
+<images/K525_I_MIDI_Cello-1.png, id=309, 597.432pt x 845.0772pt>
+File: images/K525_I_MIDI_Cello-1.png Graphic file (type png)
+
+<use images/K525_I_MIDI_Cello-1.png>
+Package pdftex.def Info: images/K525_I_MIDI_Cello-1.png used on input line 42.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [79 <./images/K525_I_OMR_Viola-1.png>]
+<images/K525_I_OMR_Cello-1.png, id=315, 597.432pt x 845.0772pt>
+File: images/K525_I_OMR_Cello-1.png Graphic file (type png)
+
+<use images/K525_I_OMR_Cello-1.png>
+Package pdftex.def Info: images/K525_I_OMR_Cello-1.png used on input line 48.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [80 <./images/K525_I_MIDI_Cello-1.png>] [81 <./images/K525_I_OMR_Cello-1.png>]
+)
+\openout2 = `appb.aux'.
+
+
+(./appb.tex [82
+
+
+
+
+]
+Appendix B.
+[83] <images/K160_MIDI_Violin_1-1.png, id=330, 597.432pt x 845.0772pt>
+File: images/K160_MIDI_Violin_1-1.png Graphic file (type png)
+
+<use images/K160_MIDI_Violin_1-1.png>
+Package pdftex.def Info: images/K160_MIDI_Violin_1-1.png used on input line 7.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+<images/K160_OMR_Violin_1-1.png, id=331, 597.432pt x 845.0772pt>
+File: images/K160_OMR_Violin_1-1.png Graphic file (type png)
+
+<use images/K160_OMR_Violin_1-1.png>
+Package pdftex.def Info: images/K160_OMR_Violin_1-1.png used on input line 14.
+(pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [84
+
+ <./images/K160_MIDI_Violin_1-1.png>]
+<images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png, id=336, 597.432pt x 845.
 0772pt>
 File: images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png Graphic file (type p
 ng)
  <use images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png>
 Package pdftex.def Info: images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png u
-sed on input line 172.
+sed on input line 21.
 (pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77 <./images/K160_OMR_Violin_1-1.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [78 <./images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png>]
-Overfull \hbox (48.35526pt too wide) in paragraph at lines 186--187
-\T1/cmr/m/n/12 (-20) Setup of the \T1/cmtt/m/n/12 Hasher \T1/cmr/m/n/12 (-20) o
-b-ject is in $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (-20) (\OML/cmm/m/it/12 n\OT1/c
-mr/m/n/12 (-20) )$ \T1/cmr/m/n/12 (-20) time, dom-i-nated by build-ing the list
- \T1/cmtt/m/n/12 finalEltsToBeHashed
- []
-
-[79] [80] [81]
-
-LaTeX Warning: Citation `seqalign' on page 82 undefined on input line 223.
-
-) [82] [83]
+ [85 <./images/K160_OMR_Violin_1-1.png>] [86 <./images/K160_Violin_1_Part_OMR_E
+nharmonic_Fixer-1.png>])
 \openout2 = `biblio.aux'.
 
- (./biblio.tex (./main.bbl [84
+ (./biblio.tex (./main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+[]\T1/cmr/m/n/12 (+20) Algorithms for Com-pu-ta-tional Bi-ol-ogy.  Se-quence Al
+ign-ment and
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+\T1/cmr/m/n/12 (+20) Dy-namic Pro-gram-ming, Lec-ture notes for 6.096.  $\T1/cm
+tt/m/n/12 https : / / ocw .
+ []
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 35--40
-[]\T1/cmr/m/n/12 (+20) Wolfgang Amadeus Mozart.  Eine kleine nacht-musik, k. 52
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+\T1/cmtt/m/n/12 mit . edu / courses / electrical-[]engineering-[]and-[]computer
+-[]science /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+\T1/cmtt/m/n/12 6-[]096-[]algorithms-[]for-[]computational-[]biology-[]spring-[
+]2005 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--52
+[]\T1/cmr/m/n/12 (+20) Wolfgang Amadeus Mozart.  Eine Kleine Nacht-musik, K. 52
 5.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--40
+Underfull \hbox (badness 10000) in paragraph at lines 47--52
 \T1/cmtt/m/n/12 http : / / ks . petruccimusiclibrary . org / files / imglnks / 
 usimg / 5 / 57 /
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 35--40
+Underfull \hbox (badness 1394) in paragraph at lines 47--52
 \T1/cmtt/m/n/12 IMSLP01776-[]Mozart _ EineKleineNachtmusik _ Score . pdf$\T1/cm
 r/m/n/12 (+20) .  Ac-cessed: 2017-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--47
+Underfull \hbox (badness 10000) in paragraph at lines 54--59
 \T1/cmtt/m/n/12 http : / / ks . petruccimusiclibrary . org / files / imglnks / 
 usimg / f / f1 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--47
+Underfull \hbox (badness 10000) in paragraph at lines 54--59
 \T1/cmtt/m/n/12 IMSLP64127-[]PMLP05214-[]Mozart _ Werke _ Breitkopf _ Serie _ 1
 4 _ KV160 . pdf$\T1/cmr/m/n/12 (+20) .
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 55--59
+Underfull \hbox (badness 10000) in paragraph at lines 61--65
+[]\T1/cmr/m/n/12 (+20) Openscore.  $\T1/cmtt/m/n/12 https : / / musescore . org
+ / en / user / 57401 / blog / 2017 / 01 / 11 /
+ []
+
+[87
+
+
+
+
+]
+Underfull \hbox (badness 6204) in paragraph at lines 67--71
 []\T1/cmr/m/n/12 (+20) An ex-cerpt of a mul-ti-ple se-quence align-ment of tmem
 66 pro-teins.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--59
+Underfull \hbox (badness 10000) in paragraph at lines 67--71
 \T1/cmtt/m/n/12 https : / / commons . wikimedia . org / wiki / File : An _ exce
 rpt _ of _ a _ multiple _
  []
 
-[85])) [86]
+)) [88]
 runsystem(rm "main.pyg")...executed.
 
- (./main.aux (./cover.aux) (./contents.aux) (./chap1.aux)
-(./chap2.aux) (./chap3.aux) (./chap4.aux) (./chap5.aux) (./biblio.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ (./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
+(./chap3.aux) (./chap4.aux) (./chap5.aux) (./appa.aux) (./appb.aux)
+(./biblio.aux)) ) 
 Here is how much of TeX's memory you used:
- 8715 strings out of 493014
- 143328 string characters out of 6133351
- 285319 words of memory out of 5000000
- 11809 multiletter control sequences out of 15000+600000
- 26721 words of font info for 122 fonts, out of 8000000 for 9000
+ 8734 strings out of 493014
+ 143472 string characters out of 6133351
+ 286429 words of memory out of 5000000
+ 11814 multiletter control sequences out of 15000+600000
+ 26653 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,17n,42p,1110b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dist/font
-s/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
-pe1/public/cm-super/sftt1440.pfb>
-Output written on main.pdf (86 pages, 2884170 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/c
+m-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1095.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/cm-super/sftt1440.pfb>
+Output written on main.pdf (88 pages, 2884084 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
- 271 compressed objects within 3 object streams
+ 432 PDF objects out of 1000 (max. 8388607)
+ 275 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  26735 words of extra memory for PDF output out of 29859 (max. 10000000)
 

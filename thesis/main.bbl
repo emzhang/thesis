@@ -4,25 +4,37 @@
 
 \bibitem{byrd-testbed}
 Donald Byrd and Jakob~Grue Simonsen.
-\newblock Towards a standard testbed for optical music recognition:
-  Definitions, metrics, and page images.
+\newblock {Towards a Standard Testbed for Optical Music Recognition:
+  Definitions, Metrics, and Page Images}.
 \newblock {\em Journal of New Music Research}, 44.3:169-- 195, 2015.
 
 \bibitem{church}
 Maura Church and Michael~Scott Cuthbert.
-\newblock Improving rhythmic transcriptions via probability models applied
-  post-omr.
+\newblock {Improving Rhythmic Transcriptions via Probability Models Applied
+  Post-{OMR}}.
 \newblock In Hsin-Min Wang, Yi-Hsuan Yang, and Jin~Ha Lee, editors, {\em
   Proceedings of the 15th Conference of the International Society for Music
-  Information Retrieval}, pages 643-- 647. ISMIR, 10 2014.
+  Information Retrieval}, pages 643-- 647. ISMIR, 10, 2014.
+
+\bibitem{seqalign}
+Algorithms for Computational~Biology.
+\newblock {Sequence Alignment and Dynamic Programming, Lecture notes for
+  6.096}.
+\newblock
+  \url{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-096-algorithms-for-computational-biology-spring-2005/lecture-notes/lecture5_newest.pdf}.
+
+\bibitem{yeti}
+Antti Haapala.
+\newblock {Yeti Levenshtein Python Extension}.
+\newblock \url{https://pypi.python.org/pypi/python-Levenshtein/0.12.0}.
 
 \bibitem{hewlett}
 Walter~B Hewlett.
-\newblock A base-40 number-line representation of musical pitch notation.
+\newblock {A Base-40 Number-line Representation of Musical Pitch Notation}.
 \newblock {\em Musikometrika}, 4:1--14, 1992.
 
 \bibitem{imslp}
-Imslp/petrucci library free public domain sheet music.
+{IMSLP/Petrucci Library Free Public Domain Sheet Music}.
 \newblock \url{http://imslp.org/}.
 \newblock Accessed: 2015-10-10.
 
@@ -33,20 +45,20 @@ Peter Joslin.
 
 \bibitem{k525}
 Wolfgang~Amadeus Mozart.
-\newblock Eine kleine nachtmusik, k. 525.
+\newblock Eine {Kleine} {Nachtmusik}, {K}. 525.
 \newblock
   \url{http://ks.petruccimusiclibrary.org/files/imglnks/usimg/5/57/IMSLP01776-Mozart_EineKleineNachtmusik_Score.pdf}.
 \newblock Accessed: 2017-05-23.
 
 \bibitem{k160}
 Wolfgang~Amadeus Mozart.
-\newblock String quartet no.7 in e-flat major, k.160/159a.
+\newblock {String Quartet No.7 in E-flat major, K.160/159a}.
 \newblock
   \url{http://ks.petruccimusiclibrary.org/files/imglnks/usimg/f/f1/IMSLP64127-PMLP05214-Mozart_Werke_Breitkopf_Serie_14_KV160.pdf}.
 \newblock Accessed: 2017-05-23.
 
 \bibitem{openscore}
-Introducing openscore.
+Openscore.
 \newblock
   \url{https://musescore.org/en/user/57401/blog/2017/01/11/introducing-openscore}.
 \newblock Accessed: 2017-05-22.
@@ -60,22 +72,22 @@ An excerpt of a multiple sequence alignment of tmem66 proteins.
 \bibitem{rebelo}
 Ana Rebelo, Ichiro Fujinaga, Filipe Paszkiewicz, Andre R.~S. Marcal, Carlos
   Guedes, and Jaime~S. Cardoso.
-\newblock Optical music recognition: state-of-the-art and open issues.
+\newblock {Optical Music Recognition - State-of-the-Art and Open Issues}.
 \newblock {\em International Journal of Multimedia Information Retrieval},
   1(3):173--190, Feb 2012.
 
 \bibitem{temperley}
 David Temperley.
-\newblock An algorithm for harmonic analysis.
-\newblock {\em Music Perception: An Interdisciplinary Journal}, 15.1:31--68,
+\newblock {An Algorithm for Harmonic Analysis}.
+\newblock {\em Music Perception: An Interdisciplinary Journal}, 15.1:31-- 68,
   1997.
 
 \bibitem{peachnote}
 Vladimir Viro.
-\newblock Peachnote: Music score search and analysis platform.
+\newblock {Peachnote: Music Score Search and Analysis Platform}.
 \newblock In Anssi Klapuri and Leider Kolby, editors, {\em Proceedings of the
   12th Conference of the International Society for Music Information
-  Retrieval}, pages 359-- 362. ISMIR, 10 2014.
+  Retrieval}, pages 359-- 362. ISMIR, 10, 2014.
 
 \bibitem{white}
 Christopher~Wm. White.

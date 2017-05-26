@@ -14,7 +14,7 @@ The inputs to the system are two \texttt{music21} streams (one OMR, one MIDI). T
 \section{OMRMIDICorrector}
 
 \subsection{System Overview}
-The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{omrMidiCorrector.py}. This class is initialized with a \texttt{midiStream}, an \texttt{omrStream} and an optional \texttt{Hasher}. The \texttt{Hasher} parameter is optional because the system provides a default \texttt{Hasher} with some all-purpose settings if no \texttt{Hasher} is passed in. The method \texttt{processRunner} is the main method of this class that preprocesses the streams, sets up the appropriate \texttt{Hasher}, and calls the aligning and fixing methods.
+The system is the \texttt{OMRMIDICorrector} class in \texttt{omrMidiCorrector.py}. This class is initialized with a \texttt{midiStream}, an \texttt{omrStream} and an optional \texttt{Hasher}. The \texttt{Hasher} parameter is optional because the system provides a default \texttt{Hasher} with some all-purpose settings if no \texttt{Hasher} is passed in. The method \texttt{processRunner} is the main method of this class that preprocesses the streams, sets up the appropriate \texttt{Hasher}, and calls the aligning and fixing methods.
 
 \begin{figure}[!h]
 \centering
@@ -54,7 +54,7 @@ The next step in the \texttt{processRunner} method is setting up the \texttt{Has
 This method creates a \texttt{StreamAligner} object for each pairwise MIDI part and OMR part found in \texttt{midiParts} and \texttt{omrParts} and aligns the two parts, calculates their similarity metrics, and visually shows the changes and alignment if \texttt{debugShow} is \texttt{True}. There is more detail about how the \texttt{StreamAligner} object works in section \ref{aligner}
 
 \subsubsection{processRunner: fixStreams}\label{processrunner2}
-The last step is of the entire process is to fix the OMR stream. While the \texttt{Fixer} still remains in development, the description of this method and the \texttt{Fixer} in section \label{fixer} will remain at a high level. 
+The last step is of the entire process is to fix the OMR stream. While the \texttt{Fixer} still remains in development, the description of this method and the \texttt{Fixer} in section \ref{fixer} will remain at a high level. 
 
 In its final implementation, \texttt{fixStreams} should create instances of the \texttt{OMRMidiFixer} object, one per pair of aligned streams and their \texttt{changes} list. This is the base class that all other \texttt{Fixer} objects inherit from. The user would be able to choose which \texttt{Fixer} objects they want to create and use on all the pairs of streams. 
 
@@ -163,7 +163,7 @@ After the backtrace to find the alignment, there is enough data to calculate som
 \subsubsection{Post-Alignment: Visual Display of Alignment}
 The \texttt{showChanges} method provides a visual display of how the two streams are related via the \texttt{changes} list. For each \texttt{ChangeTuple} in the list, this method goes back to the initial reference and changes the color of the element in reference and adds in an id number as a lyric to that element if the change operation is not a \texttt{NoChange}. The color is determined by the type of change operation. Green corresponds to an insertion, red to deletion, and purple to substitution. The id number is the index of the \texttt{ChangeTuple} in the list. 
 
-The figures below shows the visual display of alignment between the Violin 1 parts of an excerpt of \textit{Eine kleine Nachtmusik, K.525} by W.A. Mozart. and a MIDI recording of the same piece.
+The figures below shows the visual display of alignment between the Violin 1 parts of an excerpt of \textit{Eine Kleine Nachtmusik, K.525} by W.A. Mozart. and a MIDI recording of the same piece.
 \begin{figure}[H]
 \centering
 \includegraphics[width =.95\textwidth]{K525_I_MIDI_Violin_2-1}
@@ -207,7 +207,7 @@ There are two instances in which I purposefully built the system to be able to h
 \subsection{Performance vs. Space and Object Overhead}
 
 \subsubsection{NoteHashWithReference}
-The \texttt{NoteHashWithReference} object contains a reference to the original stream object. Streams and the elements they contain are complex objects, so \texttt{NoteHashWithReference} objects have much more overhead in storage than their counterparts, \texttt{NoteHash} objects. However, in setting up a \texttt{Hasher} object, the user has the decision to use either one.   
+The \texttt{NoteHashWithReference} object contains a reference to the original stream object. Streams and their elements are complex objects, so \texttt{NoteHashWithReference} objects have much more overhead in storage than their counterparts, \texttt{NoteHash} objects. However, in setting up a \texttt{Hasher} object, the user has the decision to use either one.   
 
 \subsubsection{Creating One Hasher and Many Aligners}
 During the correction process, only a single \texttt{Hasher} object is created and used and reused to generate hashes for every part in the stream passed in. There was the option of having \texttt{Hasher} object be one-time-use objects, but I chose to have the \texttt{Hasher} be able to operate on multiple streams. 
