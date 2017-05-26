@@ -2,7 +2,6 @@
 This chapter discusses previous work in musical sequence representation, alignment, and correction. The first half of the chapter is about work by others. The second half is my own previous work that was relevant to this thesis. 
 
 \section{Related Work by Others}
-In this section of work by others, 
 \subsection{Typke: Music Retrieval based on Melodic Similarity}
 Typke's thesis on Music Retrieval based on Melodic Similarity gives an example of how music can be transformed and compressed into its most relevant features \cite{typke}. Here, Typke proposes encoding music into what he calls a ``weighted point set" in a two-dimensional space of time and pitch before measuring any sort of melodic similarity between music. A note in a piece is represented as point set of pitch (in the Hewlett 40 system \cite{hewlett}) and an offset in quarter notes from the beginning of the piece. This representation allows for notes to be easily compared with each other. Since the features of notes are represented as numbers, it is convenient to do numerical operations with the representations. 
 
@@ -25,7 +24,7 @@ Rebelo et al's paper discusses the state of the art of OMR at each step of the O
 OpenScore is a project that aims to liberate all public domain music using both human and computer-powered techniques. Many works in the public domain are of low quality and/or are in formats that do not lend well to analysis, sharing, or reproducing, and OpenScore plans to turn them into high-quality music in digital formats. Both humans and computer software can aid in any part of the process, from transcription to error correction. The work of my thesis can directly contribute to the computer software tools that OpenSource is looking for. 
 
 \subsection{\texttt{music21}}
-\texttt{music21} is a open source Python library that is a toolkit for computer-aided musicology. It provides both a framework for representation of music as well as tools to perform analyses on music. The rhythm correctors built by Church and Cuthbert were made using the tools that \texttt{music21} provides. The work of my thesis relies heavily on the infrastructure of\texttt{music21}, its score and stream representations and their operations. 
+\texttt{music21} is a open source Python library that is a toolkit for computer-aided musicology. It provides both a framework for representation of music as well as tools to perform analyses on music. The rhythm correctors built by Church and Cuthbert were made using the tools that \texttt{music21} provides. The work of my thesis relies heavily on the infrastructure of \texttt{music21}, its score and stream representations and their operations. 
 
 \section{Previous Work: A Modular Universal Hasher} \label{hasher}
 The work of my thesis uses the universal \texttt{Hasher} for digital representations of music tool. This work was largely done in the Spring of 2015 as part of my undergraduate capstone supervised independent study (6.UAP). 
