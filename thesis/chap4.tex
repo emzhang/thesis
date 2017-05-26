@@ -19,7 +19,7 @@ The entire system resides within the \texttt{OMRMIDICorrector} class in \texttt{
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{sysdiag10}
-\caption{System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}
+\caption[System diagram.] {The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}
 \end{figure}
 
 \subsubsection{processRunner: preprocessStreams}\label{processrunner1}
@@ -35,10 +35,10 @@ A good alignment of the piece would involve aligning corresponding instrumental 
 \caption{An example string quartet stream and its four parts.}
 \vspace{10mm}
 \includegraphics[width=.9\textwidth]{badalignstream2}
-\caption{A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}
+\caption[A bad alignment setup] {A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}
 \vspace{10mm}
 \includegraphics[width=.25\textwidth]{goodalignstream}
-\caption{A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}
+\caption[A better alignment setup] {A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}
 \end{figure}
 
 By default, \texttt{discretizeParts} is set to \texttt{True}. However, the user ultimately has the choice to align input streams part-wise or After a stream is split up into its constituent parts, the parts are stored in the lists \texttt{midiParts} and \texttt{omrParts}. The aligners and fixers work on all of the elements in the list, and so the entire system is agnostic to the number of parts; a stream comprised of a single part is processed in the same way as a multi-instrumental score. 

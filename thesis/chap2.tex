@@ -5,16 +5,18 @@
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Background and Related Work}
-\section{Musical Terminology}
+\section{Computer Musical Terminology}
 
 \subsection{OMR}
-\subsection{MIDI} - MIDI is the protocol with which electronic instruments and computers can communicate with each other. Many people associate MIDI with an idea of low-quality computer music, but it  just an instruction-like protocol, not actually a audio recording. At the basic level, MIDI messages encode notes with note-on, note-off times, and a number that corresponds to its frequency. A piece of music can be encoded in MIDI as a sequence of notes. On the other hand, MIDI files contain sequences of MIDI protocol events time-stamped for playback in a certain order.
-\subsection{Ground Truth}
+OMR, or Optical Music Recognition, is method of recognizing the characters on scanned sheet music or printed scores and interpreting them into a digital form. 
+
+\subsection{MIDI}
+MIDI is the protocol with which electronic instruments and computers can communicate with each other. Many people associate MIDI with an idea of low-quality computer music, but it  just an instruction-like protocol, not actually a audio recording. At the basic level, MIDI messages encode notes with note-on, note-off times, and a number that corresponds to its frequency. A piece of music can be encoded in MIDI as a sequence of notes. On the other hand, MIDI files contain sequences of MIDI protocol events time-stamped for playback in a certain order.
 
 \section{Non-musical Work in Sequence Alignment}
 It is far easier to understand sequence alignment in a non-musical context (here the context is plain string alignment), understand the rules and assumptions made in the non-musical context, generalize them, and then recreate music-specific rules and assumptions. 
 
-If you are familiar with the canonical representation of the string alignment problem as a dynamic programming matrix, you can skip this section. 
+Readers familiar with the canonical representation of the string alignment problem as a dynamic programming matrix can skip this section. 
 
 \subsection{An Overview of Sequence Alignment}
 Sequence alignment in bioinformatics is an application of well-studied problem. In this field, researchers want to identify similar regions of DNA, RNA, or protein sequences to study functional, structural, or evolutionary relationships between the two sequences.
@@ -26,7 +28,7 @@ Sequence alignment in bioinformatics is an application of well-studied problem. 
 \caption{An example of protein alignment \cite{proteins}}
 \end{figure}
 
-There are various computational algorithms that can be used to solve sequence alignment including slower but more accurate dynamic programming algorithms and faster but less accurate probabilistic or heuristic-based algorithms. In my work, it makes more sense to use the slower but more accurate methods, as our datasets are not so large and small mistakes that might be permissible and overlook-able in larger data could be much more egregious in smaller contexts.
+There are various computational algorithms that can be used to solve sequence alignment including slower but more accurate dynamic programming algorithms and faster but less accurate probabilistic or heuristic-based algorithms. In my work, it makes more sense to use the slower but more accurate methods, as our datasets are not so large and small mistakes that might be permissible to overlook in larger data could be much more egregious in smaller contexts.
 
 The specific algorithm I chose to implement for solving the musical sequence alignment problem is a version of the Needleman-Wunsch dynamic programming algorithm for global sequence alignment. \footnote{This algorithm has a history of multiple invention. Needleman-Wunsch was first published in the context of protein alignment in bioinformatics. People with a more theoretical computer science bent might know the same algorithm by a different name, Wagner-Fisher.} 
 
@@ -64,7 +66,7 @@ No-change          & 0
 \label{tab:naivetable}
 \end{table}
 	
-This corresponds to an alignment that looks like this. The green pair of characters indicate an insertion operation, red is deletion, and purple is substitution. These colors are also used in the visualization of OMR/MIDI stream alignment. 
+This corresponds to an alignment that looks like figure \ref{best-alignment}. The green pair of characters indicate an insertion operation, red is deletion, and purple is substitution. These colors are also used in the visualization of OMR/MIDI stream alignment. 
 
 \begin{figure}[!h]
 \centering
@@ -76,11 +78,11 @@ seq2 & {\color[HTML]{6200C9} \textbf{J}} & \textbf{U} & \textbf{S} & {\color[HTM
 \label{best-alignment}
 \end{figure}
 
-You would say that the two strings have an edit distance of 4, because it requires four operations to completely morph one string into the other (discounting no-change operations).
+The two strings have an edit distance of 4, because it requires four operations to completely morph one string into the other (discounting no-change operations).
 
-However, you also might think that a substitution should ''cost'' more than either an insertion or deletion; after all, a substitution can be thought of as a consecutive insertion and deletion operation. 
+However, one also might think that a substitution should ``cost'' more than either an insertion or deletion; after all, a substitution can be thought of as a consecutive insertion and deletion operation. 
 
-A slightly different cost function that assigns more cost to substitution changes could look like this. Using this cost function, our edit distance of changing \textbf{MUSICAL} into \textbf{JUSTICE} is 5.
+A slightly different cost function that assigns more cost to substitution changes could look like table \ref{tab:naivetable2}. Using this cost function, the edit distance of changing \textbf{MUSICAL} into \textbf{JUSTICE} is 5.
 \begin{table}[!h]
 \centering
 \begin{tabular}{ll}
@@ -94,7 +96,7 @@ No-change          & 0
 \label{tab:naivetable2}
 \end{table}
 
-But wait, should certain subtypes of a single type of operation have differently weights? Consider if you were trying to run a spell checker (one application of string alignment and correction algorithms) on a word that wasn't recognized by the dictionary. In your particular spell check model, maybe substitution of a vowel for a vowel isn't as costly as any other types of substitution. Let's say that substituting a vowel for a vowel should only have a cost of 1.2. Using this new cost function, our new edit distance is 4.7.
+But wait, should we certain subtypes of a single type of operation have differently weights? Consider if you were trying to run a spell checker (one application of string alignment and correction algorithms) on a word that wasn't recognized by the dictionary. In your particular spell check model, perhaps substitution of a vowel for a vowel isn't as costly as any other types of substitution. Let's say that substituting a vowel for a vowel should only have a cost of 1.2. Using this new cost function, the new edit distance is 4.7.
 \begin{table}[!h]
 \centering
 \begin{tabular}{ll}
@@ -109,6 +111,7 @@ No-change                      & 0
 \label{my-label3}
 \end{table}
 
+Considerations such as these go into the creation of a musical sequence aligner as well. 
 \subsubsection{Alignment}
 
 Recall that the edit distance between two sequences come from the least-cost alignment. The figure below shows a valid alignment, but it is certainly not the least-cost alignment, and therefore does not correspond to the edit distance between between the two sequences. 
@@ -144,7 +147,7 @@ $+$ best alignment of \texttt{string1}$[i:]$ and \texttt{string2}$[j:]$
 \label{indexed musical and justice}
 \end{figure}
 
-If we can keep track of all the possible alignment subproblems, we can recursively build an optimal solution using the answers from the subproblems. One way to represent this is with a scoring matrix indexed by $i$ and $j$. For our problem of aligning \textbf{MUSICAL} and \textbf{JUSTICE}, the setup would look something like this:
+If we can keep track of all the possible alignment subproblems, we can recursively build an optimal solution using the answers from the subproblems. One way to represent this is with a scoring matrix indexed by $i$ and $j$. For the problem of aligning \textbf{MUSICAL} and \textbf{JUSTICE}, the setup would look something like this:
 
 
 \begin{figure}[!h]
@@ -164,7 +167,7 @@ If we can keep track of all the possible alignment subproblems, we can recursive
 \label{alignsetup}
 \end{figure}
 
-Recall that we have defined our problem in three different ways:
+Recall that we have defined the problem in three different ways:
 \begin{enumerate}
 \item Aligning \textbf{MUSICAL} and \textbf{JUSTICE}
 \item Finding the edit distance between \textbf{MUSICAL} and \textbf{JUSTICE}
@@ -177,7 +180,7 @@ All of these problem definitions are (almost) one and the same. Calculating the 
  \ref{tab:naivetable2} 
  will make such problems symmetric. 
 
-In our particular sample problem, we will always be transforming \textbf{MUSICAL} into \textbf{JUSTICE}. In the context of my thesis, we will always be transforming OMR sequences in MIDI sequences. 
+In this particular sample problem, we will always be transforming \textbf{MUSICAL} into \textbf{JUSTICE}. In the context of my thesis, we will always be transforming OMR sequences in MIDI sequences. 
 
 After we've set up is the scoring matrix, we will populate it with initial values: 
 \begin{enumerate}

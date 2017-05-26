@@ -18,7 +18,8 @@ can vary. For instance, in determining the rhythmic similarity between two music
 \begin{figure}[H]
 \centering
 \includegraphics[scale=.7]{alg}
-\caption{The hash of rhythmic features of this short melody would be \textit{NoteHash(offset=0, duration=0.5), NoteHash(offset=0.5, duration=0.5), NoteHash(offset=1.0, duration=2.0) NoteHash(offset=4, duration=1.0)}}
+\caption[Rhythmic hash of a short melody]{
+The hash of rhythmic features of this short melody would be \textit{NoteHash(offset=0, duration=0.5), NoteHash(offset=0.5, duration=0.5), NoteHash(offset=1.0, duration=2.0) NoteHash(offset=4, duration=1.0)}}
 \end{figure}
 
 As another example, in determining whether one piece is an approximate transposition of another, only the elements with some relation pitch (e.g. notes and chords) might be relevant.
@@ -26,7 +27,7 @@ As another example, in determining whether one piece is an approximate transposi
 \begin{figure}[H]
 \centering
 \includegraphics[scale=.7]{alg}
-\caption{The hash of features related to transposition of this short melody would be \textit{NoteHash(intervalFromLastNote=0), NoteHash(intervalFromLastNote=-2), NoteHash(intervalFromLastNote=-5)}}
+\caption[Melody transposition hash]{The hash of features related to transposition of this short melody would be \textit{NoteHash(intervalFromLastNote=0), NoteHash(intervalFromLastNote=-2), NoteHash(intervalFromLastNote=-5)}}
 \end{figure}
 Once a musical sequence is discretized and represented as a hash sequence, each individual tuple in the hash sequence can be thought of as a point in the space of all combinations of possible element properties. Then, canonical edit distance or string alignment algorithms could be used to come up with a measure of similarity or an alignment between the two original musical sequences.
 

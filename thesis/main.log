@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 MAY 2017 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 MAY 2017 23:51
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -35,7 +35,28 @@ Thesis document copyright MIT unless otherwise (manually) specified
 \@titlesupervisor=\box26
 \@abstractsupervisor=\box27
 \c@savepage=\count89
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\captionmargin=\dimen103
+\captionmargin@=\dimen104
+\captionwidth=\dimen105
+\caption@tempdima=\dimen106
+\caption@indent=\dimen107
+\caption@parindent=\dimen108
+\caption@hangindent=\dimen109
+)
+\c@ContinuedFloat=\count90
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip43
 
@@ -45,73 +66,69 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks14
-\ex@=\dimen103
+\@emptytoks=\toks15
+\ex@=\dimen110
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen104
+\pmbraise@=\dimen111
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count90
+\inf@bad=\count91
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count91
-\leftroot@=\count92
+\uproot@=\count92
+\leftroot@=\count93
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count93
-\DOTSCASE@=\count94
+\classnum@=\count94
+\DOTSCASE@=\count95
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box28
 \strutbox@=\box29
-\big@size=\dimen105
+\big@size=\dimen112
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count95
-\c@MaxMatrixCols=\count96
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count97
-\dspbrk@lvl=\count98
-\tag@help=\toks15
-\row@=\count99
-\column@=\count100
-\maxfields@=\count101
-\andhelp@=\toks16
-\eqnshift@=\dimen106
-\alignsep@=\dimen107
-\tagshift@=\dimen108
-\tagwidth@=\dimen109
-\totwidth@=\dimen110
-\lineht@=\dimen111
-\@envbody=\toks17
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks16
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks17
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks18
 \multlinegap=\skip44
 \multlinetaggap=\skip45
-\mathdisplay@stack=\toks18
+\mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
 (./lgrind.sty
 Package: lgrind 1997/01/30 v3.4 LGrind environment and supporting stuff
-\lc@unt=\count102
-\ln@xt=\count103
-\LGnuminterval=\count104
+\lc@unt=\count103
+\ln@xt=\count104
+\LGnuminterval=\count105
 \LGindent=\skip46
 \LGsloppy=\skip47
 \procbox=\box30
 \ls@far=\box31
 \tb@x=\box32
-\TBw@d=\dimen112
-\@ts=\dimen113
+\TBw@d=\dimen119
+\@ts=\dimen120
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2015/09/09 v2.1 Yet another Pygments shim for LaTeX
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks19
-)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
@@ -141,16 +158,16 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count105
+\FV@CodeLineNo=\count106
 \FV@InFile=\read1
 \FV@TabBox=\box33
-\c@FancyVerbLine=\count106
-\FV@StepNumber=\count107
+\c@FancyVerbLine=\count107
+\FV@StepNumber=\count108
 \FV@OutFile=\write3
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count108
+\c@float@type=\count109
 \float@exts=\toks20
 \float@box=\box34
 \@float@everytoks=\toks21
@@ -161,15 +178,15 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count109
-\calc@Bcount=\count110
-\calc@Adimen=\dimen114
-\calc@Bdimen=\dimen115
+\calc@Acount=\count110
+\calc@Bcount=\count111
+\calc@Adimen=\dimen121
+\calc@Bdimen=\dimen122
 \calc@Askip=\skip48
 \calc@Bskip=\skip49
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count111
+\calc@Ccount=\count112
 \calc@Cskip=\skip50
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ifplatform/ifplatform.sty
@@ -199,48 +216,48 @@ runsystem(rm -- "main.w18")...executed.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count112
+\etb@tempcnta=\count113
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/local/texlive/2016/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write4
-\integerpart=\count113
-\decimalpart=\count114
+\integerpart=\count114
+\decimalpart=\count115
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count115
+\linenopenalty=\count116
 \output=\toks22
-\linenoprevgraf=\count116
-\linenumbersep=\dimen116
-\linenumberwidth=\dimen117
-\c@linenumber=\count117
-\c@pagewiselinenumber=\count118
-\c@LN@truepage=\count119
-\c@internallinenumber=\count120
-\c@internallinenumbers=\count121
-\quotelinenumbersep=\dimen118
-\bframerule=\dimen119
-\bframesep=\dimen120
+\linenoprevgraf=\count117
+\linenumbersep=\dimen123
+\linenumberwidth=\dimen124
+\c@linenumber=\count118
+\c@pagewiselinenumber=\count119
+\c@LN@truepage=\count120
+\c@internallinenumber=\count121
+\c@internallinenumbers=\count122
+\quotelinenumbersep=\dimen125
+\bframerule=\dimen126
+\bframesep=\dimen127
 \bframebox=\box36
 LaTeX Info: Redefining \\ on input line 3056.
 )
 \minted@appexistsfile=\read2
-\FV@BreakIndent=\dimen121
-\FV@BreakSymbolSepLeft=\dimen122
-\FV@BreakSymbolSepRight=\dimen123
-\FV@BreakSymbolIndentLeft=\dimen124
-\FV@BreakSymbolIndentRight=\dimen125
-\c@FancyVerbLineBreakLast=\count122
+\FV@BreakIndent=\dimen128
+\FV@BreakSymbolSepLeft=\dimen129
+\FV@BreakSymbolSepRight=\dimen130
+\FV@BreakSymbolIndentLeft=\dimen131
+\FV@BreakSymbolIndentRight=\dimen132
+\c@FancyVerbLineBreakLast=\count123
 \FV@LineBox=\box37
 \FV@LineIndentBox=\box38
 \minted@bgbox=\box39
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count123
+\c@minted@FancyVerbLineTemp=\count124
 \@float@every@listing=\toks23
-\c@listing=\count124
+\c@listing=\count125
 )
 runsystem(mkdir -p "_minted-main")...executed.
 
@@ -262,10 +279,10 @@ Package graphics Info: Driver file: pdftex.def on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count125
+\Gread@gobject=\count126
 ))
-\Gin@req@height=\dimen126
-\Gin@req@width=\dimen127
+\Gin@req@height=\dimen133
+\Gin@req@width=\dimen134
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
@@ -287,11 +304,11 @@ Package: parskip 2001/04/09 non-zero parskip adjustments
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
 \MT@toks=\toks24
-\MT@count=\count126
+\MT@count=\count127
 LaTeX Info: Redefining \textls on input line 774.
-\MT@outer@kern=\dimen128
+\MT@outer@kern=\dimen135
 LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
-\MT@listname@count=\count127
+\MT@listname@count=\count128
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
@@ -321,8 +338,8 @@ Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen129
-\extrarowheight=\dimen130
+\col@sep=\dimen136
+\extrarowheight=\dimen137
 \NC@list=\toks25
 \extratabsurround=\skip52
 \backup@length=\skip53
@@ -330,7 +347,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \everycr=\toks26
 \minrowclearance=\skip54
 )
-\rownum=\count128
+\rownum=\count129
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -357,31 +374,34 @@ LaTeX Warning: Label `fixer' multiply defined.
 ) (./chap5.aux) (./biblio.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
  (./_minted-main/default-pyg-prefix.pygstyle)
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
-\scratchdimen=\dimen131
+\scratchcounter=\count130
+\scratchdimen=\dimen138
 \scratchbox=\box40
-\nofMPsegments=\count130
-\nofMParguments=\count131
+\nofMPsegments=\count131
+\nofMParguments=\count132
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count132
-\MPscratchDim=\dimen132
-\MPnumerator=\count133
-\makeMPintoPDFobject=\count134
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen139
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
 \everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -401,7 +421,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 57.
+LaTeX Info: Redefining \microtypecontext on input line 60.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -464,23 +484,13 @@ Underfull \vbox (badness 2556) has occurred while \output is active []
 \openout6 = `main.toc'.
 
 
-[10] (./main.lof
-Overfull \hbox (17.26115pt too wide) in paragraph at lines 10--10
- \T1/cmr/m/n/12 (-20) be \T1/cmr/m/it/12 (-20) Note-Hash(intervalFromLastNote=0
-), NoteHash(intervalFromLastNote=- 
- []
-
-
-Underfull \vbox (badness 5316) has occurred while \output is active []
-
- [11
+[10] (./main.lof [11
 
 ])
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
-
-[12] (./main.lot)
+ [12] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
@@ -508,15 +518,11 @@ Underfull \vbox (badness 1237) has occurred while \output is active []
 
 ]
 Chapter 2.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
-<images/proteinalign.png, id=78, 736.7525pt x 465.74pt>
+[19] <images/proteinalign.png, id=78, 736.7525pt x 465.74pt>
 File: images/proteinalign.png Graphic file (type png)
 
 <use images/proteinalign.png>
-Package pdftex.def Info: images/proteinalign.png used on input line 25.
+Package pdftex.def Info: images/proteinalign.png used on input line 27.
 (pdftex.def)             Requested size: 368.37535pt x 232.86943pt.
  [20 <./images/proteinalign.png>] [21] [22]
 [23]
@@ -524,12 +530,12 @@ Package pdftex.def Info: images/proteinalign.png used on input line 25.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24] [25]
-Overfull \hbox (5.2528pt too wide) in paragraph at lines 204--204
+Overfull \hbox (5.2528pt too wide) in paragraph at lines 207--207
 []\T1/cmr/bx/n/17.28 Turning Se-quence Align-ment into a Mu-si-cal Prob-
  []
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 210.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 213.
 [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -547,50 +553,41 @@ Chapter 3.
 Underfull \vbox (badness 1325) has occurred while \output is active []
 
  [31]
-<images/alg.pdf, id=125, 120.45pt x 38.1425pt>
+<images/alg.pdf, id=128, 120.45pt x 38.1425pt>
 File: images/alg.pdf Graphic file (type pdf)
  <use images/alg.pdf>
 Package pdftex.def Info: images/alg.pdf used on input line 20.
 (pdftex.def)             Requested size: 84.3144pt x 26.69955pt.
-
-Underfull \hbox (badness 1308) in paragraph at lines 21--21
-\T1/cmr/m/it/12 (+20) Note-Hash(offset=0, du-ra-tion=0.5), Note-Hash(offset=0.5
-, du-ra-tion=0.5), Note-
- []
-
 File: images/alg.pdf Graphic file (type pdf)
+
 <use images/alg.pdf>
-Package pdftex.def Info: images/alg.pdf used on input line 28.
+Package pdftex.def Info: images/alg.pdf used on input line 29.
 (pdftex.def)             Requested size: 84.3144pt x 26.69955pt.
 
-Underfull \vbox (badness 4686) has occurred while \output is active []
+Underfull \hbox (badness 6204) in paragraph at lines 30--30
+[]\T1/cmr/bx/n/10.95 Figure 3-2: |\T1/cmr/m/n/10.95 (+20) The hash of fea-tures
+ re-lated to trans-po-si-tion of this short
+ []
 
- [32 <./images/alg.pdf>]
-Underfull \vbox (badness 4084) has occurred while \output is active []
-
- [33]
-Overfull \hbox (7.10727pt too wide) in paragraph at lines 43--44
+[32 <./images/alg.pdf>] [33]
+Overfull \hbox (7.10727pt too wide) in paragraph at lines 44--45
 []\T1/cmr/m/n/12 (-20) For each el-e-ment, the Hasher will cre-ate ei-ther a \T
 1/cmtt/m/n/12 NoteHash \T1/cmr/m/n/12 (-20) or a \T1/cmtt/m/n/12 NoteHashWithRe
 ference
  []
 
 
-Overfull \hbox (46.82932pt too wide) in paragraph at lines 43--44
+Overfull \hbox (46.82932pt too wide) in paragraph at lines 44--45
 \T1/cmr/m/n/12 (-20) ob-ject and add it to the end of the \T1/cmtt/m/n/12 Final
 Hash \T1/cmr/m/n/12 (-20) list. Both \T1/cmtt/m/n/12 NoteHash \T1/cmr/m/n/12 (-
 20) and \T1/cmtt/m/n/12 NoteHashWithReference
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
-[35] [36]
+[34] [35]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 80.
- [37]
-Overfull \hbox (36.61253pt too wide) in paragraph at lines 99--100
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 81.
+ [36] [37]
+Overfull \hbox (36.61253pt too wide) in paragraph at lines 100--101
 \T1/cmr/m/n/12 (-20) It cre-ates a sin-gle \T1/cmtt/m/n/12 NamedTuple \T1/cmr/m
 /n/12 (-20) called a \T1/cmtt/m/n/12 NoteHash \T1/cmr/m/n/12 (-20) for each el-
 e-ment from \T1/cmtt/m/n/12 finalEltsToBeHashed\T1/cmr/m/n/12 (-20) . 
@@ -616,28 +613,28 @@ y\T1/cmr/m/n/12 (-20) .
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
-<images/sysdiag10.png, id=163, 704.6325pt x 595.22375pt>
+<images/sysdiag10.png, id=166, 704.6325pt x 595.22375pt>
 File: images/sysdiag10.png Graphic file (type png)
 
 <use images/sysdiag10.png>
 Package pdftex.def Info: images/sysdiag10.png used on input line 21.
 (pdftex.def)             Requested size: 433.62pt x 366.29204pt.
  [42 <./images/sysdiag10.png>]
-<images/omrmidisheets2.png, id=169, 413.545pt x 237.88875pt>
+<images/omrmidisheets2.png, id=172, 413.545pt x 237.88875pt>
 File: images/omrmidisheets2.png Graphic file (type png)
 
 <use images/omrmidisheets2.png>
 Package pdftex.def Info: images/omrmidisheets2.png used on input line 34.
 (pdftex.def)             Requested size: 216.81pt x 124.71922pt.
 
-<images/badalignstream2.png, id=170, 691.58376pt x 89.33376pt>
+<images/badalignstream2.png, id=173, 691.58376pt x 89.33376pt>
 File: images/badalignstream2.png Graphic file (type png)
 
 <use images/badalignstream2.png>
 Package pdftex.def Info: images/badalignstream2.png used on input line 37.
 (pdftex.def)             Requested size: 390.25534pt x 50.41095pt.
 
-<images/goodalignstream.png, id=171, 203.76125pt x 320.19624pt>
+<images/goodalignstream.png, id=174, 203.76125pt x 320.19624pt>
 File: images/goodalignstream.png Graphic file (type png)
 
 <use images/goodalignstream.png>
@@ -647,11 +644,8 @@ Package pdftex.def Info: images/goodalignstream.png used on input line 40.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[43]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44 <./images/omrmidisheets2.png> <./images/badalignstream2.png> <./images/goo
-dalignstream.png>] [45] [46]
+[43] [44 <./images/omrmidisheets2.png> <./images/badalignstream2.png> <./images
+/goodalignstream.png>] [45] [46]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [47]
@@ -662,7 +656,7 @@ Underfull \vbox (badness 2469) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
-[52] <images/K525_I_MIDI_Violin_2-1.png, id=209, 597.432pt x 845.0772pt>
+[52] <images/K525_I_MIDI_Violin_2-1.png, id=212, 597.432pt x 845.0772pt>
 File: images/K525_I_MIDI_Violin_2-1.png Graphic file (type png)
 
 <use images/K525_I_MIDI_Violin_2-1.png>
@@ -670,7 +664,7 @@ Package pdftex.def Info: images/K525_I_MIDI_Violin_2-1.png used on input line 1
 69.
 (pdftex.def)             Requested size: 411.93767pt x 582.70416pt.
  [53]
-<images/K525_I_OMR_Violin_2-1.png, id=213, 597.432pt x 845.0772pt>
+<images/K525_I_OMR_Violin_2-1.png, id=216, 597.432pt x 845.0772pt>
 File: images/K525_I_OMR_Violin_2-1.png Graphic file (type png)
 
 <use images/K525_I_OMR_Violin_2-1.png>
@@ -680,10 +674,9 @@ Package pdftex.def Info: images/K525_I_OMR_Violin_2-1.png used on input line 17
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54 <./images/K525_I_MIDI_Violin_2-1.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55 <./images/K525_I_OMR_Violin_2-1.png>] [56] [57]
+ [54 <./images/K525_I_MIDI_Violin_2-1.png>] [55 <./images/K525_I_OMR_Violin_2-1
+.png>]
+[56] [57]
 Overfull \hbox (5.01344pt too wide) in paragraph at lines 210--211
 \T1/cmr/m/n/12 (-20) Streams and the el-e-ments they con-tain are com-plex ob-j
 ects, so \T1/cmtt/m/n/12 NoteHashWithReference
@@ -698,7 +691,7 @@ ects, so \T1/cmtt/m/n/12 NoteHashWithReference
 
 ]
 Chapter 5.
-<images/k525originalomrscan.png, id=238, 734.745pt x 842.14626pt>
+<images/k525originalomrscan.png, id=241, 734.745pt x 842.14626pt>
 File: images/k525originalomrscan.png Graphic file (type png)
 
 <use images/k525originalomrscan.png>
@@ -722,7 +715,7 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
 
 
 (./_minted-main/E91C79C853DD9D25DB9A63C8763612357BC9F1650E5147204109012551E408C
-D.pygtex) <images/K525_I_MIDI_Violin_1-1.png, id=250, 597.432pt x 845.0772pt>
+D.pygtex) <images/K525_I_MIDI_Violin_1-1.png, id=253, 597.432pt x 845.0772pt>
 File: images/K525_I_MIDI_Violin_1-1.png Graphic file (type png)
 
 <use images/K525_I_MIDI_Violin_1-1.png>
@@ -730,7 +723,7 @@ Package pdftex.def Info: images/K525_I_MIDI_Violin_1-1.png used on input line 5
 8.
 (pdftex.def)             Requested size: 390.25534pt x 552.04027pt.
  [64]
-<images/K525_I_OMR_Violin_1-1.png, id=255, 597.432pt x 845.0772pt>
+<images/K525_I_OMR_Violin_1-1.png, id=258, 597.432pt x 845.0772pt>
 File: images/K525_I_OMR_Violin_1-1.png Graphic file (type png)
 
 <use images/K525_I_OMR_Violin_1-1.png>
@@ -759,7 +752,7 @@ Package pdftex.def Info: images/K525_I_OMR_Violin_2-1.png used on input line 76
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67]
-<images/K525_I_MIDI_Viola-1.png, id=268, 597.432pt x 845.0772pt>
+<images/K525_I_MIDI_Viola-1.png, id=271, 597.432pt x 845.0772pt>
 File: images/K525_I_MIDI_Viola-1.png Graphic file (type png)
 
 <use images/K525_I_MIDI_Viola-1.png>
@@ -769,7 +762,7 @@ Package pdftex.def Info: images/K525_I_MIDI_Viola-1.png used on input line 82.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [68]
-<images/K525_I_OMR_Viola-1.png, id=272, 597.432pt x 845.0772pt>
+<images/K525_I_OMR_Viola-1.png, id=275, 597.432pt x 845.0772pt>
 File: images/K525_I_OMR_Viola-1.png Graphic file (type png)
 
 <use images/K525_I_OMR_Viola-1.png>
@@ -779,7 +772,7 @@ Package pdftex.def Info: images/K525_I_OMR_Viola-1.png used on input line 88.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [69 <./images/K525_I_MIDI_Viola-1.png>]
-<images/K525_I_MIDI_Cello-1.png, id=277, 597.432pt x 845.0772pt>
+<images/K525_I_MIDI_Cello-1.png, id=280, 597.432pt x 845.0772pt>
 File: images/K525_I_MIDI_Cello-1.png Graphic file (type png)
 
 <use images/K525_I_MIDI_Cello-1.png>
@@ -789,7 +782,7 @@ Package pdftex.def Info: images/K525_I_MIDI_Cello-1.png used on input line 94.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [70 <./images/K525_I_OMR_Viola-1.png>]
-<images/K525_I_OMR_Cello-1.png, id=282, 597.432pt x 845.0772pt>
+<images/K525_I_OMR_Cello-1.png, id=285, 597.432pt x 845.0772pt>
 File: images/K525_I_OMR_Cello-1.png Graphic file (type png)
 
 <use images/K525_I_OMR_Cello-1.png>
@@ -807,7 +800,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 (./_minted-main/BA45B34B868B7154811B650EF5A85CB87BC9F1650E5147204109012551E408C
 D.pygtex [74])
-<images/K160_MIDI_Violin_1-1.png, id=298, 597.432pt x 845.0772pt>
+<images/K160_MIDI_Violin_1-1.png, id=302, 597.432pt x 845.0772pt>
 File: images/K160_MIDI_Violin_1-1.png Graphic file (type png)
 
 <use images/K160_MIDI_Violin_1-1.png>
@@ -818,7 +811,7 @@ Package pdftex.def Info: images/K160_MIDI_Violin_1-1.png used on input line 158
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [75]
-<images/K160_OMR_Violin_1-1.png, id=302, 597.432pt x 845.0772pt>
+<images/K160_OMR_Violin_1-1.png, id=306, 597.432pt x 845.0772pt>
 File: images/K160_OMR_Violin_1-1.png Graphic file (type png)
 
 <use images/K160_OMR_Violin_1-1.png>
@@ -829,7 +822,7 @@ Package pdftex.def Info: images/K160_OMR_Violin_1-1.png used on input line 165.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [76 <./images/K160_MIDI_Violin_1-1.png>]
-<images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png, id=307, 597.432pt x 845.
+<images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png, id=311, 597.432pt x 845.
 0772pt>
 File: images/K160_Violin_1_Part_OMR_Enharmonic_Fixer-1.png Graphic file (type p
 ng)
@@ -917,13 +910,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7646 strings out of 493014
- 123944 string characters out of 6133351
- 272453 words of memory out of 5000000
- 10767 multiletter control sequences out of 15000+600000
- 24311 words of font info for 111 fonts, out of 8000000 for 9000
+ 8715 strings out of 493014
+ 143328 string characters out of 6133351
+ 285538 words of memory out of 5000000
+ 11809 multiletter control sequences out of 15000+600000
+ 26721 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,17n,38p,1110b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,17n,42p,1110b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -931,24 +924,28 @@ usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on main.pdf (86 pages, 2798503 bytes).
+l/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/cm-super/sftt1440.pfb>
+Output written on main.pdf (86 pages, 2897859 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
- 259 compressed objects within 3 object streams
+ 426 PDF objects out of 1000 (max. 8388607)
+ 271 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 23663 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 26735 words of extra memory for PDF output out of 29859 (max. 10000000)
 

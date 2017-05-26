@@ -1,30 +1,30 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2-1}{\ignorespaces An example of protein alignment \cite {proteins}}}{20}
-\contentsline {figure}{\numberline {2-2}{\ignorespaces Alignment of MUSICAL and JUSTICE}}{22}
-\contentsline {figure}{\numberline {2-3}{\ignorespaces A bad alignment of MUSICAL and JUSTICE}}{24}
-\contentsline {figure}{\numberline {2-4}{\ignorespaces The alignment of MUSICAL split at \textit {i} and JUSTICE split at \textit {j}}}{24}
-\contentsline {figure}{\numberline {2-5}{\ignorespaces Initial distance matrix setup for aligning MUSICAL and JUSTICE}}{25}
+\contentsline {figure}{\numberline {2-1}{\ignorespaces An example of protein alignment \cite {proteins}\relax }}{20}
+\contentsline {figure}{\numberline {2-2}{\ignorespaces Alignment of MUSICAL and JUSTICE\relax }}{22}
+\contentsline {figure}{\numberline {2-3}{\ignorespaces A bad alignment of MUSICAL and JUSTICE\relax }}{24}
+\contentsline {figure}{\numberline {2-4}{\ignorespaces The alignment of MUSICAL split at \textit {i} and JUSTICE split at \textit {j}\relax }}{24}
+\contentsline {figure}{\numberline {2-5}{\ignorespaces Initial distance matrix setup for aligning MUSICAL and JUSTICE\relax }}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3-1}{\ignorespaces The hash of rhythmic features of this short melody would be \textit {NoteHash(offset=0, duration=0.5), NoteHash(offset=0.5, duration=0.5), NoteHash(offset=1.0, duration=2.0) NoteHash(offset=4, duration=1.0)}}}{32}
-\contentsline {figure}{\numberline {3-2}{\ignorespaces The hash of features related to transposition of this short melody would be \textit {NoteHash(intervalFromLastNote=0), NoteHash(intervalFromLastNote=-2), NoteHash(intervalFromLastNote=-5)}}}{33}
+\contentsline {figure}{\numberline {3-1}{\ignorespaces Rhythmic hash of a short melody}}{32}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces Melody transposition hash}}{32}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4-1}{\ignorespaces System diagram. The inputs to the system are OMR and MIDI streams. The output of the system is a corrected OMR stream.}}{42}
-\contentsline {figure}{\numberline {4-2}{\ignorespaces An example string quartet stream and its four parts.}}{44}
-\contentsline {figure}{\numberline {4-3}{\ignorespaces A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}}{44}
-\contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}}{44}
-\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in the Violin 1 part of target (MIDI) stream.}}{54}
-\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in the Violin 1 part of source (OMR) stream.}}{55}
+\contentsline {figure}{\numberline {4-1}{\ignorespaces System diagram.}}{42}
+\contentsline {figure}{\numberline {4-2}{\ignorespaces An example string quartet stream and its four parts.\relax }}{44}
+\contentsline {figure}{\numberline {4-3}{\ignorespaces A bad alignment setup}}{44}
+\contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup}}{44}
+\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in the Violin 1 part of target (MIDI) stream.\relax }}{54}
+\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in the Violin 1 part of source (OMR) stream.\relax }}{55}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5-1}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.}}{62}
-\contentsline {figure}{\numberline {5-2}{\ignorespaces Post-alignment visualization of an excerpt of the MIDI Violin 1 part in K.525- I.Allegro.}}{65}
-\contentsline {figure}{\numberline {5-3}{\ignorespaces Post-alignment visualization of an excerpt of the OMR Violin 1 part in K.525- I.Allegro.}}{66}
-\contentsline {figure}{\numberline {5-4}{\ignorespaces Post-alignment visualization of an excerpt of the MIDI Violin 2 part in K.525- I.Allegro.}}{67}
-\contentsline {figure}{\numberline {5-5}{\ignorespaces Post-alignment visualization of an excerpt of the OMR Violin 2 part in K.525- I.Allegro.}}{68}
-\contentsline {figure}{\numberline {5-6}{\ignorespaces Post-alignment visualization of an excerpt of the MIDI Viola part in K.525- I.Allegro.}}{69}
-\contentsline {figure}{\numberline {5-7}{\ignorespaces Post-alignment visualization of an excerpt of the OMR Viola part in K.525- I.Allegro.}}{70}
-\contentsline {figure}{\numberline {5-8}{\ignorespaces Post-alignment visualization of an excerpt of the MIDI Cello part in K.525- I.Allegro.}}{71}
-\contentsline {figure}{\numberline {5-9}{\ignorespaces Post-alignment visualization of an excerpt of the OMR Cello and Bass part in K.525.}}{72}
-\contentsline {figure}{\numberline {5-10}{\ignorespaces Post-alignment visualization of the MIDI Violin 1 part in K.160.}}{76}
-\contentsline {figure}{\numberline {5-11}{\ignorespaces Post-alignment visualization of the OMR Violin 1 part in K.160.}}{77}
-\contentsline {figure}{\numberline {5-12}{\ignorespaces Post-enharmonic and pitch fixing visualization of the OMR Violin 1 part in K.160.}}{78}
+\contentsline {figure}{\numberline {5-1}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.\relax }}{62}
+\contentsline {figure}{\numberline {5-2}{\ignorespaces K.525- I.Allegro MIDI Violin 1 alignment}}{65}
+\contentsline {figure}{\numberline {5-3}{\ignorespaces K.525- I.Allegro OMR Violin 1 alignment}}{66}
+\contentsline {figure}{\numberline {5-4}{\ignorespaces K.525- I.Allegro MIDI Violin 2 alignment}}{67}
+\contentsline {figure}{\numberline {5-5}{\ignorespaces K.525- I.Allegro OMR Violin 2 alignment}}{68}
+\contentsline {figure}{\numberline {5-6}{\ignorespaces K.525- I.Allegro MIDI Viola alignment}}{69}
+\contentsline {figure}{\numberline {5-7}{\ignorespaces K.525- I.Allegro OMR Viola alignment}}{70}
+\contentsline {figure}{\numberline {5-8}{\ignorespaces K.525- I.Allegro MIDI Cello alignment}}{71}
+\contentsline {figure}{\numberline {5-9}{\ignorespaces K.525- I.Allegro OMR Cello alignment}}{72}
+\contentsline {figure}{\numberline {5-10}{\ignorespaces Post-alignment visualization of the MIDI Violin 1 part in K.160.\relax }}{76}
+\contentsline {figure}{\numberline {5-11}{\ignorespaces Post-alignment visualization of the OMR Violin 1 part in K.160.\relax }}{77}
+\contentsline {figure}{\numberline {5-12}{\ignorespaces Post-enharmonic and pitch fixing visualization of the OMR Violin 1 part in K.160.\relax }}{78}
