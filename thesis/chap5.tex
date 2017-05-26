@@ -178,13 +178,49 @@ Below, The first two figures below show the alignment visualization of the Violi
 Visual inspection of figures \ref{fig:k160postalignv1midi} and \ref{fig:k160postalignv1omr} suggests that the OMR failed to pick up the appropriate key signature of the movement and that is what lends to large number of changes in the first 10 or so measures. Inspection of figure \ref{fig:k160postfixv1} shows that many of the pitch errors have been corrected using the \texttt{EnharmonicFixer}. Of course, the most ideal scenario would be to recreate the key signature, but having the correct pitch is a good start. 
 
 \section{Results: Timing Tests} \label{timing}
-This section will discuss and evaluate the system based on its runtime analysis and empirical results. It will also discuss how the system would scale to different sized inputs. 
+This section will evaluate the runtime on each of the three major modules of the system the \texttt{Hasher}, \texttt{Aligner}, and\texttt{Fixer} as well as the entire system, \texttt{OMRMIDICorrector} which is a combination of some number of instances of the three major modules. It will also discuss how the system would scale to different sized inputs. 
 
-\subsection{Runtime Analysis}
-There are three major modules of the system the \texttt{Hasher}, \texttt{Aligner}, and \texttt{Fixer}.	
+For the following calculations, assume that the length of the input MIDI stream and the OMR stream are about the same, $n$, and that the number of parts in each of the streams is $p$. 
+
+\subsection{Runtime Analysis: \texttt{Hasher}}
+Setup of the \texttt{Hasher} object is in $O(n)$ time, dominated by building the list \texttt{finalEltsToBeHashed} which requires scanning the input stream. Recall that the \texttt{tupleList} is a list of the stream element properties that will be hashed; call its length $t$. The runtime of the \texttt{hashStream} method is then $O(k \cdot n)$. 
+
+Thus, a single use of the \texttt{Hasher} is in $O(n) + O(k \cdot n) = O(n)$ time for small $k$. This is a reasonable assumption because the number of notes in a stream is likely to far greater than the number of possible qualities of stream elements that can be hashed. 
+
+\subsection{Runtime Analysis: \texttt{Aligner}}
+Setup of a \texttt{StreamAligner} object takes $O(n \cdot n) = O(n^2)$ time, dominated by the \texttt{populateDistanceMatrix} function. Traceback in the \texttt{calculateChangesList} method takes $O(n+ n) = O(n)$ time. The length of the \texttt{changes} list is then also $O(n)$. The runtime of \texttt{showChanges} is proportional to the length of the \texttt{changes} list, calculated above to be $O(n)$
+
+A single use of a \texttt{StreamAligner} object is in $O(n^2) + O(n) +O(n) = O(n^2) time$ 
+
+\subsection{Runtime Analysis: \texttt{Fixer}}
+The \texttt{OMRMIDIFixer} and is it child \texttt{EnharmonicFixer} both require negligible setup. The \texttt{fix} function's runtime is proportional to the length of the \texttt{changes} list input, shown above to be $O(n)$. 
+
+A single use of a \texttt{Fixer} object is in $O(n)$ time. 
+
+\subsection{Runtime Analysis: \texttt{OMRMIDICorrector}}
+For a single instance of an \texttt{OMRMIDICorrector} with OMR and MIDI streams of length $n$ and $p$ parts, there are $2 \cdot p$ texttt{Hasher} objects, $p$ \texttt{Aligner} objects, and $p$ \texttt{Fixer} objects created. In total this comes out to a $2 \cdot p \cdot O(n) + p \cdot O(n^2) + p \cdot O(n) = p \cdot O(n^2) + 3 \cdot O(n)$ time. For small $p$, this collapses to $O(n^2)$. 
+ 
 \subsection{Empirical Results}
-\subsection{Scalability}
+Using the the first movement of K.160, I timed some results using the \texttt{\% timeit} functionality of iPython. First I tested the major modules on a single stream, the Violin 1 part of the first movement of K.160. Then I tested the OMR/MIDI Correction system on all of the first movement of K.160.
 
+\subsection{Hasher}
+After setting up a \texttt{Hasher}, \texttt{\% timeit}  reported an average time of 621 ms per call to hash the MIDI stream and average time of 617 ms per call to hash the OMR stream. The length of the hashed MIDI stream was 662 and and the length of the hashed OMR stream was 669. 
+
+\subsection{Aligner}
+After setting up a \texttt{StreamAligner} object using the hashed MIDI stream and the hashed OMR stream, I ran \texttt{\% timeit} on the \texttt{align} function and got an average of 2.39 s per call. Since the \texttt{align} function itself hashes input streams if not already hashed, I passed in the hashed streams to get a number more accurate of the alignment process that include setting up, populating, and backtracing the distance matrix. 
+
+\subsection{Fixer}
+I set up a \texttt{EnharmonicFixer} object using the \texttt{changes} list from the aligning step and the original K.160 Violin 1 OMR and MIDI streams. Running \texttt{\% timeit} on the \texttt{fix} function returned an average of 12.7 ms per call. 
+
+\subsection{OMR/MIDI Corrector}
+After testing the timing of each of the major modules, I tested the timing of the OMR/MIDI Correction system on the entire first movement of K.160. The average time to hash, align, and fix the four instrumental parts in the first movement of K.160 was 12.94 s. 
+
+An entire run of the OMR/MIDI Corrector system on the first movement of K.160 require 8 calls to the \texttt{Hasher}, 4 calls to the \texttt{Aligner}, and 4 calls to the \texttt{Fixer}. Using the empirical numbers from above, this gives an estimate of 14.56 seconds, which is in the range of the 12.94 seconds that \texttt{\%timeit} gives us. The speedup in the empirical time versus the calculated time likely comes from the fact that there is considerable setup that reused in calling the \texttt{OMRMIDICorrector} once instead of its constituent modules. 
+
+\subsection{Scalability}
+If a single movement of a four-part Mozart quartet takes on the order of tens of seconds to hash, align, and fix, then most multi-movement pieces for chamber ensembles should take on the order of minutes to hash, align, and fix. Larger orchestral works might take on the order of tens of minutes to hash, align, and fix. Especially for the first system of its type, these preliminary timings of the\texttt{OMRMIDICorrector} have good implications. 
+
+The bottleneck of the system lies in the \texttt{Aligner}. The method implemented in my system is a basic string alignment algorithm, and there is considerable room for speedup using techniques such as The Four Russian Algorithm \cite{seqalign}. 
 
 \subsection{Implications of Free Music}
 The lasting and tangible results of this research will hopefully be in helping providing more free and high-quality musical scores to the public. With ISMLP alone having over 100,000 scores that are freely available, there is a lot of potential for my work to liberate otherwise sub-quality scanned musical scores and turn them into digital scores that can be conveniently analyzed, replicated, and distributed. It's my hope that this work will be able to facilitate musical research, provide individuals and groups with easy access to practice material, and help bring more music to all of our lives.

@@ -13,8 +13,8 @@
 \contentsline {figure}{\numberline {4-2}{\ignorespaces An example string quartet stream and its four parts.}}{44}
 \contentsline {figure}{\numberline {4-3}{\ignorespaces A bad alignment setup of the quartet would treat the entire piece as four serial streams and only the only guaranteed alignment would be between the beginning of the first part and the end of the last part.}}{44}
 \contentsline {figure}{\numberline {4-4}{\ignorespaces A better alignment setup of the quartet would do part-wise alignment instead of treating the entire piece as a sequence of parts. This methodology guarantees that the beginnings and ends of each part are aligned.}}{44}
-\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in viola part of target (MIDI) stream.}}{54}
-\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in viola part of source (OMR) stream.}}{55}
+\contentsline {figure}{\numberline {4-5}{\ignorespaces Visual display of changes in the Violin 1 part of target (MIDI) stream.}}{54}
+\contentsline {figure}{\numberline {4-6}{\ignorespaces Visual display of changes in the Violin 1 part of source (OMR) stream.}}{55}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5-1}{\ignorespaces The first page of the scanned copy of the score found on IMSLP.}}{62}
 \contentsline {figure}{\numberline {5-2}{\ignorespaces Post-alignment visualization of an excerpt of the MIDI Violin 1 part in K.525- I.Allegro.}}{65}
